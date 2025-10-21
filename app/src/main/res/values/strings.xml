@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TASKILLER</string>
+    <string name="btnVolver">Volver</string>
 </resources>
