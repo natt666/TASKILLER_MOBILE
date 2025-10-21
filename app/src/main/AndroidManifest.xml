@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TASKILLER">
         <activity
+            android:name=".DetalleTareaActivity"
+            android:exported="false" />
+        <activity
             android:name=".PaginaPrincipalActivity"
             android:exported="false" />
         <activity

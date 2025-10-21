@@ -3,4 +3,5 @@
     <dimen name="txtTitulo">36dp</dimen>
     <dimen name="txtSubtitulo">26dp</dimen>
     <dimen name="txtNormal">18dp</dimen>
+    <dimen name="paddingList">5dp</dimen>
 </resources>
