@@ -18,9 +18,10 @@
 
         <ImageButton
             android:id="@+id/btnDetallesProyectoAreaPersonal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/areaPersonal"/>
+            android:layout_width="@dimen/imgUser"
+            android:layout_height="@dimen/imgUser"
+            android:contentDescription="@string/areaPersonal"
+            android:src="@drawable/logo_user_azu"/>
 
     </LinearLayout>
 
