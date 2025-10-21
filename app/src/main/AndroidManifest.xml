@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TASKILLER">
         <activity
+            android:name=".PaginaPrincipalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
             android:name=".DetallesProyectoActivity"
             android:exported="false" />
         <activity
