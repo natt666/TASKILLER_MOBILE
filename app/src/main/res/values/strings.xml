@@ -10,4 +10,6 @@
         <item>Inglés</item>
         <item>Catalán</item>
     </string-array>
+    <string name="volver">Volver</string>
+    <string name="areaPersonal">Area Personal</string>
 </resources>

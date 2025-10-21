@@ -1,29 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/main"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDetallesProyectoMain"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/layoutDetallesProyectoBtnAreaPersonal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="right|center_vertical"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        tools:ignore="RtlHardcoded">
+
+        <ImageButton
+            android:id="@+id/btnDetallesProyectoAreaPersonal"
+            android:layout_width="@dimen/imgUser"
+            android:layout_height="@dimen/imgUser"
+            android:contentDescription="@string/areaPersonal"
+            android:src="@drawable/logo_user_azu"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/lblDetallesProyectoNombreProyecto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:text="Nombre_Proyecto"
-        android:textSize="@dimen/txtTitulo"/>
-    <ListView
+        android:textSize="@dimen/txtTitulo"
+        android:layout_weight="1"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listDetallesProyectoListaDeTareas"
         android:layout_width="match_parent"
-        android:layout_height="300dp">
-    </ListView>
-    <Button
-        android:id="@+id/btnDetallesProyectoBtnVolver"
+        android:layout_height="0dp"
+        android:padding="@dimen/paddingList"
+        android:layout_weight="7"/>
+
+    <LinearLayout
+        android:id="@+id/layoutDetallesProyectoBtnVolver"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btnVolver" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
 
-
-
+        <Button
+            android:id="@+id/btnDetallesProyectoBtnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/volver" />
+    </LinearLayout>
 
 
 </LinearLayout>
