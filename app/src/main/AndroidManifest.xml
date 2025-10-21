@@ -11,21 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TASKILLER">
+
+        <!-- Tu activity principal -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
-        <activity
-            android:name=".PaginaPrincipalActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetallesProyectoActivity"
-            android:exported="false" />
+
+            <!-- El intent-filter indica que esta es la pantalla que se abre al iniciar -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Otras activities -->
+        <activity
+            android:name=".PaginaPrincipalActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".DetallesProyectoActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
