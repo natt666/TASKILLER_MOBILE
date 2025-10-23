@@ -11,12 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TASKILLER">
+
+        <!-- Tu activity principal -->
         <activity
             android:name=".LoginActivity"
             android:exported="true"/>
         <activity
             android:name=".PaginaPrincipalActivity"
             android:exported="false" />
+
         <activity
             android:name=".DetallesProyectoActivity"
             android:exported="true">
