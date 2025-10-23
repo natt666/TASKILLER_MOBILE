@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TASKILLER</string>
+    <string name="volver">Volver</string>
+    <string name="areaPersonal">Area Personal</string>
 </resources>
