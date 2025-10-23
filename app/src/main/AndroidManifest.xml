@@ -15,24 +15,22 @@
         <!-- Tu activity principal -->
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-
-            <!-- El intent-filter indica que esta es la pantalla que se abre al iniciar -->
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
-        <!-- Otras activities -->
+            android:exported="true"/>
         <activity
             android:name=".PaginaPrincipalActivity"
             android:exported="false" />
 
         <activity
             android:name=".DetallesProyectoActivity"
-            android:exported="false" />
-
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetalleTareaActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

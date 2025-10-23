@@ -13,4 +13,15 @@
     <string name="volver">Volver</string>
     <string name="areaPersonal">Area Personal</string>
     <string name="PaginaPrincipalTxtViewProyectos">Proyectos</string>
+    <string name="tarea">Tarea</string>
+    <string name="inicio">Inicio:</string>
+    <string name="fin">Fin:</string>
+    <string name="filtro">Filtro</string>
+    <string-array name="estados">
+        <item>Por comenzar</item>
+        <item>En progreso</item>
+        <item>Entregado</item>
+        <item>Revisado</item>
+        <item>Bloqueado</item>
+    </string-array>
 </resources>
