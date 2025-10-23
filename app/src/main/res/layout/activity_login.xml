@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/main"
+    android:id="@+id/loginActivity"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,47 +18,66 @@
         android:layout_marginBottom="16dp"
         android:layout_gravity="center_horizontal" />
 
-    <!-- TÍTULO -->
-    <TextView
-        android:id="@+id/txtViewLoginTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/LoginIniciaSesion"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="25dp">
 
-    <!-- TEXT BOX 1 -->
-    <EditText
-        android:id="@+id/txtBoxLoginUsuario"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/LoginNombreUsuario"
-        android:layout_marginBottom="12dp"/>
 
-    <!-- TEXT BOX 2 -->
-    <EditText
-        android:id="@+id/txtBoxLoginContrasena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/LoginContrasena"
-        android:inputType="textPassword"
-        android:layout_marginBottom="16dp"/>
+        <!-- TÍTULO -->
+        <TextView
+            android:id="@+id/txtViewLoginTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/LoginIniciaSesion"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <!-- SPINNER (selector de idioma) -->
-    <Spinner
-        android:id="@+id/spinnerLoginIdiomas"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"/>
+        <!-- TEXT BOX 1 -->
+        <EditText
+            android:id="@+id/txtBoxLoginUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/LoginNombreUsuario"
+            android:layout_marginBottom="12dp"/>
 
-    <!-- BOTÓN 1 -->
-    <Button
-        android:id="@+id/btnLoginIniciarSesion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/LoginBotonIniciarSesion"
-        android:layout_marginBottom="8dp"/>
+        <!-- TEXT BOX 2 -->
+        <EditText
+            android:id="@+id/txtBoxLoginContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/LoginContrasena"
+            android:inputType="textPassword"
+            android:layout_marginBottom="16dp"/>
+
+
+
+        <!-- BOTÓN 1 -->
+
+        <Button
+            android:id="@+id/btnLoginIniciarSesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/LoginBotonIniciarSesion" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <!-- SPINNER (selector de idioma) -->
+
+        <Spinner
+            android:id="@+id/spinnerLoginIdiomas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -12,4 +12,5 @@
     </string-array>
     <string name="volver">Volver</string>
     <string name="areaPersonal">Area Personal</string>
+    <string name="PaginaPrincipalTxtViewProyectos">Proyectos</string>
 </resources>
