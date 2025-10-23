@@ -8,20 +8,21 @@
     android:background="@color/background">
 
     <LinearLayout
-        android:id="@+id/layoutDetallesProyectoBtnAreaPersonal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:gravity="right|center_vertical"
         android:orientation="horizontal"
-        android:layout_weight="1"
-        tools:ignore="RtlHardcoded">
+        android:layout_weight="1">
 
         <ImageButton
             android:id="@+id/btnDetallesProyectoAreaPersonal"
-            android:layout_width="@dimen/imgUser"
-            android:layout_height="@dimen/imgUser"
+            android:layout_width="@dimen/imgUserSize"
+            android:layout_height="@dimen/imgUserSize"
+            android:padding="@dimen/paddingList"
+            android:scaleType="fitCenter"
+            android:background="@android:color/transparent"
             android:contentDescription="@string/areaPersonal"
-            android:src="@drawable/logo_user_azu"/>
+            android:src="@drawable/logo_user_ros" />
 
     </LinearLayout>
 
@@ -39,10 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:padding="@dimen/paddingList"
-        android:layout_weight="7"/>
+        android:layout_weight="8"/>
 
     <LinearLayout
-        android:id="@+id/layoutDetallesProyectoBtnVolver"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

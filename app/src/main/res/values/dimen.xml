@@ -3,6 +3,7 @@
     <dimen name="txtTitulo">36sp</dimen>
     <dimen name="txtSubtitulo">26sp</dimen>
     <dimen name="txtNormal">18sp</dimen>
+    <dimen name="imgUserSize">48dp</dimen>
+    <dimen name="paddingDiscriptionTarea">15dp</dimen>
     <dimen name="paddingList">5dp</dimen>
-    <dimen name="imgUser">40dp</dimen>
 </resources>
