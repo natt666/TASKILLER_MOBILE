@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="24dp">
+    android:padding="25dp"
+    android:clipToPadding="false"> <!-- Esta línea està pq el padding me esta dando problemas INFINITOS Y ESTOY HASTA LOS MISMISIMOS C******* NO PUC MEEEEEEEEEEEEEEEEEEES  -->
 
     <!-- LOGO -->
     <ImageView
@@ -20,9 +21,9 @@
     <!-- TÍTULO -->
     <TextView
         android:id="@+id/txtViewLoginTitulo"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/LoginIniciaSesion"
         android:textSize="24sp"
         android:textStyle="bold" />
