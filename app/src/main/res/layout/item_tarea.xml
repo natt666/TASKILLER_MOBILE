@@ -1,19 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="8dp"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="8dp"
-    android:padding="16dp">
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="40dp"
+    android:layout_marginBottom="12dp"
+    android:padding="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="6dp">
 
-    <TextView
-        android:id="@+id/lblTituloTarea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nombre_tarea"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/taskNameTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre de la tarea"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/taskStatusTextView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0" />
+
+        <TextView
+            android:id="@+id/taskStatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="En progreso"
+            android:textColor="@color/en_progreso"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="2"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/lblInicioTarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio:"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/taskNameTextView"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <TextView
+                android:id="@+id/lblFinTarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fin:"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintLeft_toRightOf="@id/lblInicioTarea" />
+
+            <TextView
+                android:id="@+id/startDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10/10/2025"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lblInicioTarea"
+                app:layout_constraintVertical_bias="1" />
+
+            <TextView
+                android:id="@+id/endDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20/10/2025"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@id/lblFinTarea" />
+
+        </GridView>
+
+        <LinearLayout
+            android:id="@+id/usersIconsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="4dp"
+                android:contentDescription="Usuario 1"
+                android:src="@drawable/logoUserRos" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </com.google.android.material.card.MaterialCardView>
