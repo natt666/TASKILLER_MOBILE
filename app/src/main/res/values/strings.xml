@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">TASKILLER</string>
+    <string name="btnVolver">Volver</string>
+    <string name="LoginIniciaSesion">Inicia Sesión</string>
+    <string name="LoginBotonIniciarSesion">Iniciar Sesión</string>
+    <string name="LoginNombreUsuario">Usuario</string>
+    <string name="LoginContrasena">Contraseña</string>
+    <string-array name="idiomas">
+        <item>Español</item>
+        <item>Inglés</item>
+        <item>Catalán</item>
+    </string-array>
     <string name="volver">Volver</string>
     <string name="areaPersonal">Area Personal</string>
 </resources>

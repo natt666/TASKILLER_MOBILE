@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="24dp">
+    android:padding="25dp"
+    android:clipToPadding="false"> <!-- Esta línea està pq el padding me esta dando problemas INFINITOS Y ESTOY HASTA LOS MISMISIMOS C******* NO PUC MEEEEEEEEEEEEEEEEEEES  -->
 
     <!-- LOGO -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/"  <!-- nombre del archivo de imagen QUE AUN NO TENGO PQ NO ESTA EN LA CARPETA LOL SORRRRRYYYYYYYYYYYY -->
-    <!-- android:contentDescription="Logo"
-    android:layout_marginBottom="16dp"/> -->
+        android:src="@drawable/logo"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal" />
 
     <!-- TÍTULO -->
     <TextView
         android:id="@+id/txtViewLoginTitulo"
-        android:layout_width="364dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="Inicia Sesión"
+        android:layout_marginBottom="20dp"
+        android:text="@string/LoginIniciaSesion"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -31,15 +33,15 @@
         android:id="@+id/txtBoxLoginUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario"
+        android:hint="@string/LoginNombreUsuario"
         android:layout_marginBottom="12dp"/>
 
     <!-- TEXT BOX 2 -->
     <EditText
-        android:id="@+id/txtBoxLoginContraseña"
+        android:id="@+id/txtBoxLoginContrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="@string/LoginContrasena"
         android:inputType="textPassword"
         android:layout_marginBottom="16dp"/>
 
@@ -55,7 +57,7 @@
         android:id="@+id/btnLoginIniciarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Sesión"
+        android:text="@string/LoginBotonIniciarSesion"
         android:layout_marginBottom="8dp"/>
 
 
