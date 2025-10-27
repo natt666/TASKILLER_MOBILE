@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Botón del nombre del proyecto -->
+        <Button
+            android:id="@+id/btnProjectName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre del Proyecto"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnChart" />
+
+        <!-- Botón del gráfico (arriba a la derecha) -->
+        <ImageButton
+            android:id="@+id/btnChart"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@android:drawable/ic_menu_report_image"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón número de tareas (abajo a la izquierda) -->
+        <Button
+            android:id="@+id/btnTaskCount"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="5 tareas"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnProjectName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Botón fecha de entrega (al lado del de tareas) -->
+        <Button
+            android:id="@+id/btnDeadline"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="31/12/2024"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnProjectName"
+            app:layout_constraintStart_toEndOf="@+id/btnTaskCount" />
+
+        <!-- Contenedor de imágenes de usuarios (abajo a la derecha, al mismo nivel) -->
+        <LinearLayout
+            android:id="@+id/layoutUserImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnProjectName"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Aquí irán las imágenes de usuarios dinámicamente -->
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/logo_user_ros"
+                android:layout_marginEnd="4dp" />
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/logo_user_ros"
+                android:layout_marginEnd="4dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
