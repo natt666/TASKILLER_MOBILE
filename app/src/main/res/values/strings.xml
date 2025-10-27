@@ -1,6 +1,27 @@
 <resources>
     <string name="app_name">TASKILLER</string>
     <string name="btnVolver">Volver</string>
-    <string name="mis_tareas">Mis tareas</string>
-    <string name="nombre_tarea">Nombre de la tarea</string>
+    <string name="LoginIniciaSesion">Inicia Sesión</string>
+    <string name="LoginBotonIniciarSesion">Iniciar Sesión</string>
+    <string name="LoginNombreUsuario">Usuario</string>
+    <string name="LoginContrasena">Contraseña</string>
+    <string-array name="idiomas">
+        <item>Español</item>
+        <item>Inglés</item>
+        <item>Catalán</item>
+    </string-array>
+    <string name="volver">Volver</string>
+    <string name="areaPersonal">Area Personal</string>
+    <string name="PaginaPrincipalTxtViewProyectos">Proyectos</string>
+    <string name="tarea">Tarea</string>
+    <string name="inicio">Inicio:</string>
+    <string name="fin">Fin:</string>
+    <string name="filtro">Filtro</string>
+    <string-array name="estados">
+        <item>Por comenzar</item>
+        <item>En progreso</item>
+        <item>Entregado</item>
+        <item>Revisado</item>
+        <item>Bloqueado</item>
+    </string-array>
 </resources>
