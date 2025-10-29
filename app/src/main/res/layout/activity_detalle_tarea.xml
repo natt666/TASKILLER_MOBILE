@@ -53,7 +53,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="6"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/paddingDiscriptionTarea">
 
         <TextView
             android:id="@+id/lblDetalleTareaDescripcion"
@@ -61,8 +62,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="Descripción"
-            android:padding="@dimen/paddingDiscriptionTarea"
-            android:textSize="@dimen/txtNormal"/>
+            android:textSize="@dimen/txtNormal" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listDetalleTareaUsuarioAsignado"
