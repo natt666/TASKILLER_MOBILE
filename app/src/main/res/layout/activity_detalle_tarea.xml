@@ -1,10 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDetallesTareaMain"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalleTareaActivity">
+    android:orientation="vertical"
+    android:background="@color/background">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="@dimen/paddingList">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="@string/tarea"
+            android:textSize="@dimen/txtTitulo"
+            android:layout_weight="9"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:padding="@dimen/paddingList">
+
+        <TextView
+            android:id="@+id/lblDetalleTareaNombreTarea"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Nombre de tarea"
+            android:layout_weight="3"
+            android:textSize="@dimen/txtSubtitulo"
+            android:gravity="center"/>
+
+        <Spinner
+            android:id="@+id/spinnerDetalleTareaEstado"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:entries="@array/estados"
+            android:layout_weight="2"
+            android:background="@android:color/transparent"
+            android:popupBackground="@android:color/white"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lblDetalleTareaDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Descripción"
+            android:padding="@dimen/paddingDiscriptionTarea"
+            android:textSize="@dimen/txtNormal"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listDetalleTareaUsuarioAsignado"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/paddingList"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/paddingList">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="01"
+            android:layout_height="wrap_content"
+            android:text="@string/inicio"
+            android:textSize="@dimen/txtNormal"/>
+
+        <TextView
+            android:id="@+id/lblDetalleTareaFechaInicio"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="12/10/2025"
+            android:textSize="@dimen/txtNormal"/>
+
+        <TextView
+            android:id="@+id/lblDetalleTareaFechaFinal"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/fin"
+            android:textSize="@dimen/txtNormal"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="12/10/2025"
+            android:textSize="@dimen/txtNormal"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnDetalleTareaVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/volver" />
+    </LinearLayout>
+
+</LinearLayout>
