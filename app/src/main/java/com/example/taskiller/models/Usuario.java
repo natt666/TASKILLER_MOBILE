@@ -20,6 +20,14 @@ public class Usuario {
         this.rol = rol;
     }
 
+    public Usuario(String nombre, String apellido, String mail, String contrasena) {
+        this.id = UUID.randomUUID();
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.mail = mail;
+        this.contrasena = contrasena;
+    }
+
     public UUID getId() {
         return id;
     }

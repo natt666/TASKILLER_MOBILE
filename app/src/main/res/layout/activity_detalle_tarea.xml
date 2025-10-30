@@ -65,7 +65,7 @@
             android:textSize="@dimen/txtNormal" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listDetalleTareaUsuarioAsignado"
+            android:id="@+id/lstDetalleTareaUsuarioAsignado"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:padding="@dimen/paddingList"
