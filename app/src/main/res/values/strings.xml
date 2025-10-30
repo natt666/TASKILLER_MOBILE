@@ -17,6 +17,7 @@
     <string name="inicio">Inicio:</string>
     <string name="fin">Fin:</string>
     <string name="filtro">Filtro</string>
+    <string name="mis_tareas">Mis tareas</string>
     <string-array name="estados">
         <item>Por comenzar</item>
         <item>En progreso</item>
