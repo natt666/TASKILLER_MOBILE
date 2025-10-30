@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tarjproyecto"
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
@@ -28,24 +29,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp" />
 
-    <!-- Contenedor con Scroll para las tarjetas -->
-    <ScrollView
+    <!-- RecyclerView para las tarjetas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProjects"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp">
-
-        <LinearLayout
-            android:id="@+id/cardContainer"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        android:layout_marginTop="16dp" />
 
     <!-- Botón para añadir tarjetas -->
     <Button
         android:id="@+id/btnAddCard"
-        android:text="Añadir Tarjeta"
+        android:text="@string/anadir_tarjeta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp" />
