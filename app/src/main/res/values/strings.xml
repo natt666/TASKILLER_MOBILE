@@ -19,6 +19,7 @@
     <string name="filtro">Filtro</string>
     <string name="anadir_tarjeta">Añadir Tarjeta</string>
     <string name="nomProyectoTarjPagPrincipal">Nombre del Proyecto</string>
+    <string name="mis_tareas">Mis tareas</string>
     <string-array name="estados">
         <item>Por comenzar</item>
         <item>En progreso</item>
