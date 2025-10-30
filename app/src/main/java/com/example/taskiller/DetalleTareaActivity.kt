@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.adapters.UsuarioAdapter
 import com.example.taskiller.models.Usuario
@@ -22,20 +23,20 @@ class DetalleTareaActivity : AppCompatActivity() {
 
         val usuarios = listOf(
             Usuario(
-                "小茶",
-                "Li",
+                "Chenxiao",
+                "Xu",
                 "xiaocha@example.com",
                 "123456",
             ),
             Usuario(
-                "宗老师",
-                "Saiguu",
+                "nanana",
+                "nanana",
                 "oc3@taskiller.com",
                 "backend666",
             ),
             Usuario(
-                "玛朵莫塞尔",
-                "Mademoiselle",
+                "kakaka",
+                "kakaka",
                 "mado@taskiller.com",
                 "parisQueen",
             )
@@ -45,6 +46,8 @@ class DetalleTareaActivity : AppCompatActivity() {
         val lstDetalleTareaUsuarioAsignado = findViewById<RecyclerView>(R.id.lstDetalleTareaUsuarioAsignado)
 
         val adapter = UsuarioAdapter(usuarios)
+        lstDetalleTareaUsuarioAsignado.hasFixedSize()
+        lstDetalleTareaUsuarioAsignado.layoutManager = LinearLayoutManager(this)
         lstDetalleTareaUsuarioAsignado.adapter = adapter
     }
 }
