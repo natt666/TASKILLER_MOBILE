@@ -1,15 +1,22 @@
 package com.example.taskiller
-
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.taskiller.utils.Datos
+import com.google.gson.Gson
+import java.io.File
+import java.io.FileReader
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,12 +24,17 @@ class LoginActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        // Esto ajusta los márgenes para la barra del sistema :)s
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.loginActivity)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val datos = getDatos()
+
+        val btnLoginIniciarSesion = findViewById<Button>(R.id.btnLoginIniciarSesion)
+        val txtBoxLoginUsuario = findViewById<EditText>(R.id.txtBoxLoginUsuario)
+        val txtBoxLoginContrasena = findViewById<EditText>(R.id.txtBoxLoginContrasena)
 
         // 🔹 Paso 1: Buscar el Spinner del XML
         val spinner = findViewById<Spinner>(R.id.spinnerLoginIdiomas)
@@ -50,6 +62,37 @@ class LoginActivity : AppCompatActivity() {
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // No hace falta poner nada aquí yey
             }
+        }
+
+        btnLoginIniciarSesion.setOnClickListener {
+            for (u in datos!!.listaUsuarios) {
+                if (u.mail == txtBoxLoginUsuario.text.toString() &&
+                    u.contrasena == txtBoxLoginContrasena.text.toString()) {
+                    val intent = Intent(this, PaginaPrincipalActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
+    }
+
+
+    fun getDatos(): Datos? {
+        return try {
+            val jsonFile = File(filesDir, "json/TaskillerData.json")
+
+            if (!jsonFile.exists()) {
+                Log.e("LoginActivity", "Archivo JSON no encontrado: ${jsonFile.absolutePath}")
+                return null
+            }
+
+            val gson = Gson()
+            FileReader(jsonFile).use { reader ->
+                gson.fromJson(reader, Datos::class.java)
+            }
+
+        } catch (e: Exception) {
+            Log.e("LoginActivity", "Error leyendo JSON", e)
+            null
         }
     }
 }

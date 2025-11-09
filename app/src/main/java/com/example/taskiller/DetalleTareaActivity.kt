@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.taskiller.utils.Datos
+import kotlin.toString
 
 class DetalleTareaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,4 +19,5 @@ class DetalleTareaActivity : AppCompatActivity() {
             insets
         }
     }
+
 }
