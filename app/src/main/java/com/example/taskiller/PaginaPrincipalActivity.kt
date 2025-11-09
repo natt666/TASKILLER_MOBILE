@@ -1,5 +1,6 @@
 package com.example.taskiller
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -16,6 +17,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
     private lateinit var adapter: ProjectAdapter
     private val projectList = mutableListOf<Project>()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -6,101 +6,111 @@ import java.util.Objects;
 import java.util.UUID;
 public class Proyecto {
     public enum Estado {
-        POR_COMENZAR(1),
-        EN_PROGRESO(2),
-        ENTREGADO(3),
-        REVISADO(4),
-        BLOQUEADO(5);
-        private final int valor;
-        Estado(int valor) {
-            this.valor = valor;
-        }
-        public int getValor() {
-            return valor;
-        }
+        Por_Comenzar,
+        En_Progreso,
+        Entregado,
+        Revisado,
+        Bloqueado,
     }
-    private UUID id;
-    private String titulo;
-    private String descripcion;
-    private Date fechaInicio;
-    private Date fechaFinal;
-    private Estado estado;
-    private List<UUID> usuarios;
+    private UUID Id;
+    private String Titulo;
+    private String Descripcion;
+    public String FechaInicio;
+    public String FechaFinal;
+    private Estado Estado;
+    private List<UUID> listaUsuarios;
     public Proyecto() {
 
     }
-    public Proyecto(String titulo, String descripcion, Date fechaInicio, Date fechaFinal,
+    public Proyecto(String titulo, String descripcion, String fechaInicio, String fechaFinal,
                     Estado estado, List<UUID> usuarios) {
-        this.id = UUID.randomUUID();
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.fechaInicio = fechaInicio;
-        this.fechaFinal = fechaFinal;
-        this.estado = estado;
-        this.usuarios = usuarios;
+        this.Id = UUID.randomUUID();
+        this.Titulo = titulo;
+        this.Descripcion = descripcion;
+        this.FechaInicio = fechaInicio;
+        this.FechaFinal = fechaFinal;
+        this.Estado = estado;
+        this.listaUsuarios = usuarios;
     }
 
     public UUID getId() {
-        return id;
+        return Id;
     }
+
+    public void setId(UUID id) {
+        Id = id;
+    }
+
     public String getTitulo() {
-        return titulo;
+        return Titulo;
     }
+
     public void setTitulo(String titulo) {
-        this.titulo = titulo;
+        Titulo = titulo;
     }
+
     public String getDescripcion() {
-        return descripcion;
+        return Descripcion;
     }
+
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        Descripcion = descripcion;
     }
-    public Date getFechaInicio() {
-        return fechaInicio;
+
+    public String getFechaInicio() {
+        return FechaInicio;
     }
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
+
+    public void setFechaInicio(String fechaInicio) {
+        FechaInicio = fechaInicio;
     }
-    public Date getFechaFinal() {
-        return fechaFinal;
+
+    public String getFechaFinal() {
+        return FechaFinal;
     }
-    public void setFechaFinal(Date fechaFinal) {
-        this.fechaFinal = fechaFinal;
+
+    public void setFechaFinal(String fechaFinal) {
+        FechaFinal = fechaFinal;
     }
+
     public Estado getEstado() {
-        return estado;
+        return Estado;
     }
+
     public void setEstado(Estado estado) {
-        this.estado = estado;
+        Estado = estado;
     }
+
     public List<UUID> getUsuarios() {
-        return usuarios;
+        return listaUsuarios;
     }
+
     public void setUsuarios(List<UUID> usuarios) {
-        this.usuarios = usuarios;
+        listaUsuarios = usuarios;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Proyecto proyecto = (Proyecto) o;
-        return Objects.equals(id, proyecto.id) && Objects.equals(titulo, proyecto.titulo);
+        return Objects.equals(Id, proyecto.Id) && Objects.equals(Titulo, proyecto.Titulo);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hash(id, titulo);
+        return Objects.hash(Id, Titulo);
     }
 
     @Override
     public String toString() {
         return "Proyecto{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", fechaInicio=" + fechaInicio +
-                ", fechaFinal=" + fechaFinal +
-                ", estado=" + estado +
-                ", usuarios=" + usuarios +
+                "Id=" + Id +
+                ", Titulo='" + Titulo + '\'' +
+                ", Descripcion='" + Descripcion + '\'' +
+                ", FechaInicio=" + FechaInicio +
+                ", FechaFinal=" + FechaFinal +
+                ", Estado=" + Estado +
+                ", Usuarios=" + listaUsuarios +
                 '}';
     }
 }
