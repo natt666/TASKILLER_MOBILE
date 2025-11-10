@@ -6,54 +6,45 @@ import java.util.UUID;
 
 public class Rol {
 
-    private UUID id;
-    private String nombre;
-    private List<String> aceso;
+    private UUID Id;
+    private String Nombre;
+    private List<String> Acceso;
 
     public Rol() { }
-    public Rol(String nombre, List<String> acceso) {
-        this.id = UUID.randomUUID();
-        this.nombre = nombre;
-        this.aceso = acceso;
-    }
 
     public UUID getId() {
-        return id;
+        return Id;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
+
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Nombre = nombre;
     }
-    public List<String> getAceso() {
-        return aceso;
-    }
-    public void setAceso(List<String> aceso) {
-        this.aceso = aceso;
-    }
+
+
+
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Rol rol = (Rol) o;
-        return Objects.equals(id, rol.id);
+        return Objects.equals(Id, rol.Id);
     }
+
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(Id);
     }
 
     @Override
     public String toString() {
         return "Rol{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", aceso=" + aceso +
+                "Id=" + Id +
+                ", Nombre='" + Nombre + '\'' +
+                ", Aceso=" + Acceso +
                 '}';
     }
 }

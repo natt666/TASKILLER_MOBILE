@@ -3,86 +3,81 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Usuario {
-    private UUID id;
-    private String nombre;
-    private String apellido;
-    private String mail;
-    private String contrasena;
-    private UUID rol;
+    private UUID Id;
+    private String Nombre;
+    private String Apellido;
+    private String Mail;
+    private String Contrasena;
+    private UUID Rol;
 
     public Usuario() {}
-    public Usuario(String nombre, String apellido, String mail, String contrasena, UUID rol) {
-        this.id = UUID.randomUUID();
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.mail = mail;
-        this.contrasena = contrasena;
-        this.rol = rol;
-    }
 
-    public Usuario(String nombre, String apellido, String mail, String contrasena) {
-        this.id = UUID.randomUUID();
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.mail = mail;
-        this.contrasena = contrasena;
+    public Usuario(UUID id, String nombre, String apellido, String mail, String contrasena, UUID rol) {
+        Id = UUID.randomUUID();
+        Nombre = nombre;
+        Apellido = apellido;
+        Mail = mail;
+        Contrasena = contrasena;
+        Rol = rol;
     }
 
     public UUID getId() {
-        return id;
+        return Id;
     }
+
+    public void setId(UUID id) {
+        Id = id;
+    }
+
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
+
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Nombre = nombre;
     }
+
     public String getApellido() {
-        return apellido;
+        return Apellido;
     }
+
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        Apellido = apellido;
     }
+
     public String getMail() {
-        return mail;
+        return Mail;
     }
+
     public void setMail(String mail) {
-        this.mail = mail;
+        Mail = mail;
     }
+
     public String getContrasena() {
-        return contrasena;
+        return Contrasena;
     }
+
     public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+        Contrasena = contrasena;
     }
+
     public UUID getRol() {
-        return rol;
+        return Rol;
     }
+
     public void setRol(UUID rol) {
-        this.rol = rol;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        Usuario usuario = (Usuario) o;
-        return Objects.equals(id, usuario.id) && Objects.equals(nombre, usuario.nombre);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre);
+        Rol = rol;
     }
 
     @Override
     public String toString() {
         return "Usuario{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", mail='" + mail + '\'' +
-                ", contrasena='" + contrasena + '\'' +
-                ", rol=" + rol +
+                "Id=" + Id +
+                ", Nombre='" + Nombre + '\'' +
+                ", Apellido='" + Apellido + '\'' +
+                ", Mail='" + Mail + '\'' +
+                ", Contrasena='" + Contrasena + '\'' +
+                ", Rol=" + Rol +
                 '}';
     }
 }
