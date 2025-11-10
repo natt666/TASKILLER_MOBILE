@@ -6,4 +6,5 @@
     <dimen name="imgUserSize">48dp</dimen>
     <dimen name="paddingDiscriptionTarea">15dp</dimen>
     <dimen name="paddingList">5dp</dimen>
+    <dimen name="paddingUserList">10dp</dimen>
 </resources>
