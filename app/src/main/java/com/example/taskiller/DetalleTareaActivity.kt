@@ -8,9 +8,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.adapters.UsuarioAdapter
-import com.example.taskiller.models.Usuario
-import com.example.taskiller.utils.Datos
-import kotlin.toString
 
 class DetalleTareaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

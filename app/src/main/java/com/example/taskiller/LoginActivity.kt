@@ -65,9 +65,9 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnLoginIniciarSesion.setOnClickListener {
-            for (u in datos!!.listaUsuarios) {
-                if (u.mail == txtBoxLoginUsuario.text.toString() &&
-                    u.contrasena == txtBoxLoginContrasena.text.toString()) {
+            for (u in datos!!.ListaUsuarios) {
+                if (u.Mail == txtBoxLoginUsuario.text.toString() &&
+                    u.Contrasena == txtBoxLoginContrasena.text.toString()) {
                     val intent = Intent(this, PaginaPrincipalActivity::class.java)
                     startActivity(intent)
                 }

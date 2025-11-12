@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.R
-import com.example.taskiller.models.Usuario
 
 class UsuarioAdapter(
     private val usuarios: List<Usuario>
