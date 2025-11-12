@@ -9,7 +9,7 @@ data class Tarea(
     var Prioridad: Prioridades = Prioridades.BAJA,
     var FechaInicio: String = "",
     var FechaFinal: String = "",
-    var ListaUsuarios: MutableList<UUID> = mutableListOf(),
+    var listaUsuarios: MutableList<UUID> = mutableListOf(),
     var IdProyecto: UUID? = null,
     var Estado: Estados = Estados.Por_Comenzar,
     var IdTareaPadre: UUID? = null,

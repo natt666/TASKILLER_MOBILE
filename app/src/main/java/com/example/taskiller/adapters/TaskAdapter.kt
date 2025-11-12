@@ -14,7 +14,7 @@ class TaskAdapter(private val lista: List<TarjetaTarea>) :
     RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val titulo: TextView = view.findViewById(R.id.titulo)
+       // val titulo: TextView = view.findViewById(R.id.Titulo)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,7 +25,7 @@ class TaskAdapter(private val lista: List<TarjetaTarea>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = lista[position]
-        holder.titulo.text = item.titulo
+      //  holder.titulo.text = item.titulo
     }
 
     override fun getItemCount(): Int = lista.size

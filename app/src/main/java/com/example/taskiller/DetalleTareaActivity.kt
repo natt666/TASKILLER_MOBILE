@@ -36,8 +36,8 @@ class DetalleTareaActivity : AppCompatActivity() {
         val tareas = datos.listaTareas
         val usuarios = datos.listaUsuarios
 
-        val tareaActual = tareas.find { it.id.toString() == tareaId } ?: return
-        val usuariosEnTarea = usuarios.filter { it.id in tareaActual.listaUsuarios } ?: return
+        val tareaActual = tareas.find { it.Id.toString() == tareaId } ?: return
+        val usuariosEnTarea = usuarios.filter { it.Id in tareaActual.listaUsuarios } ?: return
 
         MostraRecyclerViewUsuario(usuariosEnTarea)
         MostarNombreDeTarea(tareaActual)
@@ -55,7 +55,7 @@ class DetalleTareaActivity : AppCompatActivity() {
 
     fun MostarNombreDeTarea(tarea: Tarea) {
         val lblNombreTarea = findViewById<TextView>(R.id.lblDetalleTareaNombreTarea)
-        val nombre = tarea.titulo
+        val nombre = tarea.Titulo
         lblNombreTarea.text = nombre
     }
 
@@ -81,7 +81,7 @@ class DetalleTareaActivity : AppCompatActivity() {
 
     fun MostarDescripcion(tarea: Tarea){
         val lblDescripcion = findViewById<TextView>(R.id.lblDetalleTareaDescripcion)
-        lblDescripcion.setText(tarea.descripcion)
+        lblDescripcion.setText(tarea.Descripcion)
     }
 
 
