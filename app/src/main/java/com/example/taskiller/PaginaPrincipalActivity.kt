@@ -1,5 +1,6 @@
 package com.example.taskiller
 
+import Datos
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
@@ -10,12 +11,18 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taskiller.models.Usuario
 
 class PaginaPrincipalActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProjectAdapter
     private val projectList = mutableListOf<Project>()
+
+    private lateinit var datos: Datos
+
+    private lateinit var user: Usuario
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +36,9 @@ class PaginaPrincipalActivity : AppCompatActivity() {
             insets
         }
 
+        datos = intent.getSerializableExtra("datos") as Datos
+        user = intent.getSerializableExtra("user") as Usuario
+
         setupRecyclerView()
         setupAddButton()
         addSampleProjects() // ← AIXÒ ÉS IMPORTANT!
@@ -39,7 +49,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter = ProjectAdapter(
-            projectList,
+            datos.listaProyectos,
             onProjectClick = { project ->
                 Toast.makeText(this, "Projecte: ${project.name}", Toast.LENGTH_SHORT).show()
             },

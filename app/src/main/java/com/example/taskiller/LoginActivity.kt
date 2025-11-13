@@ -81,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
                     if (primerProyecto != null) {
                         val intent = Intent(this, DetallesProyectoActivity::class.java)
                         intent.putExtra("datos", datos)
-                        intent.putExtra("proyecto", primerProyecto)
+                        intent.putExtra("user", u)
                         startActivity(intent)
                     }
                 }
