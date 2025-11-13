@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.adapters.UsuarioAdapter
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
-import com.example.taskiller.utils.Datos
+import Datos
 import com.google.gson.Gson
 import java.io.File
 import java.io.FileReader

@@ -1,9 +1,12 @@
 package com.example.taskiller.models
-
 import java.util.UUID
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
+@Parcelize
 data class Tarea(
-    var Id: UUID? = null,
+    val Id: @RawValue UUID? = null,
     var Titulo: String = "",
     var Descripcion: String = "",
     var Prioridad: Prioridades = Prioridades.BAJA,
@@ -14,7 +17,7 @@ data class Tarea(
     var Estado: Estados = Estados.Por_Comenzar,
     var IdTareaPadre: UUID? = null,
     var Subtareas: MutableList<Tarea> = mutableListOf()
-) {
+): Parcelable{
     enum class Prioridades {
         BAJA,
         MEDIA,
