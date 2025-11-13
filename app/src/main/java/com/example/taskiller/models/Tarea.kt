@@ -16,7 +16,7 @@ data class Tarea(
     var IdProyecto: UUID? = null,
     var Estado: Estados = Estados.Por_Comenzar,
     var IdTareaPadre: UUID? = null,
-    var Subtareas: MutableList<Tarea> = mutableListOf()
+    var Subtareas: MutableList<UUID> = mutableListOf()
 ): Parcelable{
     enum class Prioridades {
         BAJA,
