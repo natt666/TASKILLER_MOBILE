@@ -1,16 +1,13 @@
 package com.example.taskiller.models
-import java.util.UUID
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
-import kotlinx.parcelize.RawValue
 
-@Parcelize
+import java.io.Serializable
+import java.util.UUID
 
 data class Usuario(
-    val Id: @RawValue UUID? = null,
+    val Id: UUID? = null,
     var Nombre: String = "",
     var Apellido: String = "",
     var Mail: String = "",
     var Contrasena: String = "",
     var Rol: UUID? = null
-): Parcelable
+) : Serializable
