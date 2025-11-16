@@ -32,8 +32,6 @@ class LoginActivity : AppCompatActivity() {
 
         val datos = getDatos()
 
-        val primerProyecto = datos?.listaProyectos?.firstOrNull()
-
 
 
 
@@ -78,12 +76,11 @@ class LoginActivity : AppCompatActivity() {
             for (u in datos!!.listaUsuarios) {
                 if (u.Mail == txtBoxLoginUsuario.text.toString() &&
                     u.Contrasena == txtBoxLoginContrasena.text.toString()) {
-                    if (primerProyecto != null) {
-                        val intent = Intent(this, DetallesProyectoActivity::class.java)
+                        val intent = Intent(this, PaginaPrincipalActivity::class.java)
                         intent.putExtra("datos", datos)
-                        intent.putExtra("proyecto", primerProyecto)
+                        intent.putExtra("user", u)
                         startActivity(intent)
-                    }
+
                 }
             }
         }

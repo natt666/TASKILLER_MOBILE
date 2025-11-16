@@ -11,11 +11,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import Proyecto
 import Datos
+import com.example.taskiller.models.Usuario
 
 class DetallesProyectoActivity : AppCompatActivity() {
 
-    private var datos: Datos? = null
-    private var proyecto: Proyecto? = null
+    private lateinit var datos: Datos
+    private lateinit var user: Usuario
+    private lateinit var proyecto: Proyecto
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +30,9 @@ class DetallesProyectoActivity : AppCompatActivity() {
         val btnAreaPersonal = findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
 
         // Asignar variables de clase desde el Intent
-        datos = intent.getParcelableExtra("datos")
-        proyecto = intent.getParcelableExtra("proyecto")
+        datos =intent.getSerializableExtra("datos") as Datos
+        user =intent.getSerializableExtra("user") as Usuario
+        proyecto = intent.getSerializableExtra("projecto") as Proyecto
 
         lblNombreProyecto.text = proyecto?.Titulo ?: "Proyecto"
 
