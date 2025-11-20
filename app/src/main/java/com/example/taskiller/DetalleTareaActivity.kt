@@ -12,15 +12,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.adapters.UsuarioAdapter
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
-import com.example.taskiller.utils.Datos
+import Datos
 import com.google.gson.Gson
 import java.io.File
 import java.io.FileReader
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.UUID
 
 class DetalleTareaActivity : AppCompatActivity() {
-    val tareaId = "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c";
+    val tareaId = "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b"
+    private lateinit var listaTareas: List<Tarea>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,29 +35,57 @@ class DetalleTareaActivity : AppCompatActivity() {
         }
 
         val datos = getDatos() ?: return
-        val tareas = datos.listaTareas
+        listaTareas = datos.listaTareas
         val usuarios = datos.listaUsuarios
 
-        val tareaActual = tareas.find { it.id.toString() == tareaId } ?: return
-        val usuariosEnTarea = usuarios.filter { it.id in tareaActual.listaUsuarios } ?: return
+        val tareaActual = listaTareas.find { it.Id.toString() == tareaId } ?: return
+        val usuariosEnTarea = usuarios.filter { it.Id in tareaActual.listaUsuarios } ?: return
 
         MostraRecyclerViewUsuario(usuariosEnTarea)
         MostarNombreDeTarea(tareaActual)
         MostarFecha(tareaActual)
         MostarDescripcion(tareaActual)
+        MostraRecyclerViewSubtarea(tareaActual)
     }
 
     fun MostraRecyclerViewUsuario(usuarios: List<Usuario>) {
-        val lstDetalleTareaUsuarioAsignado = findViewById<RecyclerView>(R.id.lstDetalleTareaUsuarioAsignado)
+        val rvDetalleTareaUsuarioAsignado = findViewById<RecyclerView>(R.id.rvDetalleTareaUsuariosAsignado)
         val adapter = UsuarioAdapter(usuarios)
-        lstDetalleTareaUsuarioAsignado.hasFixedSize()
-        lstDetalleTareaUsuarioAsignado.layoutManager = LinearLayoutManager(this)
-        lstDetalleTareaUsuarioAsignado.adapter = adapter
+        rvDetalleTareaUsuarioAsignado.hasFixedSize()
+        rvDetalleTareaUsuarioAsignado.layoutManager = LinearLayoutManager(this)
+        rvDetalleTareaUsuarioAsignado.adapter = adapter
+    }
+
+    fun MostraRecyclerViewSubtarea(tarea: Tarea) {
+        val rvDetalleTareaSubtareas = findViewById<RecyclerView>(R.id.rvDetalleTareaSubtareas)
+        val subtareasIds = tarea.Subtareas
+
+        if (subtareasIds != null) {
+
+            val subtareasTarea: MutableList<Tarea> = subtareasIds
+                .mapNotNull { id -> obtenerTareaPorId(id) }
+                .toMutableList()
+
+            val adapter = MyTaskAdapter(
+                subtareasTarea,
+                onStateChanged = { tarea, nuevoEstado ->
+                }
+            )
+            rvDetalleTareaSubtareas.hasFixedSize()
+            rvDetalleTareaSubtareas.layoutManager = LinearLayoutManager(this)
+            rvDetalleTareaSubtareas.adapter = adapter
+
+        }
+
+    }
+
+    fun obtenerTareaPorId(id: UUID): Tarea? {
+        return listaTareas.find { it.Id == id }
     }
 
     fun MostarNombreDeTarea(tarea: Tarea) {
         val lblNombreTarea = findViewById<TextView>(R.id.lblDetalleTareaNombreTarea)
-        val nombre = tarea.titulo
+        val nombre = tarea.Titulo
         lblNombreTarea.text = nombre
     }
 
@@ -81,7 +111,7 @@ class DetalleTareaActivity : AppCompatActivity() {
 
     fun MostarDescripcion(tarea: Tarea){
         val lblDescripcion = findViewById<TextView>(R.id.lblDetalleTareaDescripcion)
-        lblDescripcion.setText(tarea.descripcion)
+        lblDescripcion.setText(tarea.Descripcion)
     }
 
 

@@ -1,4 +1,5 @@
 package com.example.taskiller
+import Datos
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -13,7 +14,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.taskiller.utils.Datos
 import com.google.gson.Gson
 import java.io.File
 import java.io.FileReader
@@ -31,6 +31,15 @@ class LoginActivity : AppCompatActivity() {
         }
 
         val datos = getDatos()
+
+        val primerProyecto = datos?.listaProyectos?.firstOrNull()
+
+
+
+
+
+
+
 
         val btnLoginIniciarSesion = findViewById<Button>(R.id.btnLoginIniciarSesion)
         val txtBoxLoginUsuario = findViewById<EditText>(R.id.txtBoxLoginUsuario)
@@ -65,11 +74,16 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnLoginIniciarSesion.setOnClickListener {
+
             for (u in datos!!.listaUsuarios) {
-                if (u.mail == txtBoxLoginUsuario.text.toString() &&
-                    u.contrasena == txtBoxLoginContrasena.text.toString()) {
-                    val intent = Intent(this, PaginaPrincipalActivity::class.java)
-                    startActivity(intent)
+                if (u.Mail == txtBoxLoginUsuario.text.toString() &&
+                    u.Contrasena == txtBoxLoginContrasena.text.toString()) {
+                    if (primerProyecto != null) {
+                        val intent = Intent(this, DetallesProyectoActivity::class.java)
+                        intent.putExtra("datos", datos)
+                        intent.putExtra("proyecto", primerProyecto)
+                        startActivity(intent)
+                    }
                 }
             }
         }

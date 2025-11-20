@@ -27,7 +27,7 @@ class UsuarioAdapter(
 
     override fun onBindViewHolder(holder: UsuarioViewHolder, position: Int) {
         val u = usuarios[position]
-        holder.txtItemUsuario.text = u.nombre
+        holder.txtItemUsuario.text = u.Nombre
         holder.imgItemUsuario.setImageResource(R.drawable.logo_user_azu)
     }
 
