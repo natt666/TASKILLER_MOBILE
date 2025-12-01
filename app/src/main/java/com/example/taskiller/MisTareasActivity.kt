@@ -1,12 +1,16 @@
 package com.example.taskiller
 
+import Datos
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.taskiller.models.Usuario
 
 class MisTareasActivity : AppCompatActivity() {
+    private lateinit var datos: Datos
+    private lateinit var user: Usuario
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -16,5 +20,7 @@ class MisTareasActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        datos =intent.getSerializableExtra("datos") as Datos
+        user =intent.getSerializableExtra("user") as Usuario
     }
 }
