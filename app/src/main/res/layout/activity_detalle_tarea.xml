@@ -44,8 +44,14 @@
         <Spinner
             android:id="@+id/spinnerDetalleTareaEstado"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="4dp" />
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_spinner_estado"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+
     </LinearLayout>
 
 
@@ -61,7 +67,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bg_tarea_rounded"
             android:padding="@dimen/paddingDiscriptionTarea"
             android:layout_marginBottom="8dp">
 
