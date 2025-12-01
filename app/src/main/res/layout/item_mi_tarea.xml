@@ -24,13 +24,13 @@
 
         <Spinner
             android:id="@+id/spinnerEstado"
-            android:layout_width="wrap_content"
+            android:layout_width="92dp"
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown" />
 
         <TextView
             android:id="@+id/btnPrioridad"
-            android:layout_width="wrap_content"
+            android:layout_width="35dp"
             android:layout_height="wrap_content"
             android:text="Prioridad" />
 

@@ -85,25 +85,4 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
-
-
-    fun getDatos(): Datos? {
-        return try {
-            val jsonFile = File(filesDir, "json/TaskillerData.json")
-
-            if (!jsonFile.exists()) {
-                Log.e("LoginActivity", "Archivo JSON no encontrado: ${jsonFile.absolutePath}")
-                return null
-            }
-
-            val gson = Gson()
-            FileReader(jsonFile).use { reader ->
-                gson.fromJson(reader, Datos::class.java)
-            }
-
-        } catch (e: Exception) {
-            Log.e("LoginActivity", "Error leyendo JSON", e)
-            null
-        }
-    }
 }

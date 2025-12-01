@@ -24,16 +24,13 @@ class DetallesProyectoActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detalles_proyecto)
 
-        val recyclerTareas = findViewById<RecyclerView>(R.id.listDetallesProyectoListaDeTareas)
+        val recyclerTareas = findViewById<  RecyclerView>(R.id.listDetallesProyectoListaDeTareas)
         val lblNombreProyecto = findViewById<TextView>(R.id.lblDetallesProyectoNombreProyecto)
         val btnVolver = findViewById<Button>(R.id.btnDetallesProyectoBtnVolver)
         val btnAreaPersonal = findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
 
-        // Asignar variables de clase desde el Intent
-        datos =intent.getSerializableExtra("datos") as Datos
-        user =intent.getSerializableExtra("user") as Usuario
-        proyecto = intent.getSerializableExtra("projecto") as Proyecto
-
+        this.datos = getDatos()!!;
+        this.proyecto = datos.listaProyectos.firstOrNull()!!
         lblNombreProyecto.text = proyecto?.Titulo ?: "Proyecto"
 
         // Configurar RecyclerView
