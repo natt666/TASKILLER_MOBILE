@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -17,8 +18,10 @@ class MyTaskAdapter(
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtTitulo: TextView = view.findViewById(R.id.btnTitulo)
         val spinnerEstado: Spinner = view.findViewById(R.id.spinnerEstado)
-        val txtPrioridad: TextView = view.findViewById(R.id.btnPrioridad)
+
+        val imgPrioridad: ImageView = view.findViewById(R.id.btnPrioridad)
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -31,7 +34,6 @@ class MyTaskAdapter(
 
         // Asignar valores
         holder.txtTitulo.text = tarea.Titulo
-        holder.txtPrioridad.text = tarea.Prioridad.name
 
         // Configurar el spinner de estado
         val context = holder.itemView.context
@@ -60,9 +62,15 @@ class MyTaskAdapter(
 
         // Colores según prioridad
         when (tarea.Prioridad) {
-            Tarea.Prioridades.ALTA -> holder.txtPrioridad.setTextColor(0xFFFF0000.toInt()) // rojo
-            Tarea.Prioridades.MEDIA -> holder.txtPrioridad.setTextColor(0xFFFFA500.toInt()) // naranja
-            Tarea.Prioridades.BAJA -> holder.txtPrioridad.setTextColor(0xFF008000.toInt()) // verde
+            Tarea.Prioridades.ALTA -> {
+                holder.imgPrioridad.setImageResource(R.drawable.prioridad_alta)
+            }
+            Tarea.Prioridades.MEDIA -> {
+                holder.imgPrioridad.setImageResource(R.drawable.prioridad_media)
+            }
+            Tarea.Prioridades.BAJA -> {
+                holder.imgPrioridad.setImageResource(R.drawable.prioridad_baja)
+            }
         }
 
         // Listener de clic en el título y prioridad

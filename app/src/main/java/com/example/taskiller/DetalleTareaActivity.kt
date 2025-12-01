@@ -13,6 +13,8 @@ import com.example.taskiller.adapters.UsuarioAdapter
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
 import Datos
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import com.google.gson.Gson
 import java.io.File
 import java.io.FileReader
@@ -40,12 +42,14 @@ class DetalleTareaActivity : AppCompatActivity() {
 
         val tareaActual = listaTareas.find { it.Id.toString() == tareaId } ?: return
         val usuariosEnTarea = usuarios.filter { it.Id in tareaActual.listaUsuarios } ?: return
+        configurarSpinnerEstado()
 
         MostraRecyclerViewUsuario(usuariosEnTarea)
         MostarNombreDeTarea(tareaActual)
         MostarFecha(tareaActual)
         MostarDescripcion(tareaActual)
         MostraRecyclerViewSubtarea(tareaActual)
+        MostarEstado(tareaActual)
     }
 
     fun MostraRecyclerViewUsuario(usuarios: List<Usuario>) {
@@ -112,6 +116,35 @@ class DetalleTareaActivity : AppCompatActivity() {
     fun MostarDescripcion(tarea: Tarea){
         val lblDescripcion = findViewById<TextView>(R.id.lblDetalleTareaDescripcion)
         lblDescripcion.setText(tarea.Descripcion)
+    }
+
+    fun configurarSpinnerEstado() {
+        val spinnerEstado = findViewById<Spinner>(R.id.spinnerDetalleTareaEstado)
+
+        val estados = Tarea.Estados.values()
+        val labels = estados.map {
+            when (it) {
+                Tarea.Estados.Por_Comenzar -> "Por comenzar"
+                Tarea.Estados.En_Progreso -> "En progreso"
+                Tarea.Estados.Entregado   -> "Entregado"
+                Tarea.Estados.Revisado    -> "Revisado"
+                Tarea.Estados.Bloqueado   -> "Bloqueado"
+            }
+        }
+
+        val adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            labels
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerEstado.adapter = adapter
+    }
+
+
+    fun MostarEstado(tarea: Tarea){
+        val spinnerEstado = findViewById<Spinner>(R.id.spinnerDetalleTareaEstado)
+        spinnerEstado.setSelection(tarea.Estado.ordinal)
     }
 
 

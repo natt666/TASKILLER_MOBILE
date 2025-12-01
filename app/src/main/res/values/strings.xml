@@ -22,6 +22,8 @@
     <string name="mis_tareas">Mis tareas</string>
     <string name="graficos">Gráficos del proyecto:</string>
     <string name="subtareas">Subtareas</string>
+    <string name="usuarios">Usuarios:</string>
+    <string name="prioridad">prioridad</string>
     <string-array name="estados">
         <item>Por comenzar</item>
         <item>En progreso</item>

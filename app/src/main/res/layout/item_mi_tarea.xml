@@ -3,37 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:layout_margin="20dp">
+    android:layout_margin="16dp"
+    android:background="@drawable/bg_tarea_rounded"
+    android:padding="12dp">
 
-    <GridLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="3"
         android:orientation="horizontal"
-        android:alignmentMode="alignMargins"
-        android:useDefaultMargins="true">
+        android:gravity="center_vertical">
 
         <TextView
             android:id="@+id/btnTitulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnWeight="1"
+            android:layout_weight="1"
             android:text="Título"
             android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/spinnerEstado"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:spinnerMode="dropdown" />
 
-        <TextView
+        <ImageView
             android:id="@+id/btnPrioridad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prioridad" />
-
-    </GridLayout>
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="@string/prioridad" />
+    </LinearLayout>
 
 </LinearLayout>
