@@ -1,5 +1,6 @@
 package com.example.taskiller
 
+import Proyecto
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
@@ -15,7 +16,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProjectAdapter
-    private val projectList = mutableListOf<Project>()
+    private val projectList = mutableListOf<Proyecto>()
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +31,6 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         }
 
         setupRecyclerView()
-        setupAddButton()
-        addSampleProjects() // ← AIXÒ ÉS IMPORTANT!
     }
 
     private fun setupRecyclerView() {
@@ -40,39 +39,24 @@ class PaginaPrincipalActivity : AppCompatActivity() {
 
         adapter = ProjectAdapter(
             projectList,
-            onProjectClick = { project ->
-                Toast.makeText(this, "Projecte: ${project.name}", Toast.LENGTH_SHORT).show()
+            onProjectClick = { Proyecto ->
+                    Toast.makeText(this, "Projecte: ${Proyecto.Titulo}", Toast.LENGTH_SHORT).show()
             },
-            onChartClick = { project ->
-                Toast.makeText(this, "Gràfic de: ${project.name}", Toast.LENGTH_SHORT).show()
+            onChartClick = { Proyecto ->
+                Toast.makeText(this, "Gràfic de: ${Proyecto.Titulo}", Toast.LENGTH_SHORT).show()
             },
-            onTaskCountClick = { project ->
-                Toast.makeText(this, "${project.taskCount} tasques", Toast.LENGTH_SHORT).show()
+            onTaskCountClick = { Proyecto ->
+                Toast.makeText(this, "${Proyecto.Titulo} tasques", Toast.LENGTH_SHORT).show()
             },
             onDeadlineClick = { project ->
-                Toast.makeText(this, "Data límit: ${project.deadline}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data límit: ${Proyecto.Estados.Por_Comenzar}", Toast.LENGTH_SHORT).show()
             }
                                 )
 
         recyclerView.adapter = adapter
     }
 
-    private fun setupAddButton() {
-        val btnAddCard: Button = findViewById(R.id.btnAddCard)
-        btnAddCard.setOnClickListener {
-            val newProject = Project(
-                name = "Projecte ${projectList.size + 1}",
-                taskCount = (1..10).random(),
-                deadline = "31/12/2024"
-                                    )
-            adapter.addProject(newProject)
-        }
-    }
 
-    private fun addSampleProjects() {
-        projectList.add(Project("App Mòbil", 5, "15/11/2024"))
-        projectList.add(Project("Web Empresa", 8, "20/12/2024"))
-        projectList.add(Project("Base de Dades", 3, "10/11/2024"))
-        adapter.notifyDataSetChanged()
-    }
+
+
 }

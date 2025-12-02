@@ -1,5 +1,6 @@
 package com.example.taskiller
 
+import Proyecto
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,11 +9,11 @@ import android.widget.ImageButton
 import androidx.recyclerview.widget.RecyclerView
 
 class ProjectAdapter(
-    private val projects: MutableList<Project>,
-    private val onProjectClick: (Project) -> Unit,
-    private val onChartClick: (Project) -> Unit,
-    private val onTaskCountClick: (Project) -> Unit,
-    private val onDeadlineClick: (Project) -> Unit
+    private val projects: MutableList<Proyecto>,
+    private val onProjectClick: (Proyecto) -> Unit,
+    private val onChartClick: (Proyecto) -> Unit,
+    private val onTaskCountClick: (Proyecto) -> Unit,
+    private val onDeadlineClick: (Proyecto) -> Unit
                     ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -29,11 +30,15 @@ class ProjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
+
+        for (p in projects){
+
+        }
+
         val project = projects[position]
 
-        holder.btnProjectName.text = project.name
-        holder.btnTaskCount.text = "${project.taskCount} tareas"
-        holder.btnDeadline.text = project.deadline
+        holder.btnProjectName.text = project.Titulo
+        holder.btnDeadline.text = project.FechaFinal
 
         holder.btnProjectName.setOnClickListener { onProjectClick(project) }
         holder.btnChart.setOnClickListener { onChartClick(project) }
@@ -43,7 +48,7 @@ class ProjectAdapter(
 
     override fun getItemCount() = projects.size
 
-    fun addProject(project: Project) {
+    fun addProject(project: Proyecto) {
         projects.add(project)
         notifyItemInserted(projects.size - 1)
     }

@@ -7,4 +7,6 @@
     <color name="notificaciones">#ffa100</color>
     <color name="background">#fdfdfd</color>
     <color name="texto">#0e1f2f</color>
+    <color name="cardSurface">#FFFFFFFF</color>
+    <color name="cardBorder">#22000000</color>
 </resources>

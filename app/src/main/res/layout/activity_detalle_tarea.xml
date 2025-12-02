@@ -1,136 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutDetallesTareaMain"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:padding="@dimen/paddingList">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/paddingList">
+        android:gravity="center_vertical"
+        android:paddingBottom="@dimen/paddingList">
+
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/tarea"
             android:textSize="@dimen/txtTitulo"
-            android:layout_weight="9"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        android:padding="@dimen/paddingList">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/paddingList"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="8dp">
 
         <TextView
             android:id="@+id/lblDetalleTareaNombreTarea"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Nombre de tarea"
-            android:layout_weight="3"
-            android:textSize="@dimen/txtSubtitulo" />
+            android:textSize="@dimen/txtSubtitulo"
+            android:textStyle="bold"
+            android:paddingBottom="4dp" />
 
         <Spinner
             android:id="@+id/spinnerDetalleTareaEstado"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2" />
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_spinner_estado"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp" />
+
+
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="6"
+        android:layout_weight="1"
         android:orientation="vertical"
-        android:padding="@dimen/paddingDiscriptionTarea">
+        android:paddingTop="@dimen/paddingList">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/paddingDiscriptionTarea"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/lblDetalleTareaDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripción"
+                android:textSize="@dimen/txtNormal"
+                android:paddingBottom="4dp" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/lblDetalleTareaDescripcion"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:text="Descripción"
-            android:textSize="@dimen/txtNormal" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
             android:text="@string/subtareas"
             android:textSize="@dimen/txtNormal"
-            android:isScrollContainer="true"/>
+            android:textStyle="bold" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDetalleTareaSubtareas"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
-            android:padding="@dimen/paddingList"/>
+            android:layout_weight="1"
+            android:padding="@dimen/paddingList"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            tools:listitem="@layout/item_mi_tarea" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="@string/usuarios"
+            android:textSize="@dimen/txtNormal"
+            android:textStyle="bold" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDetalleTareaUsuariosAsignado"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tarea_rounded"
             android:padding="@dimen/paddingList"
-            android:layout_weight="3" />
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            tools:listitem="@layout/item_usuario" />
     </LinearLayout>
 
+    <!-- 日期行 -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="@dimen/paddingList">
+        android:gravity="center_vertical"
+        android:paddingTop="@dimen/paddingList"
+        android:layout_marginTop="4dp">
 
         <TextView
             android:layout_width="0dp"
-            android:layout_weight="01"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/inicio"
-            android:textSize="@dimen/txtNormal"/>
+            android:textSize="@dimen/txtNormal" />
 
         <TextView
             android:id="@+id/lblDetalleTareaFechaInicio"
             android:layout_width="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="12/10/2025"
-            android:textSize="@dimen/txtNormal"/>
+            android:textSize="@dimen/txtNormal" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="@string/fin"
-            android:textSize="@dimen/txtNormal"/>
+            android:textSize="@dimen/txtNormal" />
 
         <TextView
             android:id="@+id/lblDetalleTareaFechaFinal"
             android:layout_width="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="12/10/2025"
-            android:textSize="@dimen/txtNormal"/>
+            android:textSize="@dimen/txtNormal" />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/paddingList"
+        android:paddingBottom="@dimen/paddingList"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp">
 
         <Button
             android:id="@+id/btnDetalleTareaVolver"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
             android:text="@string/volver" />
     </LinearLayout>
 
