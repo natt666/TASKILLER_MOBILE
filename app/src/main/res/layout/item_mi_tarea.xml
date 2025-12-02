@@ -22,12 +22,14 @@
             android:text="Título"
             android:textStyle="bold" />
 
-        <Spinner
-            android:id="@+id/spinnerEstado"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/txtEstado"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:spinnerMode="dropdown" />
+            android:text="En progreso"
+            android:textSize="@dimen/txtNormal"
+            android:textColor="@color/principal"
+            android:layout_marginStart="8dp" />
 
         <ImageView
             android:id="@+id/btnPrioridad"

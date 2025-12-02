@@ -17,10 +17,10 @@ class MyTaskAdapter(
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtTitulo: TextView = view.findViewById(R.id.btnTitulo)
-        val spinnerEstado: Spinner = view.findViewById(R.id.spinnerEstado)
-
+        val txtEstado: TextView = view.findViewById(R.id.txtEstado)
         val imgPrioridad: ImageView = view.findViewById(R.id.btnPrioridad)
     }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -37,27 +37,13 @@ class MyTaskAdapter(
 
         // Configurar el spinner de estado
         val context = holder.itemView.context
-        val estados = Tarea.Estados.values().map { it.name.replace("_", " ") }
-        val spinnerAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, estados)
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        holder.spinnerEstado.adapter = spinnerAdapter
 
-        // Seleccionar el estado actual
-        holder.spinnerEstado.setSelection(tarea.Estado.ordinal)
-
-        // Detectar cambio de estado
-        holder.spinnerEstado.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: android.widget.AdapterView<*>, view: View?, pos: Int, id: Long
-            ) {
-                val nuevoEstado = Tarea.Estados.values()[pos]
-                if (tarea.Estado != nuevoEstado) {
-                    tarea.Estado = nuevoEstado
-                    onStateChanged(tarea, nuevoEstado)
-                }
-            }
-
-            override fun onNothingSelected(parent: android.widget.AdapterView<*>) {}
+        holder.txtEstado.text = when (tarea.Estado) {
+            Tarea.Estados.Por_Comenzar -> "Por comenzar"
+            Tarea.Estados.En_Progreso -> "En progreso"
+            Tarea.Estados.Entregado   -> "Entregado"
+            Tarea.Estados.Revisado    -> "Revisado"
+            Tarea.Estados.Bloqueado   -> "Bloqueado"
         }
 
         // Colores según prioridad
