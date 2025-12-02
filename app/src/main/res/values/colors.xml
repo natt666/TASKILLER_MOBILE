@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="principal">#e1115c</color>
+    <color name="principal_pressed">#C40E4D</color>
     <color name="secundario">#60c834</color>
     <color name="notificaciones">#ffa100</color>
     <color name="background">#fdfdfd</color>
