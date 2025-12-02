@@ -8,5 +8,5 @@ class TarjetaTarea {
     val estado = String()
     val fechaInicio = Date()
     val fechaFin = Date()
-    val prioridad = Int
+    val prioridad = String()
 }

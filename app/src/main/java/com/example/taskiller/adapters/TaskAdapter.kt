@@ -14,7 +14,11 @@ class TaskAdapter(private val lista: List<TarjetaTarea>) :
     RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-       // val titulo: TextView = view.findViewById(R.id.Titulo)
+        val titulo: TextView = view.findViewById(R.id.taskNameTextView)
+        val estado: TextView = view.findViewById(R.id.taskStatusTextView)
+        val inicio: TextView = view.findViewById(R.id.lblInicioTarea)
+        val fin: TextView = view.findViewById(R.id.lblFinTarea)
+        val prioridad: TextView = view.findViewById(R.id.prioridadTextView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
