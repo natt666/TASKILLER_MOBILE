@@ -3,10 +3,17 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="principal">#e1115c</color>
+    <color name="principal_pressed">#C40E4D</color>
     <color name="secundario">#60c834</color>
     <color name="notificaciones">#ffa100</color>
     <color name="background">#fdfdfd</color>
     <color name="texto">#0e1f2f</color>
     <color name="cardSurface">#FFFFFFFF</color>
     <color name="cardBorder">#22000000</color>
+    <color name="Por_comenzar">#FFA726</color>
+    <color name="En_progreso">#29B6F6</color>
+    <color name="Entregado">#66BB6A</color>
+    <color name="Revisado">#AB47BC</color>
+    <color name="Bloqueado">#EF5350</color>
+
 </resources>

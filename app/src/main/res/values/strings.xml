@@ -24,6 +24,7 @@
     <string name="subtareas">Subtareas</string>
     <string name="usuarios">Usuarios:</string>
     <string name="prioridad">prioridad</string>
+    <string name="nombre_proyecto">Nombre_Proyecto</string>
     <string-array name="estados">
         <item>Por comenzar</item>
         <item>En progreso</item>

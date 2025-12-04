@@ -6,20 +6,21 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.models.Tarea
 
 class MyTaskAdapter(
     private val tareas: MutableList<Tarea>,
-    private val onStateChanged: (Tarea, Tarea.Estados) -> Unit
+    private val onItemClick: (Tarea) -> Unit
 ) : RecyclerView.Adapter<MyTaskAdapter.TaskViewHolder>() {
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtTitulo: TextView = view.findViewById(R.id.btnTitulo)
-        val spinnerEstado: Spinner = view.findViewById(R.id.spinnerEstado)
-
+        val txtEstado: TextView = view.findViewById(R.id.txtEstado)
         val imgPrioridad: ImageView = view.findViewById(R.id.btnPrioridad)
     }
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
@@ -31,35 +32,41 @@ class MyTaskAdapter(
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val tarea = tareas[position]
 
-        // Asignar valores
         holder.txtTitulo.text = tarea.Titulo
 
-        // Configurar el spinner de estado
         val context = holder.itemView.context
-        val estados = Tarea.Estados.values().map { it.name.replace("_", " ") }
-        val spinnerAdapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, estados)
-        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        holder.spinnerEstado.adapter = spinnerAdapter
 
-        // Seleccionar el estado actual
-        holder.spinnerEstado.setSelection(tarea.Estado.ordinal)
+        val textoEstado: String
+        val colorId: Int
 
-        // Detectar cambio de estado
-        holder.spinnerEstado.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: android.widget.AdapterView<*>, view: View?, pos: Int, id: Long
-            ) {
-                val nuevoEstado = Tarea.Estados.values()[pos]
-                if (tarea.Estado != nuevoEstado) {
-                    tarea.Estado = nuevoEstado
-                    onStateChanged(tarea, nuevoEstado)
-                }
+        when (tarea.Estado) {
+            Tarea.Estados.Por_Comenzar -> {
+                textoEstado = "Por comenzar"
+                colorId = R.color.Por_comenzar
             }
-
-            override fun onNothingSelected(parent: android.widget.AdapterView<*>) {}
+            Tarea.Estados.En_Progreso -> {
+                textoEstado = "En progreso"
+                colorId = R.color.En_progreso
+            }
+            Tarea.Estados.Entregado -> {
+                textoEstado = "Entregado"
+                colorId = R.color.Entregado
+            }
+            Tarea.Estados.Revisado -> {
+                textoEstado = "Revisado"
+                colorId = R.color.Revisado
+            }
+            Tarea.Estados.Bloqueado -> {
+                textoEstado = "Bloqueado"
+                colorId = R.color.Bloqueado
+            }
         }
 
-        // Colores según prioridad
+        holder.txtEstado.text = textoEstado
+        holder.txtEstado.setTextColor(ContextCompat.getColor(context, colorId))
+
+
+
         when (tarea.Prioridad) {
             Tarea.Prioridades.ALTA -> {
                 holder.imgPrioridad.setImageResource(R.drawable.prioridad_alta)
@@ -72,14 +79,11 @@ class MyTaskAdapter(
             }
         }
 
-        // Listener de clic en el título y prioridad
-
+        holder.itemView.setOnClickListener {
+            onItemClick(tarea)
+        }
     }
+
 
     override fun getItemCount() = tareas.size
-
-    fun addTask(tarea: Tarea) {
-        tareas.add(tarea)
-        notifyItemInserted(tareas.size - 1)
-    }
 }
