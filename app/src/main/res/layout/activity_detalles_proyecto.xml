@@ -1,64 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layoutDetallesProyectoMain"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+
+    <ImageButton
+        android:id="@+id/btnDetallesProyectoAreaPersonal"
+        android:layout_width="@dimen/imgUserSize"
+        android:layout_height="@dimen/imgUserSize"
+        android:layout_gravity="end"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="15dp"
-        android:gravity="right|center_vertical"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/areaPersonal"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_user_ros" />
 
-        <ImageButton
-            android:id="@+id/btnDetallesProyectoAreaPersonal"
-            android:layout_width="@dimen/imgUserSize"
-            android:layout_height="@dimen/imgUserSize"
-            android:background="@android:color/transparent"
-            android:contentDescription="@string/areaPersonal"
-            android:padding="@dimen/paddingList"
-            android:scaleType="fitCenter"
-            android:src="@drawable/logo_user_ros" />
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/lblDetallesProyectoNombreProyecto"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginLeft="20dp"
-        android:text="Nombre_Proyecto"
-        android:textSize="@dimen/txtTitulo"
+        android:layout_marginStart="20dp"
         android:layout_weight="1"
-        />
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/nombre_proyecto"
+        android:textSize="@dimen/txtTitulo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listDetallesProyectoListaDeTareas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:padding="@dimen/paddingList"
-        android:layout_weight="8"/>
+        android:layout_weight="8"
+        android:padding="@dimen/paddingList" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center">
-
-        <Button
-            android:id="@+id/btnDetallesProyectoBtnVolver"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:text="@string/volver"
-            />
-    </LinearLayout>
-
+    <Button
+        android:id="@+id/btnDetallesProyectoBtnVolver"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/volver" />
 
 </LinearLayout>
