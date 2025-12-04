@@ -11,7 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import Proyecto
 import Datos
+import android.content.Intent
 import com.example.taskiller.models.Usuario
+import java.util.UUID
 
 class DetallesProyectoActivity : AppCompatActivity() {
 
@@ -30,30 +32,33 @@ class DetallesProyectoActivity : AppCompatActivity() {
         val btnAreaPersonal = findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
 
         this.datos = getDatos()!!;
-        this.proyecto = datos.listaProyectos.firstOrNull()!!
+        val idBuscado = UUID.fromString("f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c")
+        this.proyecto = datos.listaProyectos.firstOrNull { it.Id == idBuscado }!!
+        this.user = datos.listaUsuarios.firstOrNull()!!
+
         lblNombreProyecto.text = proyecto?.Titulo ?: "Proyecto"
 
-        // Configurar RecyclerView
         recyclerTareas.layoutManager = LinearLayoutManager(this)
 
-        // Filtrar solo las tareas de este proyecto
         val tareasDelProyecto = datos?.listaTareas
             ?.filter { it.IdProyecto == proyecto?.Id }
             ?.toMutableList() ?: mutableListOf()
 
         val adapter = MyTaskAdapter(
             tareas = tareasDelProyecto,
-            onStateChanged = { tarea, nuevoEstado ->
-                // Aquí puedes manejar los cambios de estado
+            onItemClick = { tarea ->
+                val intent = Intent(this, DetalleTareaActivity::class.java)
+                intent.putExtra("datos", datos)
+                intent.putExtra("tarea", tarea)
+                intent.putExtra("user", user)
+                startActivity(intent)
             }
         )
 
         recyclerTareas.adapter = adapter
 
-        // Botón volver
         btnVolver.setOnClickListener { finish() }
 
-        // Botón área personal
         btnAreaPersonal.setOnClickListener {
             Toast.makeText(this, "Área personal clickeada", Toast.LENGTH_SHORT).show()
         }

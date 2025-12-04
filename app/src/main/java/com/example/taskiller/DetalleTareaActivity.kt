@@ -13,6 +13,7 @@ import com.example.taskiller.adapters.UsuarioAdapter
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
 import Datos
+import android.content.Intent
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import com.google.gson.Gson
@@ -36,11 +37,14 @@ class DetalleTareaActivity : AppCompatActivity() {
             insets
         }
 
-        val datos = getDatos() ?: return
+        val datos = intent.getSerializableExtra("datos") as Datos
         listaTareas = datos.listaTareas
         val usuarios = datos.listaUsuarios
 
-        val tareaActual = listaTareas.find { it.Id.toString() == tareaId } ?: return
+
+        val tareaActual = intent.getSerializableExtra("tarea") as Tarea
+        val user = intent.getSerializableExtra("user") as Usuario
+
         val usuariosEnTarea = usuarios.filter { it.Id in tareaActual.listaUsuarios } ?: return
         configurarSpinnerEstado()
 
@@ -48,7 +52,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         MostarNombreDeTarea(tareaActual)
         MostarFecha(tareaActual)
         MostarDescripcion(tareaActual)
-        MostraRecyclerViewSubtarea(tareaActual)
+        MostraRecyclerViewSubtarea(tareaActual, datos, user)
         MostarEstado(tareaActual)
     }
 
@@ -60,7 +64,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         rvDetalleTareaUsuarioAsignado.adapter = adapter
     }
 
-    fun MostraRecyclerViewSubtarea(tarea: Tarea) {
+    fun MostraRecyclerViewSubtarea(tarea: Tarea, datos: Datos, user: Usuario) {
         val rvDetalleTareaSubtareas = findViewById<RecyclerView>(R.id.rvDetalleTareaSubtareas)
         val subtareasIds = tarea.Subtareas
 
@@ -72,7 +76,12 @@ class DetalleTareaActivity : AppCompatActivity() {
 
             val adapter = MyTaskAdapter(
                 subtareasTarea,
-                onStateChanged = { tarea, nuevoEstado ->
+                onItemClick = { tarea ->
+                    val intent = Intent(this, DetalleTareaActivity::class.java)
+                    intent.putExtra("datos", datos)
+                    intent.putExtra("tarea", tarea)
+                    intent.putExtra("user", user)
+                    startActivity(intent)
                 }
             )
             rvDetalleTareaSubtareas.hasFixedSize()

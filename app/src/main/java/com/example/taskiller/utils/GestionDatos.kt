@@ -9,49 +9,46 @@ import com.google.gson.JsonDeserializer
 import java.io.File
 import java.io.FileReader
 import java.io.FileWriter
+import java.io.InputStreamReader
 
 fun Context.getDatos(): Datos? {
     return try {
-        val jsonFile = File(filesDir, "json/TaskillerData.json")
+        assets.open("TaskillerData.json").use { inputStream ->
+            val reader = InputStreamReader(inputStream)
+            val gson = GsonBuilder()
+                .registerTypeAdapter(Tarea.Prioridades::class.java, JsonDeserializer { json, _, _ ->
+                    when (json.asInt) {
+                        1 -> Tarea.Prioridades.BAJA
+                        2 -> Tarea.Prioridades.MEDIA
+                        3 -> Tarea.Prioridades.ALTA
+                        else -> Tarea.Prioridades.BAJA
+                    }
+                })
+                .registerTypeAdapter(Tarea.Estados::class.java, JsonDeserializer { json, _, _ ->
+                    when (json.asString) {
+                        "Por_Comenzar" -> Tarea.Estados.Por_Comenzar
+                        "0" -> Tarea.Estados.Por_Comenzar
+                        "En_Progreso" -> Tarea.Estados.En_Progreso
+                        "1" -> Tarea.Estados.En_Progreso
+                        "Entregado" -> Tarea.Estados.Entregado
+                        "2" -> Tarea.Estados.Entregado
+                        "Revisado" -> Tarea.Estados.Revisado
+                        "3" -> Tarea.Estados.Revisado
+                        "Bloqueado" -> Tarea.Estados.Bloqueado
+                        "4" -> Tarea.Estados.Bloqueado
+                        else -> "ERROR"
+                    }
+                })
+                .create()
 
-        if (!jsonFile.exists()) {
-            Log.e("FileUtils", "Archivo JSON no encontrado: ${jsonFile.absolutePath}")
-            return null
-        }
-
-        val prioridadDeserializer = JsonDeserializer { json, _, _ ->
-            val num = json.asInt
-            when (num) {
-                1 -> Tarea.Prioridades.BAJA
-                2 -> Tarea.Prioridades.MEDIA
-                3 -> Tarea.Prioridades.ALTA
-                else -> Tarea.Prioridades.BAJA
-            }
-        }
-        val estadoDeserializer = JsonDeserializer { json, _, _ ->
-            when (val valor = json.asString) {
-                "Por_Comenzar" -> Tarea.Estados.Por_Comenzar
-                "En_Progreso" -> Tarea.Estados.En_Progreso
-                "Entregado" -> Tarea.Estados.Entregado
-                "Revisado" -> Tarea.Estados.Revisado
-                "Bloqueado" -> Tarea.Estados.Bloqueado
-                else -> Tarea.Estados.Por_Comenzar
-            }
-        }
-
-        val gson = GsonBuilder()
-            .registerTypeAdapter(Tarea.Prioridades::class.java, prioridadDeserializer)
-            .registerTypeAdapter(Tarea.Estados::class.java, estadoDeserializer).create()
-
-        FileReader(jsonFile).use { reader ->
             gson.fromJson(reader, Datos::class.java)
         }
-
     } catch (e: Exception) {
-        Log.e("FileUtils", "Error leyendo JSON", e)
+        Log.e("FileUtils", "Error leyendo JSON desde assets", e)
         null
     }
 }
+
 
 
 fun Context.guardarDatos(datos: Datos) {

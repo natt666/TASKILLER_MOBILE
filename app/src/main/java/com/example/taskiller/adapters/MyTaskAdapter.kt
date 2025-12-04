@@ -6,12 +6,13 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.models.Tarea
 
 class MyTaskAdapter(
     private val tareas: MutableList<Tarea>,
-    private val onStateChanged: (Tarea, Tarea.Estados) -> Unit
+    private val onItemClick: (Tarea) -> Unit
 ) : RecyclerView.Adapter<MyTaskAdapter.TaskViewHolder>() {
 
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -31,21 +32,41 @@ class MyTaskAdapter(
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val tarea = tareas[position]
 
-        // Asignar valores
         holder.txtTitulo.text = tarea.Titulo
 
-        // Configurar el spinner de estado
         val context = holder.itemView.context
 
-        holder.txtEstado.text = when (tarea.Estado) {
-            Tarea.Estados.Por_Comenzar -> "Por comenzar"
-            Tarea.Estados.En_Progreso -> "En progreso"
-            Tarea.Estados.Entregado   -> "Entregado"
-            Tarea.Estados.Revisado    -> "Revisado"
-            Tarea.Estados.Bloqueado   -> "Bloqueado"
+        val textoEstado: String
+        val colorId: Int
+
+        when (tarea.Estado) {
+            Tarea.Estados.Por_Comenzar -> {
+                textoEstado = "Por comenzar"
+                colorId = R.color.Por_comenzar
+            }
+            Tarea.Estados.En_Progreso -> {
+                textoEstado = "En progreso"
+                colorId = R.color.En_progreso
+            }
+            Tarea.Estados.Entregado -> {
+                textoEstado = "Entregado"
+                colorId = R.color.Entregado
+            }
+            Tarea.Estados.Revisado -> {
+                textoEstado = "Revisado"
+                colorId = R.color.Revisado
+            }
+            Tarea.Estados.Bloqueado -> {
+                textoEstado = "Bloqueado"
+                colorId = R.color.Bloqueado
+            }
         }
 
-        // Colores según prioridad
+        holder.txtEstado.text = textoEstado
+        holder.txtEstado.setTextColor(ContextCompat.getColor(context, colorId))
+
+
+
         when (tarea.Prioridad) {
             Tarea.Prioridades.ALTA -> {
                 holder.imgPrioridad.setImageResource(R.drawable.prioridad_alta)
@@ -58,14 +79,11 @@ class MyTaskAdapter(
             }
         }
 
-        // Listener de clic en el título y prioridad
-
+        holder.itemView.setOnClickListener {
+            onItemClick(tarea)
+        }
     }
+
 
     override fun getItemCount() = tareas.size
-
-    fun addTask(tarea: Tarea) {
-        tareas.add(tarea)
-        notifyItemInserted(tareas.size - 1)
-    }
 }
