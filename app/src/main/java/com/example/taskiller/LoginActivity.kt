@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
             for (u in datos!!.listaUsuarios) {
                 if (u.Mail == txtBoxLoginUsuario.text.toString() &&
                     u.Contrasena == txtBoxLoginContrasena.text.toString()) {
-                        val intent = Intent(this, PaginaPrincipalActivity::class.java)
+                        val intent = Intent(this, MisTareasActivity::class.java)
                         intent.putExtra("datos", datos)
                         intent.putExtra("user", u)
                         startActivity(intent)

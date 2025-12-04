@@ -6,6 +6,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.taskiller.adapters.TaskAdapter
+import com.example.taskiller.models.TarjetaTarea
 import com.example.taskiller.models.Usuario
 
 class MisTareasActivity : AppCompatActivity() {
@@ -22,5 +26,11 @@ class MisTareasActivity : AppCompatActivity() {
         }
         datos =intent.getSerializableExtra("datos") as Datos
         user =intent.getSerializableExtra("user") as Usuario
+        val recyclerTareas = findViewById<RecyclerView>(R.id.rVTareas)
+        recyclerTareas.layoutManager = LinearLayoutManager(this)
+        val listaTareas = mutableListOf<TarjetaTarea>()
+        val adapter = TaskAdapter(datos.listaTareas)
+        for (tarea in datos.listaTareas) {}
+        recyclerTareas.adapter = adapter
     }
 }
