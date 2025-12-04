@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import Proyecto
 import Datos
 import android.content.Intent
+import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
 import java.util.UUID
 
@@ -28,7 +29,7 @@ class DetallesProyectoActivity : AppCompatActivity() {
 
         val recyclerTareas = findViewById<  RecyclerView>(R.id.listDetallesProyectoListaDeTareas)
         val lblNombreProyecto = findViewById<TextView>(R.id.lblDetallesProyectoNombreProyecto)
-        val btnVolver = findViewById<Button>(R.id.btnDetallesProyectoBtnVolver)
+        val btnVolver = findViewById<ImageButton>(R.id.btnDetallesProyectoVolver)
         val btnAreaPersonal = findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
 
         this.datos = getDatos()!!;
@@ -39,6 +40,8 @@ class DetallesProyectoActivity : AppCompatActivity() {
         lblNombreProyecto.text = proyecto?.Titulo ?: "Proyecto"
 
         recyclerTareas.layoutManager = LinearLayoutManager(this)
+
+        MostarDescripcion(proyecto)
 
         val tareasDelProyecto = datos?.listaTareas
             ?.filter { it.IdProyecto == proyecto?.Id }
@@ -62,5 +65,10 @@ class DetallesProyectoActivity : AppCompatActivity() {
         btnAreaPersonal.setOnClickListener {
             Toast.makeText(this, "Área personal clickeada", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun MostarDescripcion(Proyecto: Proyecto){
+        val lblDescripcion = findViewById<TextView>(R.id.lblDetallesProyectoDescripcion)
+        lblDescripcion.setText(Proyecto.Descripcion)
     }
 }

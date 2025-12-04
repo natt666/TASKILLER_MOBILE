@@ -39,7 +39,7 @@
             android:fontFamily="@font/montserrat_bold"/>
 
         <ImageButton
-            android:id="@+id/btnDetallesTareaUsuarioIcon"
+            android:id="@+id/btnDetallesTareaAreaPersonal"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
