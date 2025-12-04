@@ -15,6 +15,7 @@ import com.example.taskiller.models.Usuario
 import Datos
 import android.content.Intent
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
 import android.widget.Spinner
 import com.google.gson.Gson
 import java.io.File
@@ -40,7 +41,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         val datos = intent.getSerializableExtra("datos") as Datos
         listaTareas = datos.listaTareas
         val usuarios = datos.listaUsuarios
-
+        val btnVolver = findViewById<ImageButton>(R.id.btnDetalleTareaVolver)
 
         val tareaActual = intent.getSerializableExtra("tarea") as Tarea
         val user = intent.getSerializableExtra("user") as Usuario
@@ -54,6 +55,11 @@ class DetalleTareaActivity : AppCompatActivity() {
         MostarDescripcion(tareaActual)
         MostraRecyclerViewSubtarea(tareaActual, datos, user)
         MostarEstado(tareaActual)
+
+        btnVolver.setOnClickListener {
+            val intent = Intent(this, DetallesProyectoActivity::class.java )
+            startActivity(intent)
+        }
     }
 
     fun MostraRecyclerViewUsuario(usuarios: List<Usuario>) {
