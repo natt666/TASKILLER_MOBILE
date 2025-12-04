@@ -32,8 +32,6 @@ class LoginActivity : AppCompatActivity() {
 
         val datos = getDatos()
 
-        val primerProyecto = datos?.listaProyectos?.firstOrNull()
-
 
 
 
@@ -78,35 +76,13 @@ class LoginActivity : AppCompatActivity() {
             for (u in datos!!.listaUsuarios) {
                 if (u.Mail == txtBoxLoginUsuario.text.toString() &&
                     u.Contrasena == txtBoxLoginContrasena.text.toString()) {
-                    if (primerProyecto != null) {
-                        val intent = Intent(this, DetallesProyectoActivity::class.java)
+                        val intent = Intent(this, PaginaPrincipalActivity::class.java)
                         intent.putExtra("datos", datos)
                         intent.putExtra("user", u)
                         startActivity(intent)
-                    }
+
                 }
             }
-        }
-    }
-
-
-    fun getDatos(): Datos? {
-        return try {
-            val jsonFile = File(filesDir, "json/TaskillerData.json")
-
-            if (!jsonFile.exists()) {
-                Log.e("LoginActivity", "Archivo JSON no encontrado: ${jsonFile.absolutePath}")
-                return null
-            }
-
-            val gson = Gson()
-            FileReader(jsonFile).use { reader ->
-                gson.fromJson(reader, Datos::class.java)
-            }
-
-        } catch (e: Exception) {
-            Log.e("LoginActivity", "Error leyendo JSON", e)
-            null
         }
     }
 }

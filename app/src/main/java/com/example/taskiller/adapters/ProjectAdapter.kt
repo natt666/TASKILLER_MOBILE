@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ProjectAdapter(
     private val projects: MutableList<Proyecto>,
-    private val onProjectClick: (Project) -> Unit,
-    private val onChartClick: (Project) -> Unit,
-    private val onTaskCountClick: (Project) -> Unit,
-    private val onDeadlineClick: (Project) -> Unit
+    private val onProjectClick: (Proyecto) -> Unit,
+    private val onChartClick: (Proyecto) -> Unit,
+    private val onTaskCountClick: (Proyecto) -> Unit,
+    private val onDeadlineClick: (Proyecto) -> Unit
                     ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -31,11 +31,15 @@ class ProjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
+
+        for (p in projects){
+
+        }
+
         val project = projects[position]
 
         holder.btnProjectName.text = project.Titulo
-        holder.txtViewTaskCount.text = "${project.taskCount} tareas"
-        holder.txtViewDeadline.text = project.deadline
+        holder.btnDeadline.text = project.FechaFinal
 
         holder.btnProjectName.setOnClickListener { onProjectClick(project) }
         holder.btnChart.setOnClickListener { onChartClick(project) }
@@ -45,7 +49,7 @@ class ProjectAdapter(
 
     override fun getItemCount() = projects.size
 
-    fun addProject(project: Project) {
+    fun addProject(project: Proyecto) {
         projects.add(project)
         notifyItemInserted(projects.size - 1)
     }
