@@ -1,15 +1,17 @@
 package com.example.taskiller
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.res.ResourcesCompat
 import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.utils.ColorTemplate
+import com.github.mikephil.charting.formatter.PercentFormatter
+import com.github.mikephil.charting.animation.Easing
 
 class GraficosActivity : AppCompatActivity() {
 
@@ -22,54 +24,88 @@ class GraficosActivity : AppCompatActivity() {
 
         pieChart = findViewById(R.id.pieChart)
 
-
         val datos = getDatos()!!
         val proyecto = datos.listaProyectos.firstOrNull()
-        val todasTareas = datos.listaTareas.filter { it.IdProyecto?.equals(proyecto?.Id) == true }
+        val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyecto?.Id }
 
+        // Contamos tareas por estado
         val estadoCounts = Proyecto.Estados.values().associateWith { estado ->
             todasTareas.count { it.Estado.name == estado.name }
         }
 
-        // Creamos entradas para el PieChart
-        val entries = estadoCounts.map { (estado, count) ->
-            PieEntry(count.toFloat(), estado.name.replace("_", " "))
+        // Tipografías Montserrat
+        val tfBold = ResourcesCompat.getFont(this, R.font.montserrat_bold)
+        val tfMedium = ResourcesCompat.getFont(this, R.font.montserrat_medium)
+
+        // Creamos entradas del PieChart, solo con >0
+        val entries = estadoCounts
+            .filter { it.value > 0 }
+            .map { (estado, count) ->
+                PieEntry(count.toFloat(), estado.name.replace("_", " "))
+            }
+
+        if (entries.isEmpty()) {
+            pieChart.centerText = "Sin tareas"
+            pieChart.data = null
+            pieChart.invalidate()
+            return
         }
 
-        val dataSet = PieDataSet(entries, "Tareas por Estado")
-        dataSet.colors = ColorTemplate.MATERIAL_COLORS.toList()
-        dataSet.sliceSpace = 3f        // separa las porciones
-        dataSet.valueTextSize = 14f    // tamaño del texto de los valores
-        dataSet.valueTextColor = android.graphics.Color.WHITE
-        dataSet.valueFormatter = com.github.mikephil.charting.formatter.PercentFormatter(pieChart)
+        // Dataset
+        val dataSet = PieDataSet(entries, "")
+        dataSet.colors = listOf(
+            Color.parseColor("#FF6384"),
+            Color.parseColor("#36A2EB"),
+            Color.parseColor("#FFCE56"),
+            Color.parseColor("#8BC34A"),
+            Color.parseColor("#FF9800"),
+            Color.parseColor("#9C27B0")
+                               )
+        dataSet.sliceSpace = 5f
+        dataSet.selectionShift = 10f
+        dataSet.valueTextSize = 14f
+        dataSet.valueTextColor = Color.DKGRAY
+        dataSet.valueTypeface = tfBold
+        dataSet.valueFormatter = PercentFormatter(pieChart)
+        dataSet.yValuePosition = PieDataSet.ValuePosition.OUTSIDE_SLICE
+        dataSet.xValuePosition = PieDataSet.ValuePosition.OUTSIDE_SLICE
+        dataSet.valueLinePart1Length = 0.4f
+        dataSet.valueLinePart2Length = 0.4f
+        dataSet.valueLineColor = Color.DKGRAY
 
-// PieChart general
-        pieChart.isDrawHoleEnabled = true          // dibuja el agujero en el centro
-        pieChart.holeRadius = 40f                  // radio del agujero
-        pieChart.setHoleColor(android.graphics.Color.TRANSPARENT)
-        pieChart.setTransparentCircleRadius(45f)   // círculo transparente alrededor del agujero
-
-        pieChart.setUsePercentValues(true)         // muestra los valores en porcentaje
-        pieChart.setEntryLabelColor(android.graphics.Color.BLACK)  // color de etiquetas fuera del agujero
+        // PieChart general
+        pieChart.isDrawHoleEnabled = true
+        pieChart.holeRadius = 45f
+        pieChart.setHoleColor(Color.TRANSPARENT)
+        pieChart.setTransparentCircleRadius(50f)
+        pieChart.setTransparentCircleAlpha(110)
+        pieChart.setUsePercentValues(true)
+        pieChart.setEntryLabelColor(Color.BLACK)
         pieChart.setEntryLabelTextSize(12f)
+        pieChart.setEntryLabelTypeface(tfMedium)
 
-// Texto central
+        // Texto central
         pieChart.centerText = proyecto?.Titulo
-        pieChart.setCenterTextSize(18f)
-        pieChart.setCenterTextColor(android.graphics.Color.DKGRAY)
+        pieChart.setCenterTextSize(20f)
+        pieChart.setCenterTextColor(Color.DKGRAY)
+        pieChart.setCenterTextTypeface(tfBold)
 
-// Animación
-        pieChart.animateY(1000, com.github.mikephil.charting.animation.Easing.EaseInOutQuad)
+        // Animación
+        pieChart.animateY(1200, Easing.EaseInOutQuad)
 
-// Leyenda
+        // Leyenda
         val legend = pieChart.legend
         legend.isEnabled = true
-        legend.textSize = 12f
+        legend.textSize = 14f
         legend.formSize = 12f
-        legend.verticalAlignment = com.github.mikephil.charting.components.Legend.LegendVerticalAlignment.BOTTOM
-        legend.horizontalAlignment = com.github.mikephil.charting.components.Legend.LegendHorizontalAlignment.CENTER
-        legend.orientation = com.github.mikephil.charting.components.Legend.LegendOrientation.HORIZONTAL
+        legend.verticalAlignment = Legend.LegendVerticalAlignment.BOTTOM
+        legend.horizontalAlignment = Legend.LegendHorizontalAlignment.CENTER
+        legend.orientation = Legend.LegendOrientation.HORIZONTAL
         legend.setDrawInside(false)
-    }
 
+        // Asignar datos
+        val data = PieData(dataSet)
+        pieChart.data = data
+        pieChart.invalidate()
+    }
 }
