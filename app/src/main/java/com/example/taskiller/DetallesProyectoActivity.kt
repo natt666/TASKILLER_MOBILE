@@ -31,16 +31,24 @@ class DetallesProyectoActivity : AppCompatActivity() {
         val btnVolver = findViewById<Button>(R.id.btnDetallesProyectoBtnVolver)
         val btnAreaPersonal = findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
 
+
         this.datos = getDatos()!!;
         val idBuscado = UUID.fromString("f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c")
         this.proyecto = datos.listaProyectos.firstOrNull { it.Id == idBuscado }!!
         this.user = datos.listaUsuarios.firstOrNull()!!
 
-        lblNombreProyecto.text = proyecto?.Titulo ?: "Proyecto"
+        lblNombreProyecto.setText(proyecto.Titulo)
+
+        btnAreaPersonal.setOnClickListener {
+            val intent = Intent(this, MisTareasActivity::class.java)
+            intent.putExtra("datos", datos)
+            intent.putExtra("user", user)
+            startActivity(intent)
+        }
 
         recyclerTareas.layoutManager = LinearLayoutManager(this)
 
-        val tareasDelProyecto = datos?.listaTareas
+        val tareasDelProyecto = datos.listaTareas
             ?.filter { it.IdProyecto == proyecto?.Id }
             ?.toMutableList() ?: mutableListOf()
 
@@ -58,9 +66,5 @@ class DetallesProyectoActivity : AppCompatActivity() {
         recyclerTareas.adapter = adapter
 
         btnVolver.setOnClickListener { finish() }
-
-        btnAreaPersonal.setOnClickListener {
-            Toast.makeText(this, "Área personal clickeada", Toast.LENGTH_SHORT).show()
-        }
     }
 }

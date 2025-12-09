@@ -7,8 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="25dp"
-    android:clipToPadding="false"> <!-- Esta línea està pq el padding me esta dando problemas INFINITOS Y ESTOY HASTA LOS MISMISIMOS C******* NO PUC MEEEEEEEEEEEEEEEEEEES  -->
-
+    android:clipToPadding="false">
     <!-- LOGO -->
     <ImageView
         android:id="@+id/logo"
@@ -61,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="@string/LoginBotonIniciarSesion" />
+            android:text="@string/LoginIniciaSesion" />
 
         <View
             android:layout_width="match_parent"
@@ -75,7 +74,9 @@
             android:id="@+id/spinnerLoginIdiomas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp"
+            android:text="Idioma"
+            />
 
     </LinearLayout>
 
