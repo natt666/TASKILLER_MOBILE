@@ -13,36 +13,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingBottom="@dimen/paddingList"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp">
+        android:layout_marginTop="8dp">
 
         <ImageButton
             android:id="@+id/btnDetalleTareaVolver"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="4dp"
             android:scaleType="fitCenter"
             android:src="@drawable/flecha_hacia_atras"
             android:contentDescription="@string/volver" />
 
-        <TextView
+        <View
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/principal"
-            android:text="@string/tarea"
-            android:textSize="@dimen/txtTitulo"
-            android:textStyle="bold"
-            android:fontFamily="@font/montserrat_bold"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <ImageButton
             android:id="@+id/btnDetallesTareaAreaPersonal"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:scaleType="fitCenter"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/app_name"
@@ -173,7 +164,6 @@
         android:paddingTop="@dimen/paddingList"
         android:layout_marginTop="4dp">
 
-        <!-- Inicio -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -199,10 +189,10 @@
                 android:text="12/10/2025"
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
-                android:paddingTop="2dp" />
+                android:paddingTop="2dp"
+                android:paddingBottom="10dp"/>
         </LinearLayout>
 
-        <!-- Fin -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -226,7 +216,8 @@
                 android:text="12/10/2025"
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
-                android:paddingTop="2dp" />
+                android:paddingTop="2dp"
+                android:paddingBottom="10dp"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -1,7 +1,7 @@
 package com.example.taskiller
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
@@ -9,11 +9,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import Proyecto
-import Datos
-import android.content.Intent
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
+import Proyecto
+import Datos
 import java.util.UUID
 
 class DetallesProyectoActivity : AppCompatActivity() {
@@ -27,48 +26,102 @@ class DetallesProyectoActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detalles_proyecto)
 
-        val recyclerTareas = findViewById<  RecyclerView>(R.id.listDetallesProyectoListaDeTareas)
-        val lblNombreProyecto = findViewById<TextView>(R.id.lblDetallesProyectoNombreProyecto)
-        val btnVolver = findViewById<ImageButton>(R.id.btnDetallesProyectoVolver)
-        val btnAreaPersonal = findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
+        val datosCargados = initData()
+        if (!datosCargados) {
+            return
+        }
 
-        this.datos = getDatos()!!;
+        initUi()
+    }
+
+    private fun initData(): Boolean {
+        val datosObtenidos = getDatos()
+        if (datosObtenidos == null) {
+            Toast.makeText(this, "Error al cargar los datos", Toast.LENGTH_SHORT).show()
+            finish()
+            return false
+        }
+
+        datos = datosObtenidos
+
         val idBuscado = UUID.fromString("f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c")
-        this.proyecto = datos.listaProyectos.firstOrNull { it.Id == idBuscado }!!
-        this.user = datos.listaUsuarios.firstOrNull()!!
+        val proyectoEncontrado = datos.listaProyectos.firstOrNull { it.Id == idBuscado }
+        val usuarioEncontrado = datos.listaUsuarios.firstOrNull()
 
-        lblNombreProyecto.text = proyecto?.Titulo ?: "Proyecto"
+        if (proyectoEncontrado == null || usuarioEncontrado == null) {
+            Toast.makeText(this, "No se ha encontrado el proyecto o el usuario", Toast.LENGTH_SHORT).show()
+            finish()
+            return false
+        }
+
+        proyecto = proyectoEncontrado
+        user = usuarioEncontrado
+
+        return true
+    }
+
+    private fun initUi() {
+        val recyclerTareas =
+            findViewById<RecyclerView>(R.id.listDetallesProyectoListaDeTareas)
+        val lblNombreProyecto =
+            findViewById<TextView>(R.id.lblDetallesProyectoNombreProyecto)
+        val btnVolver =
+            findViewById<ImageButton>(R.id.btnDetallesProyectoVolver)
+        val btnAreaPersonal =
+            findViewById<ImageButton>(R.id.btnDetallesProyectoAreaPersonal)
+
+
+        lblNombreProyecto.text = proyecto.Titulo
 
         recyclerTareas.layoutManager = LinearLayoutManager(this)
 
-        MostarDescripcion(proyecto)
+        mostrarDescripcion(proyecto)
 
-        val tareasDelProyecto = datos?.listaTareas
-            ?.filter { it.IdProyecto == proyecto?.Id }
-            ?.toMutableList() ?: mutableListOf()
+        configurarListaDeTarea(recyclerTareas)
 
-        val adapter = MyTaskAdapter(
-            tareas = tareasDelProyecto,
-            onItemClick = { tarea ->
-                val intent = Intent(this, DetalleTareaActivity::class.java)
-                intent.putExtra("datos", datos)
-                intent.putExtra("tarea", tarea)
-                intent.putExtra("user", user)
-                startActivity(intent)
-            }
-        )
-
-        recyclerTareas.adapter = adapter
-
-        btnVolver.setOnClickListener { finish() }
+        btnVolver.setOnClickListener {
+            finish()
+        }
 
         btnAreaPersonal.setOnClickListener {
             Toast.makeText(this, "Área personal clickeada", Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun MostarDescripcion(Proyecto: Proyecto){
-        val lblDescripcion = findViewById<TextView>(R.id.lblDetallesProyectoDescripcion)
-        lblDescripcion.setText(Proyecto.Descripcion)
+    private fun mostrarDescripcion(p: Proyecto) {
+        val lblDescripcion =
+            findViewById<TextView>(R.id.lblDetallesProyectoDescripcion)
+        lblDescripcion.text = p.Descripcion
     }
+
+    private fun mostrarFechas(p: Proyecto) {
+        val lblFechaInicio =
+            findViewById<TextView>(R.id.lblDetalleProyectoFechaInicio)
+        val lblFechaFinal =
+            findViewById<TextView>(R.id.lblDetalleProyectoFechaFinal)
+
+        lblFechaInicio.text = p.FechaInicio
+        lblFechaInicio.text = p.FechaFinal
+    }
+
+    private fun configurarListaDeTarea(rv: RecyclerView) {
+        val tareasDelProyecto = datos.listaTareas
+            .filter { it.IdProyecto == proyecto.Id }
+            .toMutableList()
+
+        val adapter = MyTaskAdapter(
+            tareas = tareasDelProyecto,
+            onItemClick = { tarea ->
+                val intent = Intent(this, DetalleTareaActivity::class.java).apply {
+                    putExtra("datos", datos)
+                    putExtra("tarea", tarea)
+                    putExtra("user", user)
+                }
+                startActivity(intent)
+            }
+        )
+
+        rv.adapter = adapter
+    }
+
 }

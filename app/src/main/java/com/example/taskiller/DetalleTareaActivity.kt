@@ -57,8 +57,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         MostarEstado(tareaActual)
 
         btnVolver.setOnClickListener {
-            val intent = Intent(this, DetallesProyectoActivity::class.java )
-            startActivity(intent)
+            finish()
         }
     }
 
