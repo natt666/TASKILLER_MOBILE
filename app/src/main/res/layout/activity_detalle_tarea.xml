@@ -6,15 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
-    android:padding="@dimen/paddingList">
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingBottom="@dimen/paddingList">
+        android:paddingBottom="@dimen/paddingList"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
 
         <ImageButton
             android:id="@+id/btnDetalleTareaVolver"
@@ -34,15 +35,18 @@
             android:textColor="@color/principal"
             android:text="@string/tarea"
             android:textSize="@dimen/txtTitulo"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="@font/montserrat_bold"/>
 
-        <ImageView
-            android:id="@+id/imgDetalleTareaLogo"
+        <ImageButton
+            android:id="@+id/btnDetallesTareaAreaPersonal"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="8dp"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo_user_ros" />
     </LinearLayout>
 
 
@@ -58,8 +62,11 @@
             android:id="@+id/lblDetalleTareaNombreTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nombre_de_tarea"
+            android:text="Nombre de tarea"
+            android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/principal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
             android:textSize="@dimen/txtSubtitulo"
             android:textStyle="bold"
             android:paddingBottom="4dp" />
@@ -70,9 +77,9 @@
             android:layout_height="48dp"
             android:minHeight="48dp"
             android:layout_marginTop="4dp"
-            android:background="@drawable/bg_spinner_estado"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_spinner_estado" />
 
 
     </LinearLayout>
@@ -98,6 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripción"
+                android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
                 android:paddingBottom="4dp" />
 
@@ -109,9 +117,12 @@
             android:paddingTop="4dp"
             android:paddingBottom="4dp"
             android:text="@string/subtareas"
+            android:fontFamily="@font/montserrat_medium"
             android:textSize="@dimen/txtNormal"
             android:textStyle="bold"
-            android:textColor="@color/principal"/>
+            android:textColor="@color/principal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -132,7 +143,10 @@
             android:paddingBottom="4dp"
             android:text="@string/usuarios"
             android:textSize="@dimen/txtNormal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
             android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/principal"/>
 
 
@@ -142,7 +156,10 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/bg_tarea_rounded"
-            android:padding="@dimen/paddingList"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
             tools:listitem="@layout/item_usuario" />
@@ -162,7 +179,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingEnd="8dp">
+            android:paddingEnd="8dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -170,13 +189,15 @@
                 android:text="@string/inicio"
                 android:textSize="@dimen/txtNormal"
                 android:textStyle="bold"
-                android:textColor="@color/principal" />
+                android:textColor="@color/principal"
+                android:fontFamily="@font/montserrat_medium"/>
 
             <TextView
                 android:id="@+id/lblDetalleTareaFechaInicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12/10/2025"
+                android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
                 android:paddingTop="2dp" />
         </LinearLayout>
@@ -195,6 +216,7 @@
                 android:text="@string/fin"
                 android:textSize="@dimen/txtNormal"
                 android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="@color/principal" />
 
             <TextView
@@ -202,6 +224,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12/10/2025"
+                android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
                 android:paddingTop="2dp" />
         </LinearLayout>
