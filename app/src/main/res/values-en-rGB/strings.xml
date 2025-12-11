@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TASKILLER</string>
+    <string name="btnVolver">Return</string>
+    <string name="LoginIniciaSesion">Login</string>
+    <string name="LoginNombreUsuario">User</string>
+    <string name="LoginContrasena">Password</string>
+    <string-array name="idiomas">
+        <item>Spanish</item>
+        <item>English</item>
+        <item>Catalan</item>
+    </string-array>
+    <string name="areaPersonal">Personal Area</string>
+    <string name="PaginaPrincipalTxtViewProyectos">Projects</string>
+    <string name="tarea">Tasks</string>
+    <string name="inicio">Started:</string>
+    <string name="fin">Deadline:</string>
+    <string name="filtro">Filter</string>
+    <string name="anadir_tarjeta">Add  Card</string>
+    <string name="nomProyectoTarjPagPrincipal">Project Name</string>
+    <string name="mis_tareas">My tasks</string>
+    <string name="graficos">Project graphics:</string>
+    <string name="subtareas">Subtasks</string>
+    <string name="usuarios">Users:</string>
+    <string name="prioridad">Priority:</string>
+    <string name="nombre_proyecto">Project_name</string>
+    <string-array name="estados">
+        <item>To do</item>
+        <item>In progress</item>
+        <item>Delivered</item>
+        <item>Revised</item>
+        <item>Blocked</item>
+    </string-array>
+</resources>

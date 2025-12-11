@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/principal"
             android:text="Título"
             android:textStyle="bold" />
 
@@ -30,11 +31,19 @@
             android:id="@+id/txtEstado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Estado"
-            android:textSize="@dimen/txtNormal"
+            android:layout_marginStart="8dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:text="EN PROGRESO"
+            android:textSize="11sp"
             android:fontFamily="@font/montserrat_medium"
-            android:textColor="@color/principal"
-            android:layout_marginStart="8dp" />
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:background="@drawable/bg_estado_por_comenzar"
+            android:textColor="@android:color/black" />
+
 
         <ImageView
             android:id="@+id/btnPrioridad"
