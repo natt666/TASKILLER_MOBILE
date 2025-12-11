@@ -53,7 +53,6 @@ class DetallesProyectoActivity : AppCompatActivity() {
             finish()
             return false
         }
-
         proyecto = proyectoEncontrado
         user = usuarioEncontrado
 
