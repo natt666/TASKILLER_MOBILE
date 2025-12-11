@@ -502,7 +502,7 @@
             "listaUsuarios": [
                 "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
             ],
-            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+                "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
             "Estado": 2,
             "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
             "Subtareas": null

@@ -33,12 +33,6 @@ class LoginActivity : AppCompatActivity() {
         val datos = getDatos()
 
 
-
-
-
-
-
-
         val btnLoginIniciarSesion = findViewById<Button>(R.id.btnLoginIniciarSesion)
         val txtBoxLoginUsuario = findViewById<EditText>(R.id.txtBoxLoginUsuario)
         val txtBoxLoginContrasena = findViewById<EditText>(R.id.txtBoxLoginContrasena)

@@ -1,5 +1,6 @@
 package com.example.taskiller
 
+import Datos
 import Proyecto
 import android.view.LayoutInflater
 import android.view.View
@@ -8,13 +9,12 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class ProjectAdapter(
     private val projects: MutableList<Proyecto>,
-    private val onProjectClick: (Proyecto) -> Unit,
-    private val onChartClick: (Proyecto) -> Unit,
-    private val onTaskCountClick: (Proyecto) -> Unit,
-    private val onDeadlineClick: (Proyecto) -> Unit
+    private val datos: Datos
                     ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -31,26 +31,31 @@ class ProjectAdapter(
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
-
-        for (p in projects){
-
-        }
-
         val project = projects[position]
 
-        holder.btnProjectName.text = project.Titulo
-        holder.btnDeadline.text = project.FechaFinal
+        val inputFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")
+        val outputFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 
-        holder.btnProjectName.setOnClickListener { onProjectClick(project) }
-        holder.btnChart.setOnClickListener { onChartClick(project) }
-        holder.txtViewTaskCount.setOnClickListener { onTaskCountClick(project) }
-        holder.txtViewDeadline.setOnClickListener { onDeadlineClick(project) }
+        val fechaFinal = runCatching {
+            LocalDateTime.parse(project.FechaFinal, inputFormat).format(outputFormat)
+        }.getOrElse { project.FechaFinal }
+
+
+        var contadorTareas = 0
+        for (tarea in datos.listaTareas){
+            if (tarea.IdProyecto == project.Id){
+                contadorTareas++
+            }
+        }
+
+        holder.btnProjectName.text = project.Titulo
+        holder.txtViewDeadline.text = fechaFinal
+        holder.txtViewTaskCount.text = contadorTareas.toString()
+
+
     }
 
     override fun getItemCount() = projects.size
 
-    fun addProject(project: Proyecto) {
-        projects.add(project)
-        notifyItemInserted(projects.size - 1)
-    }
+
 }

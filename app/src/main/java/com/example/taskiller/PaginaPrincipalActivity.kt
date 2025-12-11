@@ -1,5 +1,6 @@
 package com.example.taskiller
 
+import Datos
 import Proyecto
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -12,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.models.Usuario
+
 
 class PaginaPrincipalActivity : AppCompatActivity() {
 
@@ -47,23 +49,14 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter = ProjectAdapter(
-            projectList,
-            onProjectClick = { Proyecto ->
-                    Toast.makeText(this, "Projecte: ${Proyecto.Titulo}", Toast.LENGTH_SHORT).show()
-            },
-            onChartClick = { Proyecto ->
-                Toast.makeText(this, "Gràfic de: ${Proyecto.Titulo}", Toast.LENGTH_SHORT).show()
-            },
-            onTaskCountClick = { Proyecto ->
-                Toast.makeText(this, "${Proyecto.Titulo} tasques", Toast.LENGTH_SHORT).show()
-            },
-            onDeadlineClick = { project ->
-                Toast.makeText(this, "Data límit: ${Proyecto.Estados.Por_Comenzar}", Toast.LENGTH_SHORT).show()
-            }
-                                )
+            datos.listaProyectos,
+            datos
+            )
 
         recyclerView.adapter = adapter
     }
+
+
 
 
 
