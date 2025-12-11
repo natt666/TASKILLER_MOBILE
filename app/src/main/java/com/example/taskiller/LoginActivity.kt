@@ -80,7 +80,6 @@ class LoginActivity : AppCompatActivity() {
                         intent.putExtra("datos", datos)
                         intent.putExtra("user", u)
                         startActivity(intent)
-
                 }
             }
         }

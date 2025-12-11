@@ -15,6 +15,8 @@ class TaskAdapter(private val lista: MutableList<Tarea>) :
     RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val lblInicio: TextView = view.findViewById(R.id.lblInicioTarea)
+        val lblFin: TextView = view.findViewById(R.id.lblFinTarea)
         val titulo: TextView = view.findViewById(R.id.taskNameTextView)
         val estado: TextView = view.findViewById(R.id.taskStatusTextView)
         val inicio: TextView = view.findViewById(R.id.lblInicioTarea)
@@ -32,8 +34,11 @@ class TaskAdapter(private val lista: MutableList<Tarea>) :
         val item = lista[position]
         holder.titulo.text = item.Titulo
         holder.estado.text = item.Estado.toString()
+        holder.lblInicio.text = holder.itemView.context.getString(R.string.fecha_inicio_txt)
+        holder.lblFin.text = "Fecha fin:"
         holder.inicio.text = item.FechaInicio
         holder.fin.text = item.FechaFinal
+        holder.prioridad.text = item.Prioridad.toString()
     }
 
     override fun getItemCount(): Int = lista.size
