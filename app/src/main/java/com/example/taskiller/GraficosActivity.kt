@@ -27,15 +27,16 @@ class GraficosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_graficos1)
 
         pieChart = findViewById(R.id.pieChart)
-        graficosbtnvolver = findViewById<ImageButton>(R.id.graficosbtnvolver)
+        graficosbtnvolver = findViewById(R.id.graficosbtnvolver)
         val lblnombreproyecto = findViewById<TextView>(R.id.lblGraficosNombreProyecto)
 
         val datos = getDatos()!!
         val proyecto = datos.listaProyectos.firstOrNull()
+        val user =  datos.listaUsuarios.firstOrNull()
         val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyecto?.Id }
 
         lblnombreproyecto.text = proyecto?.Titulo
-        // Contamos tareas por estado
+
         val estadoCounts = Proyecto.Estados.values().associateWith { estado ->
             todasTareas.count { it.Estado.name == estado.name }
         }
@@ -118,7 +119,11 @@ class GraficosActivity : AppCompatActivity() {
         pieChart.invalidate()
 
         graficosbtnvolver.setOnClickListener {
-            val itent
+            val intent = intent
+            intent.putExtra("datos", datos)
+            intent.putExtra("user", user)
+            finish()
+            startActivity(intent)
         }
     }
 
