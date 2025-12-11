@@ -78,6 +78,8 @@ class DetallesProyectoActivity : AppCompatActivity() {
 
         configurarListaDeTarea(recyclerTareas)
 
+        mostrarFechas(proyecto)
+
         btnVolver.setOnClickListener {
             finish()
         }
@@ -100,7 +102,7 @@ class DetallesProyectoActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.lblDetalleProyectoFechaFinal)
 
         lblFechaInicio.text = p.FechaInicio
-        lblFechaInicio.text = p.FechaFinal
+        lblFechaFinal.text = p.FechaFinal
     }
 
     private fun configurarListaDeTarea(rv: RecyclerView) {
