@@ -23,7 +23,7 @@
             android:padding="4dp"
             android:scaleType="fitCenter"
             android:src="@drawable/flecha_hacia_atras"
-            android:contentDescription="@string/volver" />
+            android:contentDescription="@string/btnVolver" />
 
         <View
             android:layout_width="0dp"
@@ -40,14 +40,13 @@
             android:src="@drawable/logo_user_ros" />
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/paddingList"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp">
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp">
 
         <TextView
             android:id="@+id/lblDetalleTareaNombreTarea"
@@ -60,21 +59,18 @@
             android:paddingLeft="10dp"
             android:textSize="@dimen/txtSubtitulo"
             android:textStyle="bold"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="2dp" />
 
         <Spinner
             android:id="@+id/spinnerDetalleTareaEstado"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:minHeight="48dp"
-            android:layout_marginTop="4dp"
+            android:layout_height="40dp"
+            android:minHeight="40dp"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:background="@drawable/bg_spinner_estado" />
-
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,13 +79,12 @@
         android:orientation="vertical"
         android:paddingTop="@dimen/paddingList">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/paddingDiscriptionTarea"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="4dp">
 
             <TextView
                 android:id="@+id/lblDetalleTareaDescripcion"
@@ -98,15 +93,45 @@
                 android:text="Descripción"
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
-                android:paddingBottom="4dp" />
+                android:paddingBottom="2dp" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/layoutDetalleTareaTiempo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/horas_dedicadas"
+                android:textSize="@dimen/txtNormal"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/principal" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0h 0m"
+                android:textSize="@dimen/txtNormal"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="8dp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:text="@string/subtareas"
             android:fontFamily="@font/montserrat_medium"
             android:textSize="@dimen/txtNormal"
@@ -115,23 +140,22 @@
             android:paddingRight="10dp"
             android:paddingLeft="10dp"/>
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDetalleTareaSubtareas"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="@dimen/paddingList"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             tools:listitem="@layout/item_mi_tarea" />
-
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:text="@string/usuarios"
             android:textSize="@dimen/txtNormal"
             android:paddingRight="10dp"
@@ -139,7 +163,6 @@
             android:textStyle="bold"
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/principal"/>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDetalleTareaUsuariosAsignado"
@@ -151,8 +174,8 @@
             android:paddingLeft="10dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
             tools:listitem="@layout/item_usuario" />
     </LinearLayout>
 
@@ -162,7 +185,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="@dimen/paddingList"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="2dp">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -190,7 +213,7 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
                 android:paddingTop="2dp"
-                android:paddingBottom="10dp"/>
+                android:paddingBottom="8dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -217,9 +240,8 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
                 android:paddingTop="2dp"
-                android:paddingBottom="10dp"/>
+                android:paddingBottom="8dp"/>
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

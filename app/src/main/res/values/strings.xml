@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">TASKILLER</string>
+    <string name="app_name" translatable="false">TASKILLER</string>
     <string name="btnVolver">Volver</string>
-    <string name="LoginIniciaSesion">Inicia Sesión</string>
-    <string name="LoginBotonIniciarSesion">Iniciar Sesión</string>
+    <string name="LoginIniciaSesion">Iniciar Sesión</string>
     <string name="LoginNombreUsuario">Usuario</string>
     <string name="LoginContrasena">Contraseña</string>
     <string-array name="idiomas">
@@ -10,8 +9,7 @@
         <item>Inglés</item>
         <item>Catalán</item>
     </string-array>
-    <string name="volver">Volver</string>
-    <string name="areaPersonal">Area Personal</string>
+    <string name="areaPersonal">Área Personal</string>
     <string name="PaginaPrincipalTxtViewProyectos">Proyectos</string>
     <string name="tarea">Tarea</string>
     <string name="inicio">Inicio:</string>
@@ -33,4 +31,6 @@
         <item>Revisado</item>
         <item>Bloqueado</item>
     </string-array>
+    <string name="title_activity_graficos">GraficosActivity</string>
+    <string name="horas_dedicadas">Horas Dedicadas:</string>
 </resources>
