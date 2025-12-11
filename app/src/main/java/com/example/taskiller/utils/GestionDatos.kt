@@ -13,9 +13,11 @@ import java.io.InputStreamReader
 
 fun Context.getDatos(): Datos? {
     return try {
-        assets.open("TaskillerData.json").use { inputStream ->
-            val reader = InputStreamReader(inputStream)
-            val gson = GsonBuilder()
+        val jsonFile = File(filesDir, "datajson/TaskillerData.json")
+
+        val reader = InputStreamReader(jsonFile.inputStream())
+
+        val gson = GsonBuilder()
                 .registerTypeAdapter(Tarea.Prioridades::class.java, JsonDeserializer { json, _, _ ->
                     when (json.asInt) {
                         1 -> Tarea.Prioridades.BAJA
@@ -42,9 +44,9 @@ fun Context.getDatos(): Datos? {
                 .create()
 
             gson.fromJson(reader, Datos::class.java)
-        }
+
     } catch (e: Exception) {
-        Log.e("FileUtils", "Error leyendo JSON desde assets", e)
+        Log.e("FileUtils", "Error leyendo JSON desde data", e)
         null
     }
 }

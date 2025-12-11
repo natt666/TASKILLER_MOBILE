@@ -10,47 +10,58 @@
     android:layout_gravity="center"
 
     >
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
-        >
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
 
-        <ImageButton
-            android:id="@+id/graficosbtnvolver"
-            android:layout_width="80dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:src="@drawable/flecha_hacia_atras">
-        </ImageButton>
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            >
 
-        <TextView
-            android:layout_width="224dp"
+            <ImageButton
+                android:id="@+id/graficosbtnvolver"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/flecha_hacia_atras">
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/lblGraficosNombreProyecto"
+                android:layout_width="224dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:maxWidth="200dp"
+                android:text="Gráficos_ Proyecto"
+                android:textSize="30sp">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat_bold"
-            android:maxWidth="200dp"
-            android:text="Gráficos_ Proyecto"
-            android:textSize="30sp">
-        </TextView>
+            android:gravity="center_horizontal"
+            >
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:padding="120dp"
+                android:id="@+id/pieChart"
+                android:layout_width="370dp"
+                android:layout_height="350dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
     </LinearLayout>
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        >
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/pieChart"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_gravity="center_horizontal" />
-
-    </GridLayout>
 
 </LinearLayout>
