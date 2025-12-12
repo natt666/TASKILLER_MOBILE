@@ -23,8 +23,8 @@
     <string name="usuarios">Usuarios:</string>
     <string name="prioridad">prioridad</string>
     <string name="nombre_proyecto">Nombre_Proyecto</string>
-    <string name="fecha_inicio_txt">Fecha inicio:</string>
-    <string name="descripcion">Descripción:</string>
+    <string name="fecha_inicio_txt" translatable="false">Fecha inicio:</string>
+    <string name="descripcion" translatable="false">Descripción:</string>
     <string-array name="estados">
         <item>Por comenzar</item>
         <item>En progreso</item>
@@ -32,5 +32,5 @@
         <item>Revisado</item>
         <item>Bloqueado</item>
     </string-array>
-    <string name="title_activity_graficos">GraficosActivity</string>
+    <string name="title_activity_graficos" translatable="false">GraficosActivity</string>
 </resources>

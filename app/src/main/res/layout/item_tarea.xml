@@ -4,18 +4,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginStart="40dp"
     android:layout_marginEnd="40dp"
     android:layout_marginBottom="12dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    android:layout_marginTop="25dp">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:rowCount="3"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp">
 
         <TextView
             android:id="@+id/taskNameTextView"
@@ -23,11 +27,13 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="0"
-            android:text=""
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@android:color/black"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:text="Nombre de la tarea (nombre largo)"
+            android:maxWidth="285dp"
+            android:minHeight="70dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
+            android:textColor="@color/principal"
+            android:textSize="25sp"/>
 
         <TextView
             android:id="@+id/taskStatusTextView"
@@ -35,10 +41,14 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="2"
-            android:layout_gravity="end"
-            android:text=""
-            android:fontFamily="@font/montserrat_bold"
-            android:textSize="25sp"/>
+            android:layout_marginStart="8dp"
+            android:text="ESTADO"
+            android:textSize="15sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
+            android:background="@drawable/bg_estado_por_comenzar"
+            android:textColor="@android:color/black"
+            android:layout_gravity="end"/>
 
         <TextView
             android:id="@+id/lblInicioTarea"
@@ -46,9 +56,9 @@
             android:layout_height="wrap_content"
             android:layout_row="1"
             android:layout_column="0"
-            android:paddingTop="20dp"
             android:text="Inicio:"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
@@ -59,7 +69,21 @@
             android:layout_row="1"
             android:layout_column="1"
             android:text="Fin:"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/lblPrioridadItemTarea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:text="Prioridad:"
+            android:layout_gravity="end"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp" />
 
@@ -69,10 +93,11 @@
             android:layout_height="wrap_content"
             android:layout_row="2"
             android:layout_column="0"
-            android:text=""
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="15sp"/>
+            android:text="XX-XX-XXXX"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/endDateTextView"
@@ -80,10 +105,11 @@
             android:layout_height="wrap_content"
             android:layout_row="2"
             android:layout_column="1"
-            android:text=""
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="15sp" />
+            android:text="XX-XX-XXXX"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/prioridadTextView"
@@ -92,9 +118,11 @@
             android:layout_row="2"
             android:layout_column="2"
             android:layout_gravity="end"
-            android:text=""
+            android:text="PRIOR."
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
             android:textColor="@android:color/darker_gray"
-            android:textSize="15sp" />
+            android:textSize="20sp" />
 
     </GridLayout>
 

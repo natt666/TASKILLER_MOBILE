@@ -9,18 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.R
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.TarjetaTarea
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class TaskAdapter(private val lista: MutableList<Tarea>) :
     RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val lblInicio: TextView = view.findViewById(R.id.lblInicioTarea)
-        val lblFin: TextView = view.findViewById(R.id.lblFinTarea)
         val titulo: TextView = view.findViewById(R.id.taskNameTextView)
         val estado: TextView = view.findViewById(R.id.taskStatusTextView)
-        val inicio: TextView = view.findViewById(R.id.lblInicioTarea)
-        val fin: TextView = view.findViewById(R.id.lblFinTarea)
+        val inicio: TextView = view.findViewById(R.id.startDateTextView)
+        val fin: TextView = view.findViewById(R.id.endDateTextView)
         val prioridad: TextView = view.findViewById(R.id.prioridadTextView)
     }
 
@@ -32,12 +32,52 @@ class TaskAdapter(private val lista: MutableList<Tarea>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = lista[position]
+        var txtEstado : String
+        val fechaInicioInput = LocalDateTime.parse(item.FechaInicio, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"))
+        val fechaFinalInput = LocalDateTime.parse(item.FechaFinal, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"))
+        val fechaInicio = fechaInicioInput.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        val fechaFinal = fechaFinalInput.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+
+        when (item.Estado) {
+            Tarea.Estados.Por_Comenzar -> {
+                txtEstado = "POR COMENZAR"
+            }
+            Tarea.Estados.En_Progreso -> {
+                txtEstado = "EN PROGRESO"
+            }
+            Tarea.Estados.Entregado -> {
+                txtEstado = "ENTREGADO"
+            }
+            Tarea.Estados.Revisado -> {
+                txtEstado = "REVISADO"
+            }
+            Tarea.Estados.Bloqueado -> {
+                txtEstado = "BLOQUEADO"
+            }
+        }
+
+        when (item.Estado) {
+            Tarea.Estados.Por_Comenzar -> {
+                holder.estado.setBackgroundResource(R.drawable.bg_estado_por_comenzar)
+            }
+            Tarea.Estados.En_Progreso -> {
+                holder.estado.setBackgroundResource(R.drawable.bg_estado_en_progreso)
+            }
+            Tarea.Estados.Entregado -> {
+                holder.estado.setBackgroundResource(R.drawable.bg_estado_entregado)
+            }
+            Tarea.Estados.Revisado -> {
+                holder.estado.setBackgroundResource(R.drawable.bg_estado_revisado)
+            }
+            Tarea.Estados.Bloqueado -> {
+                holder.estado.setBackgroundResource(R.drawable.bg_estado_bloqueado)
+            }
+        }
+
         holder.titulo.text = item.Titulo
-        holder.estado.text = item.Estado.toString()
-        holder.lblInicio.text = holder.itemView.context.getString(R.string.fecha_inicio_txt)
-        holder.lblFin.text = "Fecha fin:"
-        holder.inicio.text = item.FechaInicio
-        holder.fin.text = item.FechaFinal
+        holder.estado.text = txtEstado
+        holder.inicio.text = fechaInicio
+        holder.fin.text = fechaFinal
         holder.prioridad.text = item.Prioridad.toString()
     }
 
