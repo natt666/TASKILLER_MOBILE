@@ -23,11 +23,10 @@ fun Context.getDatos(): Datos? {
                         "BAJA" -> Tarea.Prioridades.BAJA
                         "MEDIA" -> Tarea.Prioridades.MEDIA
                         "ALTA" -> Tarea.Prioridades.ALTA
-
                         "1" -> Tarea.Prioridades.BAJA
                         "2" -> Tarea.Prioridades.MEDIA
                         "3" -> Tarea.Prioridades.ALTA
-                        else -> Tarea.Prioridades.BAJA
+                        else -> "ERROR"
                     }
                 })
                 .registerTypeAdapter(Tarea.Estados::class.java, JsonDeserializer { json, _, _ ->
