@@ -94,7 +94,5 @@ class MyTaskAdapter(
             onItemClick(tarea)
         }
     }
-
-
     override fun getItemCount() = tareas.size
 }

@@ -1,9 +1,9 @@
 package com.example.taskiller
 
 import Datos
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import android.widget.ImageButton
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,10 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.adapters.TaskAdapter
 import com.example.taskiller.models.Tarea
-import com.example.taskiller.models.TarjetaTarea
 import com.example.taskiller.models.Usuario
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class MisTareasActivity : AppCompatActivity() {
     private lateinit var datos: Datos
@@ -33,13 +30,26 @@ class MisTareasActivity : AppCompatActivity() {
         user =intent.getSerializableExtra("user") as Usuario
         val recyclerTareas = findViewById<RecyclerView>(R.id.rVTareas)
         recyclerTareas.layoutManager = LinearLayoutManager(this)
-        val listaTareas = mutableListOf<Tarea>()
+        val tareas = mutableListOf<Tarea>()
+        val btnVolver = findViewById<ImageButton>(R.id.btnMisTareasVolver)
         for (tarea in datos.listaTareas) {
             if (tarea.listaUsuarios.contains(user.Id)) {
-                listaTareas.add(tarea)
+                tareas.add(tarea)
             }
         }
-        val adapter = TaskAdapter(listaTareas)
+        val adapter = TaskAdapter(
+            tareas,
+            onCardClick = { tarea ->
+                val intent = Intent(this, DetalleTareaActivity::class.java).apply {
+                    putExtra("datos", datos)
+                    putExtra("tarea", tarea)
+                    putExtra("user", user)
+                }
+                startActivity(intent)
+            })
         recyclerTareas.adapter = adapter
+        btnVolver.setOnClickListener {
+            finish()
+        }
     }
 }
