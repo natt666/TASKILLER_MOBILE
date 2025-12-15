@@ -207,16 +207,41 @@ class DetalleTareaActivity : AppCompatActivity() {
     }
 
     fun configurarSpinnerEstado() {
-        val spinnerEstado = findViewById<Spinner>(R.id.spinnerDetalleTareaEstado)
-
         val labels = resources.getStringArray(R.array.estados)
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
         spinnerEstado.adapter = adapter
+
+        spinnerEstado.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: android.view.View?,
+                position: Int,
+                id: Long
+            ) {
+                if (ignorarEventoSpinner) {
+                    return
+                }
+
+                val nuevoEstado = Tarea.Estados.values()[position]
+
+                val tareaEnDatos = datos.listaTareas.firstOrNull { it.Id == tareaId }
+                if (tareaEnDatos != null && tareaEnDatos.Estado != nuevoEstado) {
+                    tareaEnDatos.Estado = nuevoEstado
+                    guardarDatos(datos)
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) { }
+        }
     }
 
+
     fun MostarEstado(tarea: Tarea) {
-        findViewById<Spinner>(R.id.spinnerDetalleTareaEstado).setSelection(tarea.Estado.ordinal)
+        ignorarEventoSpinner = true
+        spinnerEstado.setSelection(tarea.Estado.ordinal, false)
+        ignorarEventoSpinner = false
     }
 }
