@@ -28,6 +28,7 @@ import java.util.UUID
 
 class DetalleTareaActivity : AppCompatActivity() {
     private lateinit var listaTareas: List<Tarea>
+    private lateinit var tareaActual: Tarea
     private var horas = 0
     private var minutos = 0
 
@@ -46,7 +47,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         val usuarios = datos.listaUsuarios
         val btnVolver = findViewById<ImageButton>(R.id.btnDetalleTareaVolver)
 
-        val tareaActual = intent.getSerializableExtra("tarea") as Tarea
+         tareaActual = intent.getSerializableExtra("tarea") as Tarea
         val user = intent.getSerializableExtra("user") as Usuario
 
         val txtTotal = findViewById<TextView>(R.id.total)
@@ -72,6 +73,11 @@ class DetalleTareaActivity : AppCompatActivity() {
         MostarEstado(tareaActual)
 
         btnVolver.setOnClickListener {
+            val resultIntent = Intent()
+            resultIntent.putExtra("datos", datos)
+            resultIntent.putExtra("tarea", tareaActual)
+            resultIntent.putExtra("user", user)
+            setResult(RESULT_OK, resultIntent)
             finish()
         }
     }
