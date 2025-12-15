@@ -55,7 +55,7 @@ fun Context.getDatos(): Datos? {
 
 fun Context.guardarDatos(datos: Datos) {
     try {
-        val jsonDir = File(filesDir, "json")
+        val jsonDir = File(filesDir, "datajson")
         if (!jsonDir.exists()) {
             jsonDir.mkdirs()
         }
