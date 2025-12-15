@@ -203,15 +203,7 @@ class DetalleTareaActivity : AppCompatActivity() {
     fun configurarSpinnerEstado() {
         val spinnerEstado = findViewById<Spinner>(R.id.spinnerDetalleTareaEstado)
 
-        val labels = Tarea.Estados.values().map {
-            when (it) {
-                Tarea.Estados.Por_Comenzar -> "Por comenzar"
-                Tarea.Estados.En_Progreso -> "En progreso"
-                Tarea.Estados.Entregado -> "Entregado"
-                Tarea.Estados.Revisado -> "Revisado"
-                Tarea.Estados.Bloqueado -> "Bloqueado"
-            }
-        }
+        val labels = resources.getStringArray(R.array.estados)
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
