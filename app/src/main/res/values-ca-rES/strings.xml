@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="volver">Tornar</string>
-    <string name="LoginIniciaSesion">Iniciar Sesió</string>
+    <string name="LoginIniciaSesion">Iniciar Sessió</string>
     <string name="LoginNombreUsuario">Usuari</string>
     <string name="LoginContrasena">Contrasenya</string>
     <string-array name="idiomas">
