@@ -36,24 +36,14 @@ class MyTaskAdapter(
 
         val context = holder.itemView.context
 
-        val textoEstado: String
+        val estadosArray = context.resources.getStringArray(R.array.estados)
 
-        when (tarea.Estado) {
-            Tarea.Estados.Por_Comenzar -> {
-                textoEstado = "Por comenzar"
-            }
-            Tarea.Estados.En_Progreso -> {
-                textoEstado = "En progreso"
-            }
-            Tarea.Estados.Entregado -> {
-                textoEstado = "Entregado"
-            }
-            Tarea.Estados.Revisado -> {
-                textoEstado = "Revisado"
-            }
-            Tarea.Estados.Bloqueado -> {
-                textoEstado = "Bloqueado"
-            }
+        val textoEstado = when (tarea.Estado) {
+            Tarea.Estados.Por_Comenzar -> estadosArray[0]
+            Tarea.Estados.En_Progreso -> estadosArray[1]
+            Tarea.Estados.Entregado -> estadosArray[2]
+            Tarea.Estados.Revisado -> estadosArray[3]
+            Tarea.Estados.Bloqueado -> estadosArray[4]
         }
 
         when (tarea.Estado) {

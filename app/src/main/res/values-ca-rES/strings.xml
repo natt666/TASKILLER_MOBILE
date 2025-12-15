@@ -10,7 +10,7 @@
         <item>Català</item>
     </string-array>
     <string name="areaPersonal">Àrea Personal</string>
-    <string name="PaginaPrincipalTxtViewProyectos">Projectes</string>
+    <string name="PaginaPrincipalTxtViewProyectos">Els meus projectes</string>
     <string name="tarea">Tasques</string>
     <string name="inicio">Inici:</string>
     <string name="fin">Fi:</string>
@@ -21,7 +21,7 @@
     <string name="graficos">Gràfics del projecte:</string>
     <string name="subtareas">Subtasques</string>
     <string name="usuarios">Usuaris:</string>
-    <string name="prioridad">prioritat</string>
+    <string name="prioridad">Prioritat:</string>
     <string name="nombre_proyecto">Nom_projecte</string>
     <string-array name="estados">
         <item>A començar</item>
@@ -33,4 +33,6 @@
     <string name="fecha_inicio_txt">Data d\'inici:</string>
     <string name="horas_dedicadas">Hores dedicades:</string>
     <string name="descripci_n">Descripció:</string>
+    <string name="numero_de_tareas">Número de tasques:</string>
+    <string name="fecha_de_entrega">Data d\'entrega:</string>
 </resources>

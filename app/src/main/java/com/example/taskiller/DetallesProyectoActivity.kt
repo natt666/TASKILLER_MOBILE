@@ -15,6 +15,8 @@ import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.Usuario
 import Datos
 import Proyecto
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class DetallesProyectoActivity : AppCompatActivity() {
 
@@ -128,7 +130,13 @@ class DetallesProyectoActivity : AppCompatActivity() {
         val lblFechaInicio: TextView = findViewById(R.id.lblDetalleProyectoFechaInicio)
         val lblFechaFinal: TextView = findViewById(R.id.lblDetalleProyectoFechaFinal)
 
-        lblFechaInicio.text = p.FechaInicio
-        lblFechaFinal.text = p.FechaFinal
+        val formatoOriginal = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault())
+        val formatoDeseado = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+
+        val fechaInicioFormateada = formatoDeseado.format(formatoOriginal.parse(p.FechaInicio)!!)
+        val fechaFinalFormateada = formatoDeseado.format(formatoOriginal.parse(p.FechaFinal)!!)
+
+        lblFechaInicio.text = fechaInicioFormateada
+        lblFechaFinal.text = fechaFinalFormateada
     }
 }
