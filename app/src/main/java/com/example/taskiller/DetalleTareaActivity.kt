@@ -30,6 +30,10 @@ class DetalleTareaActivity : AppCompatActivity() {
     private lateinit var txtTotal: TextView
     private lateinit var btnVolver: ImageButton
 
+    private lateinit var spinnerEstado: Spinner
+    private var ignorarEventoSpinner: Boolean = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -52,7 +56,9 @@ class DetalleTareaActivity : AppCompatActivity() {
         txtTotal = findViewById(R.id.total)
         btnVolver = findViewById(R.id.btnDetalleTareaVolver)
 
+        spinnerEstado = findViewById(R.id.spinnerDetalleTareaEstado)
         configurarSpinnerEstado()
+
 
         findViewById<LinearLayout>(R.id.layoutDetalleTareaTiempo).setOnClickListener {
             mostrarDialogoTiempo()
