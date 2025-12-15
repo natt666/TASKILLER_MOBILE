@@ -48,6 +48,25 @@ class DetallesProyectoActivity : AppCompatActivity() {
             }
         }
 
+    private val misTareasLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                val datosDevueltos = data?.getSerializableExtra("datos") as? Datos
+                val userDevuelto = data?.getSerializableExtra("user") as? Usuario
+
+                if (datosDevueltos != null) {
+                    datos = datosDevueltos
+                }
+                if (userDevuelto != null) {
+                    user = userDevuelto
+                }
+
+                cargarTareasDelProyecto()
+                adapter.notifyDataSetChanged()
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -112,7 +131,11 @@ class DetallesProyectoActivity : AppCompatActivity() {
         }
 
         btnAreaPersonal.setOnClickListener {
-            Toast.makeText(this, "Área personal clickeada", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MisTareasActivity::class.java).apply {
+                putExtra("datos", datos)
+                putExtra("user", user)
+            }
+            misTareasLauncher.launch(intent)
         }
     }
 

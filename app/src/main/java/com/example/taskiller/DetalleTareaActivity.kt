@@ -29,9 +29,26 @@ class DetalleTareaActivity : AppCompatActivity() {
 
     private lateinit var txtTotal: TextView
     private lateinit var btnVolver: ImageButton
+    private lateinit var btnAreaPersonal: ImageButton
 
     private lateinit var spinnerEstado: Spinner
     private var ignorarEventoSpinner: Boolean = false
+
+    private val misTareasLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                val datosDevueltos = data?.getSerializableExtra("datos") as? Datos
+                val userDevuelto = data?.getSerializableExtra("user") as? Usuario
+
+                if (datosDevueltos != null) {
+                    datos = datosDevueltos
+                }
+                if (userDevuelto != null) {
+                    user = userDevuelto
+                }
+            }
+        }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +83,16 @@ class DetalleTareaActivity : AppCompatActivity() {
 
         btnVolver.setOnClickListener {
             devolverResultadoYSalir()
+        }
+
+        btnAreaPersonal = findViewById(R.id.btnDetallesTareaAreaPersonal)
+
+        btnAreaPersonal.setOnClickListener {
+            val intent = Intent(this, MisTareasActivity::class.java).apply {
+                putExtra("datos", datos)
+                putExtra("user", user)
+            }
+            misTareasLauncher.launch(intent)
         }
 
         refrescarPantalla()
