@@ -2,6 +2,7 @@ package com.example.taskiller
 
 import Datos
 import Proyecto
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,16 +10,19 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taskiller.models.Usuario
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class ProjectAdapter(
     private val projects: MutableList<Proyecto>,
-    private val datos: Datos
+    private val datos: Datos,
+    private val user: Usuario,
+    private val onItemClick: (Proyecto) -> Unit
                     ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val btnProjectName: Button = view.findViewById(R.id.btnProjectName)
+        val btnProjectName: TextView = view.findViewById(R.id.txtProjectName)
         val btnChart: ImageButton = view.findViewById(R.id.btnChart)
         val txtViewTaskCount: TextView = view.findViewById(R.id.txtViewTaskCount)
         val txtViewDeadline: TextView = view.findViewById(R.id.txtViewDeadline)
@@ -52,10 +56,17 @@ class ProjectAdapter(
         holder.txtViewDeadline.text = fechaFinal
         holder.txtViewTaskCount.text = contadorTareas.toString()
 
+        holder.itemView.setOnClickListener { onItemClick(project) }
 
+        holder.btnChart.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, GraficosActivity::class.java).apply {
+                putExtra("datos", datos)
+                putExtra("user", user)
+                putExtra("proyecto", project)
+            }
+            context.startActivity(intent)
+        }
     }
-
     override fun getItemCount() = projects.size
-
-
 }

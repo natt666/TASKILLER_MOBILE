@@ -3,8 +3,10 @@ package com.example.taskiller
 import Datos
 import Proyecto
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,9 +22,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProjectAdapter
     private val projectList = mutableListOf<Proyecto>()
-
     private lateinit var datos: Datos
-
     private lateinit var user: Usuario
 
 
@@ -48,17 +48,34 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val userIdString = user.Id
+
+        val proyectosColaborador = datos.listaProyectos.filter { proyecto ->
+            proyecto.listaUsuarios.any { it == user.Id }
+        }
+
         adapter = ProjectAdapter(
-            datos.listaProyectos,
-            datos
-            )
+            proyectosColaborador.toMutableList(),
+            datos,
+            user,
+            onItemClick = { proyecto ->
+                val intent = Intent(this, DetallesProyectoActivity::class.java).apply {
+                    putExtra("proyecto", proyecto)
+                    putExtra("datos", datos)
+                    putExtra("user", user)
+                }
+                startActivity(intent)
+            })
+
+        val logo = findViewById<ImageButton>(R.id.logo)
+        logo.setOnClickListener {
+            val intent = Intent(this@PaginaPrincipalActivity, MisTareasActivity::class.java)
+            intent.putExtra("datos", datos)
+            intent.putExtra("user", user)
+            startActivity(intent)
+        }
+
 
         recyclerView.adapter = adapter
     }
-
-
-
-
-
-
 }
