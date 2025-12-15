@@ -10,10 +10,12 @@
     <!-- Botón con imagen -->
     <ImageButton
         android:id="@+id/logo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="right"
         android:layout_marginBottom="16dp"
+        android:paddingTop="10dp"
+        android:paddingRight="20dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
         android:src="@drawable/logo_user_ros" />
@@ -33,16 +35,10 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProjects"
         android:layout_width="match_parent"
+        android:padding="15dp"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="16dp" />
 
-    <!-- Botón para añadir tarjetas -->
-    <Button
-        android:id="@+id/btnAddCard"
-        android:text="@string/anadir_tarjeta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
 
 </LinearLayout>
