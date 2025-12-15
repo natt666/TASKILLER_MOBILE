@@ -2,6 +2,7 @@ package com.example.taskiller
 
 import Datos
 import Proyecto
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -64,17 +65,15 @@ class GraficosActivity : AppCompatActivity() {
         setupPieChart(entries, colors, proyecto?.Titulo)
 
         graficosbtnvolver.setOnClickListener {
-            val intent = intent
-            intent.putExtra("datos", datos)
-            intent.putExtra("user", user)
+            val resultIntent = Intent()
+            resultIntent.putExtra("datos", datos)
+            resultIntent.putExtra("user", user)
+            setResult(RESULT_OK, resultIntent)
             finish()
-            startActivity(intent)
         }
     }
 
-    private fun preparePieChartData(
-        estadoCounts: Map<Tarea.Estados, Int>
-    ): Pair<List<PieEntry>, List<Int>> {
+    private fun preparePieChartData(estadoCounts: Map<Tarea.Estados, Int>): Pair<List<PieEntry>, List<Int>> {
         val entries = mutableListOf<PieEntry>()
         val colors = mutableListOf<Int>()
 
@@ -95,7 +94,6 @@ class GraficosActivity : AppCompatActivity() {
 
         return entries to colors
     }
-
     private fun setupPieChart(entries: List<PieEntry>, colors: List<Int>, title: String?) {
         val dataSet = PieDataSet(entries, "").apply {
             this.colors = colors

@@ -19,11 +19,14 @@ fun Context.getDatos(): Datos? {
 
         val gson = GsonBuilder()
                 .registerTypeAdapter(Tarea.Prioridades::class.java, JsonDeserializer { json, _, _ ->
-                    when (json.asInt) {
-                        1 -> Tarea.Prioridades.BAJA
-                        2 -> Tarea.Prioridades.MEDIA
-                        3 -> Tarea.Prioridades.ALTA
-                        else -> Tarea.Prioridades.BAJA
+                    when (json.asString) {
+                        "BAJA" -> Tarea.Prioridades.BAJA
+                        "MEDIA" -> Tarea.Prioridades.MEDIA
+                        "ALTA" -> Tarea.Prioridades.ALTA
+                        "1" -> Tarea.Prioridades.BAJA
+                        "2" -> Tarea.Prioridades.MEDIA
+                        "3" -> Tarea.Prioridades.ALTA
+                        else -> "ERROR"
                     }
                 })
                 .registerTypeAdapter(Tarea.Estados::class.java, JsonDeserializer { json, _, _ ->
@@ -55,7 +58,7 @@ fun Context.getDatos(): Datos? {
 
 fun Context.guardarDatos(datos: Datos) {
     try {
-        val jsonDir = File(filesDir, "json")
+        val jsonDir = File(filesDir, "datajson")
         if (!jsonDir.exists()) {
             jsonDir.mkdirs()
         }

@@ -7,7 +7,7 @@
     <string-array name="idiomas">
         <item>Espanyol</item>
         <item>Anglés</item>
-        <item>Catalá</item>
+        <item>Català</item>
     </string-array>
     <string name="areaPersonal">Àrea Personal</string>
     <string name="PaginaPrincipalTxtViewProyectos">Projectes</string>

@@ -123,5 +123,6 @@ class LoginActivity : AppCompatActivity() {
         btnLoginIniciarSesion.text = getString(R.string.LoginIniciaSesion)
         txtBoxLoginUsuario.hint = getString(R.string.LoginNombreUsuario)
         txtBoxLoginContrasena.hint = getString(R.string.LoginContrasena)
+
     }
 }
