@@ -22,9 +22,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProjectAdapter
     private val projectList = mutableListOf<Proyecto>()
-
     private lateinit var datos: Datos
-
     private lateinit var user: Usuario
 
 
@@ -50,11 +48,16 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val userIdString = user.Id
 
+        val proyectosColaborador = datos.listaProyectos.filter { proyecto ->
+            proyecto.listaUsuarios.any { it == user.Id }
+        }
 
         adapter = ProjectAdapter(
-            datos.listaProyectos,
+            proyectosColaborador.toMutableList(),
             datos,
+            user,
             onItemClick = { proyecto ->
                 val intent = Intent(this, DetallesProyectoActivity::class.java).apply {
                     putExtra("proyecto", proyecto)
@@ -62,10 +65,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
                     putExtra("user", user)
                 }
                 startActivity(intent)
-                }
-
-
-            )
+            })
 
         val logo = findViewById<ImageButton>(R.id.logo)
         logo.setOnClickListener {
@@ -74,6 +74,7 @@ class PaginaPrincipalActivity : AppCompatActivity() {
             intent.putExtra("user", user)
             startActivity(intent)
         }
+
 
         recyclerView.adapter = adapter
     }
