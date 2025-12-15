@@ -34,4 +34,6 @@
     <string name="title_activity_graficos" translatable="false">GraficosActivity</string>
     <string name="horas_dedicadas">Horas Dedicadas:</string>
     <string name="descripci_n">Descripción:</string>
+    <string name="numero_de_tareas">Número de tareas:</string>
+    <string name="fecha_de_entrega">Fecha de entrega:</string>
 </resources>
