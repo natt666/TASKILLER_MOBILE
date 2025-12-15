@@ -38,7 +38,7 @@
 
         <!-- fecha de entrega (al lado del de tareas) -->
         <TextView
-            android:id="@+id/btnTaskCount"
+            android:id="@+id/txtViewTaskCount"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -48,13 +48,13 @@
 
         <!-- Contenedor de imágenes de usuarios (abajo a la derecha, al mismo nivel) -->
         <TextView
-            android:id="@+id/btnDeadline"
+            android:id="@+id/txtViewDeadline"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:text="dd/mm/yyyy"
-            app:layout_constraintStart_toEndOf="@+id/btnTaskCount"
+            app:layout_constraintStart_toEndOf="@+id/txtViewTaskCount"
             app:layout_constraintTop_toBottomOf="@+id/btnProjectName" />
 
         <LinearLayout

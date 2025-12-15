@@ -8,7 +8,7 @@ data class Proyecto(
     var FechaInicio: String = "",
     var FechaFinal: String = "",
     var Estado: Estados = Estados.Por_Comenzar,
-    var listaUsuarios: MutableList<UUID> = mutableListOf()
+    var listaUsuarios: MutableList<UUID> = mutableListOf(),
 ) : Serializable {
     enum class Estados {
         Por_Comenzar,

@@ -3,6 +3,7 @@ package com.example.taskiller
 import Datos
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,6 +14,8 @@ import com.example.taskiller.adapters.TaskAdapter
 import com.example.taskiller.models.Tarea
 import com.example.taskiller.models.TarjetaTarea
 import com.example.taskiller.models.Usuario
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class MisTareasActivity : AppCompatActivity() {
     private lateinit var datos: Datos
@@ -29,7 +32,6 @@ class MisTareasActivity : AppCompatActivity() {
         datos =intent.getSerializableExtra("datos") as Datos
         user =intent.getSerializableExtra("user") as Usuario
         val recyclerTareas = findViewById<RecyclerView>(R.id.rVTareas)
-        val btnVolver = findViewById<Button>(R.id.btnMisTareasVolver)
         recyclerTareas.layoutManager = LinearLayoutManager(this)
         val listaTareas = mutableListOf<Tarea>()
         for (tarea in datos.listaTareas) {
