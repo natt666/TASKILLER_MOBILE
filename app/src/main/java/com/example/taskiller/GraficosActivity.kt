@@ -1,5 +1,7 @@
 package com.example.taskiller
 
+import Datos
+import Proyecto
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import com.example.taskiller.models.Tarea
+import com.example.taskiller.models.Usuario
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
@@ -38,9 +41,9 @@ class GraficosActivity : AppCompatActivity() {
         tfBold = ResourcesCompat.getFont(this, R.font.montserrat_bold)!!
         tfMedium = ResourcesCompat.getFont(this, R.font.montserrat_medium)!!
 
-        val datos = getDatos()!!
-        val proyecto = datos.listaProyectos.random()
-        val user = datos.listaUsuarios.firstOrNull()
+        val datos = intent.getSerializableExtra("datos") as Datos
+        val proyecto = intent.getSerializableExtra("proyecto") as Proyecto
+        val user = intent.getSerializableExtra("user") as Usuario
         val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyecto?.Id }
 
         lblnombreproyecto.text = proyecto?.Titulo
