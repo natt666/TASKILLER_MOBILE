@@ -10,7 +10,10 @@
             "IdCreador": "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
             "listaUsuarios": [
                 "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
-                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
             ]
         },
         {
@@ -23,7 +26,11 @@
             "IdCreador": "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
             "listaUsuarios": [
                 "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
             ]
         },
         {
@@ -36,7 +43,11 @@
             "IdCreador": "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
             "listaUsuarios": [
                 "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a"
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
             ]
         },
         {
@@ -49,7 +60,11 @@
             "IdCreador": "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
             "listaUsuarios": [
                 "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
-                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
+                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
             ]
         },
         {
@@ -62,7 +77,12 @@
             "IdCreador": "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
             "listaUsuarios": [
                 "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
-                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
+                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
             ]
         },
         {
@@ -76,7 +96,8 @@
             "listaUsuarios": [
                 "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
                 "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
             ]
         },
         {
@@ -89,7 +110,8 @@
             "IdCreador": "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
             "listaUsuarios": [
                 "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
-                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
             ]
         },
         {
@@ -102,7 +124,13 @@
             "IdCreador": "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
             "listaUsuarios": [
                 "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+                "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b",
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
             ]
         },
         {
@@ -115,7 +143,15 @@
             "IdCreador": "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
             "listaUsuarios": [
                 "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-                "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"
+                "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+                "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+                "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"
             ]
         },
         {
@@ -129,7 +165,10 @@
             "listaUsuarios": [
                 "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
                 "c1a2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
             ]
         }
     ],
@@ -527,7 +566,7 @@
             "listaUsuarios": [
                 "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
             ],
-                "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
             "Estado": 2,
             "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
             "Subtareas": null,
