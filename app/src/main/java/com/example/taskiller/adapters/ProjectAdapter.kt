@@ -14,7 +14,8 @@ import java.time.format.DateTimeFormatter
 
 class ProjectAdapter(
     private val projects: MutableList<Proyecto>,
-    private val datos: Datos
+    private val datos: Datos,
+    private val onItemClick: (Proyecto) -> Unit
                     ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
     class ProjectViewHolder(view: View) : RecyclerView.ViewHolder(view) {

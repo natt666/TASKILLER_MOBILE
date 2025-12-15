@@ -42,11 +42,10 @@ class DetallesProyectoActivity : AppCompatActivity() {
             return false
         }
 
-        datos = datosObtenidos
+        datos = intent.getSerializableExtra("datos") as Datos
+        val proyectoEncontrado = intent.getSerializableExtra("proyecto") as Proyecto?
+        val usuarioEncontrado = intent.getSerializableExtra("user") as Usuario?
 
-        val idBuscado = UUID.fromString("f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c")
-        val proyectoEncontrado = datos.listaProyectos.firstOrNull { it.Id == idBuscado }
-        val usuarioEncontrado = datos.listaUsuarios.firstOrNull()
 
         if (proyectoEncontrado == null || usuarioEncontrado == null) {
             Toast.makeText(this, "No se ha encontrado el proyecto o el usuario", Toast.LENGTH_SHORT).show()
