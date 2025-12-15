@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="btnVolver">Tornar</string>
-    <string name="LoginIniciaSesion">Iniciar Sesió</string>
+    <string name="volver">Tornar</string>
+    <string name="LoginIniciaSesion">Iniciar Sessió</string>
     <string name="LoginNombreUsuario">Usuari</string>
     <string name="LoginContrasena">Contrasenya</string>
     <string-array name="idiomas">
@@ -30,4 +30,7 @@
         <item>Revisat</item>
         <item>Bloquejat</item>
     </string-array>
+    <string name="fecha_inicio_txt">Data d\'inici:</string>
+    <string name="horas_dedicadas">Hores dedicades:</string>
+    <string name="descripci_n">Descripció:</string>
 </resources>

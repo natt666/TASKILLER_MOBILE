@@ -13,49 +13,55 @@
         android:padding="16dp">
 
         <!-- Botón del nombre del proyecto -->
-        <Button
-            android:id="@+id/btnProjectName"
+        <TextView
+            android:id="@+id/txtProjectName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/nomProyectoTarjPagPrincipal"
             android:backgroundTint="@color/principal"
             android:textAllCaps="false"
+            android:maxWidth="285dp"
+            android:minHeight="70dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textStyle="bold"
+            android:textColor="@color/principal"
+            android:textSize="25sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/btnChart" />
+            app:layout_constraintEnd_toStartOf="@+id/btnChart"
+            />
 
         <!-- Botón del gráfico (arriba a la derecha) -->
         <ImageButton
             android:id="@+id/btnChart"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@android:drawable/ic_menu_report_image"
+            android:src="@drawable/piechart"
+            android:scaleType="fitCenter"
+            android:padding="5dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- número de tareas (abajo a la izquierda) -->
 
-        <!-- fecha de entrega (al lado del de tareas) -->
         <TextView
-            android:id="@+id/btnTaskCount"
+            android:id="@+id/txtViewTaskCount"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="num tareas"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnProjectName" />
+            app:layout_constraintTop_toBottomOf="@+id/txtProjectName" />
 
-        <!-- Contenedor de imágenes de usuarios (abajo a la derecha, al mismo nivel) -->
         <TextView
-            android:id="@+id/btnDeadline"
+            android:id="@+id/txtViewDeadline"
             android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
             android:text="dd/mm/yyyy"
-            app:layout_constraintStart_toEndOf="@+id/btnTaskCount"
-            app:layout_constraintTop_toBottomOf="@+id/btnProjectName" />
+            app:layout_constraintStart_toEndOf="@+id/txtViewTaskCount"
+            app:layout_constraintTop_toBottomOf="@+id/txtProjectName" />
 
         <LinearLayout
             android:id="@+id/layoutUserImages"
@@ -63,7 +69,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnProjectName"
+            app:layout_constraintTop_toBottomOf="@+id/txtProjectName"
             app:layout_constraintEnd_toEndOf="parent">
 
 

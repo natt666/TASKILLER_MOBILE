@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:id="@+id/main"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_graficos"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".GraficosActivity"
+    android:layout_gravity="center"
 
-    <TextView
-        android:id="@+id/lblGraficos"
+    >
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/graficos"
-        android:textStyle="bold"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:textSize="@dimen/txtTitulo" />
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnCount="1"
-        android:rowCount="3"
-        android:padding="8dp">
-
-        <Button
-            android:id="@+id/grf1"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:background="@drawable/boton_volver"
-            android:text="GRÁFICO: BARRA PROGRESO PROYECTO"
-            android:textSize="30sp"
-            app:backgroundTint="@null"/>
+            android:layout_margin="30dp"
+            >
 
-        <Button
-            android:id="@+id/grf2"
-            android:layout_width="wrap_content"
+            <ImageButton
+                android:id="@+id/graficosbtnvolver"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/flecha_hacia_atras">
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/lblGraficosNombreProyecto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:maxWidth="250dp"
+                android:text="Gráficos_Proyecto"
+                android:textSize="30sp">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            android:background="@drawable/boton_volver"
-            android:text="GRÁFICO: PIZZA PROGRESO TAREAS PROYECTO"
-            android:textSize="30sp"
-            app:backgroundTint="@null"/>
+            android:gravity="center_horizontal"
+            >
 
-        <Button
-            android:id="@+id/btnVolver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:layout_marginTop="60dp"
-            android:layout_gravity="center"
-            android:background="@drawable/boton_volver"
-            android:text="@string/btnVolver"
-            android:textSize="30sp"
-            app:backgroundTint="@null"/>
+            <com.github.mikephil.charting.charts.PieChart
+                android:padding="120dp"
+                android:id="@+id/pieChart"
+                android:layout_width="370dp"
+                android:layout_height="350dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
-    </GridLayout>
 
 </LinearLayout>

@@ -1,9 +1,12 @@
 package com.example.taskiller
 
+import Datos
 import Proyecto
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +14,17 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.taskiller.models.Usuario
+
 
 class PaginaPrincipalActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProjectAdapter
     private val projectList = mutableListOf<Proyecto>()
+    private lateinit var datos: Datos
+    private lateinit var user: Usuario
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +38,9 @@ class PaginaPrincipalActivity : AppCompatActivity() {
             insets
         }
 
+        datos = intent.getSerializableExtra("datos") as Datos
+        user = intent.getSerializableExtra("user") as Usuario
+
         setupRecyclerView()
     }
 
@@ -37,26 +48,34 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        val userIdString = user.Id
+
+        val proyectosColaborador = datos.listaProyectos.filter { proyecto ->
+            proyecto.listaUsuarios.any { it == user.Id }
+        }
+
         adapter = ProjectAdapter(
-            projectList,
-            onProjectClick = { Proyecto ->
-                    Toast.makeText(this, "Projecte: ${Proyecto.Titulo}", Toast.LENGTH_SHORT).show()
-            },
-            onChartClick = { Proyecto ->
-                Toast.makeText(this, "Gràfic de: ${Proyecto.Titulo}", Toast.LENGTH_SHORT).show()
-            },
-            onTaskCountClick = { Proyecto ->
-                Toast.makeText(this, "${Proyecto.Titulo} tasques", Toast.LENGTH_SHORT).show()
-            },
-            onDeadlineClick = { project ->
-                Toast.makeText(this, "Data límit: ${Proyecto.Estados.Por_Comenzar}", Toast.LENGTH_SHORT).show()
-            }
-                                )
+            proyectosColaborador.toMutableList(),
+            datos,
+            user,
+            onItemClick = { proyecto ->
+                val intent = Intent(this, DetallesProyectoActivity::class.java).apply {
+                    putExtra("proyecto", proyecto)
+                    putExtra("datos", datos)
+                    putExtra("user", user)
+                }
+                startActivity(intent)
+            })
+
+        val logo = findViewById<ImageButton>(R.id.logo)
+        logo.setOnClickListener {
+            val intent = Intent(this@PaginaPrincipalActivity, MisTareasActivity::class.java)
+            intent.putExtra("datos", datos)
+            intent.putExtra("user", user)
+            startActivity(intent)
+        }
+
 
         recyclerView.adapter = adapter
     }
-
-
-
-
 }

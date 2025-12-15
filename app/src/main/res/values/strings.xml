@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">TASKILLER</string>
-    <string name="btnVolver">Volver</string>
+    <string name="app_name" translatable="false">TASKILLER</string>
+    <string name="volver">Volver</string>
     <string name="LoginIniciaSesion">Inicia Sesión</string>
-    <string name="LoginBotonIniciarSesion">Iniciar Sesión</string>
     <string name="LoginNombreUsuario">Usuario</string>
     <string name="LoginContrasena">Contraseña</string>
     <string-array name="idiomas">
@@ -10,8 +9,7 @@
         <item>Inglés</item>
         <item>Catalán</item>
     </string-array>
-    <string name="volver">Volver</string>
-    <string name="areaPersonal">Area Personal</string>
+    <string name="areaPersonal">Área Personal</string>
     <string name="PaginaPrincipalTxtViewProyectos">Proyectos</string>
     <string name="tarea">Tarea</string>
     <string name="inicio">Inicio:</string>
@@ -25,8 +23,7 @@
     <string name="usuarios">Usuarios:</string>
     <string name="prioridad">prioridad</string>
     <string name="nombre_proyecto">Nombre_Proyecto</string>
-    <string name="fecha_inicio_txt" translatable="false">Fecha inicio:</string>
-    <string name="descripcion" translatable="false">Descripción:</string>
+    <string name="fecha_inicio_txt">Fecha inicio:</string>
     <string-array name="estados">
         <item>Por comenzar</item>
         <item>En progreso</item>
@@ -34,6 +31,7 @@
         <item>Revisado</item>
         <item>Bloqueado</item>
     </string-array>
-    <string name="title_activity_graficos">GraficosActivity</string>
+    <string name="title_activity_graficos" translatable="false">GraficosActivity</string>
     <string name="horas_dedicadas">Horas Dedicadas:</string>
+    <string name="descripci_n">Descripción:</string>
 </resources>
