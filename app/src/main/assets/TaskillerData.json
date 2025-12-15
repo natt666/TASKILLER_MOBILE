@@ -609,7 +609,7 @@
             "Id": "e0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
             "Titulo": "Formación a usuarios finales",
             "Descripcion": "Sesiones de formación para el equipo interno.",
-            "Prioridad": 1,
+            "Prioridad": 2,
             "FechaInicio": "2025-05-21T00:00:00",
             "FechaFinal": "2025-06-01T00:00:00",
             "listaUsuarios": [
