@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TASKILLER</string>
-    <string name="btnVolver">Return</string>
+    <string name="volver">Return</string>
     <string name="LoginIniciaSesion">Login</string>
     <string name="LoginNombreUsuario">User</string>
     <string name="LoginContrasena">Password</string>
@@ -22,7 +21,7 @@
     <string name="graficos">Project graphics:</string>
     <string name="subtareas">Subtasks</string>
     <string name="usuarios">Users:</string>
-    <string name="prioridad">Priority:</string>
+    <string name="prioridad">priority</string>
     <string name="nombre_proyecto">Project_name</string>
     <string-array name="estados">
         <item>To do</item>
@@ -31,4 +30,7 @@
         <item>Revised</item>
         <item>Blocked</item>
     </string-array>
+    <string name="fecha_inicio_txt">Start date:</string>
+    <string name="horas_dedicadas">Dedicated hours:</string>
+    <string name="descripci_n">Description:</string>
 </resources>
