@@ -30,6 +30,10 @@ class DetalleTareaActivity : AppCompatActivity() {
     private lateinit var txtTotal: TextView
     private lateinit var btnVolver: ImageButton
 
+    private lateinit var spinnerEstado: Spinner
+    private var ignorarEventoSpinner: Boolean = false
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -52,7 +56,9 @@ class DetalleTareaActivity : AppCompatActivity() {
         txtTotal = findViewById(R.id.total)
         btnVolver = findViewById(R.id.btnDetalleTareaVolver)
 
+        spinnerEstado = findViewById(R.id.spinnerDetalleTareaEstado)
         configurarSpinnerEstado()
+
 
         findViewById<LinearLayout>(R.id.layoutDetalleTareaTiempo).setOnClickListener {
             mostrarDialogoTiempo()
@@ -201,24 +207,47 @@ class DetalleTareaActivity : AppCompatActivity() {
     }
 
     fun configurarSpinnerEstado() {
-        val spinnerEstado = findViewById<Spinner>(R.id.spinnerDetalleTareaEstado)
-
         val labels = Tarea.Estados.values().map {
             when (it) {
                 Tarea.Estados.Por_Comenzar -> "Por comenzar"
-                Tarea.Estados.En_Progreso -> "En progreso"
-                Tarea.Estados.Entregado -> "Entregado"
-                Tarea.Estados.Revisado -> "Revisado"
-                Tarea.Estados.Bloqueado -> "Bloqueado"
+                Tarea.Estados.En_Progreso  -> "En progreso"
+                Tarea.Estados.Entregado    -> "Entregado"
+                Tarea.Estados.Revisado     -> "Revisado"
+                Tarea.Estados.Bloqueado    -> "Bloqueado"
             }
         }
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerEstado.adapter = adapter
+
+        spinnerEstado.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: android.view.View?, position: Int, id: Long) {
+                if (ignorarEventoSpinner) {
+                    return
+                }
+
+                val nuevoEstado = Tarea.Estados.values()[position]
+                val tareaEnDatos = datos.listaTareas.firstOrNull { it.Id == tareaId }
+                if (tareaEnDatos != null) {
+                    if (tareaEnDatos.Estado != nuevoEstado) {
+                        tareaEnDatos.Estado = nuevoEstado
+                        guardarDatos(datos)
+                    }
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Nada
+            }
+        }
     }
 
+
     fun MostarEstado(tarea: Tarea) {
-        findViewById<Spinner>(R.id.spinnerDetalleTareaEstado).setSelection(tarea.Estado.ordinal)
+        ignorarEventoSpinner = true
+        spinnerEstado.setSelection(tarea.Estado.ordinal)
+        ignorarEventoSpinner = false
     }
+
 }

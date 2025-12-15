@@ -2,13 +2,12 @@ package com.example.taskiller
 
 import Datos
 import Proyecto
-import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -16,17 +15,52 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.taskiller.models.Usuario
 
-
 class PaginaPrincipalActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProjectAdapter
-    private val projectList = mutableListOf<Proyecto>()
+
     private lateinit var datos: Datos
     private lateinit var user: Usuario
 
+    private val proyectosColaborador: MutableList<Proyecto> = mutableListOf()
 
-    @SuppressLint("MissingInflatedId")
+    private val detallesProyectoLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                val datosDevueltos = data?.getSerializableExtra("datos") as? Datos
+                val userDevuelto = data?.getSerializableExtra("user") as? Usuario
+
+                if (datosDevueltos != null) {
+                    datos = datosDevueltos
+                }
+                if (userDevuelto != null) {
+                    user = userDevuelto
+                }
+                adapter.updateContext(datos, user)
+                refrescarLista()
+            }
+        }
+
+    private val misTareasLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                val datosDevueltos = data?.getSerializableExtra("datos") as? Datos
+                val userDevuelto = data?.getSerializableExtra("user") as? Usuario
+
+                if (datosDevueltos != null) {
+                    datos = datosDevueltos
+                }
+                if (userDevuelto != null) {
+                    user = userDevuelto
+                }
+                adapter.updateContext(datos, user)
+                refrescarLista()
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,20 +76,16 @@ class PaginaPrincipalActivity : AppCompatActivity() {
         user = intent.getSerializableExtra("user") as Usuario
 
         setupRecyclerView()
+        refrescarLista()
+        setupBotones()
     }
 
     private fun setupRecyclerView() {
         recyclerView = findViewById(R.id.recyclerViewProjects)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val userIdString = user.Id
-
-        val proyectosColaborador = datos.listaProyectos.filter { proyecto ->
-            proyecto.listaUsuarios.any { it == user.Id }
-        }
-
         adapter = ProjectAdapter(
-            proyectosColaborador.toMutableList(),
+            proyectosColaborador,
             datos,
             user,
             onItemClick = { proyecto ->
@@ -64,18 +94,31 @@ class PaginaPrincipalActivity : AppCompatActivity() {
                     putExtra("datos", datos)
                     putExtra("user", user)
                 }
-                startActivity(intent)
-            })
-
-        val logo = findViewById<ImageButton>(R.id.logo)
-        logo.setOnClickListener {
-            val intent = Intent(this@PaginaPrincipalActivity, MisTareasActivity::class.java)
-            intent.putExtra("datos", datos)
-            intent.putExtra("user", user)
-            startActivity(intent)
-        }
-
+                detallesProyectoLauncher.launch(intent)
+            }
+        )
 
         recyclerView.adapter = adapter
+    }
+
+    private fun setupBotones() {
+        val logo = findViewById<ImageButton>(R.id.logo)
+        logo.setOnClickListener {
+            val intent = Intent(this, MisTareasActivity::class.java).apply {
+                putExtra("datos", datos)
+                putExtra("user", user)
+            }
+            misTareasLauncher.launch(intent)
+        }
+    }
+
+    private fun refrescarLista() {
+        proyectosColaborador.clear()
+        proyectosColaborador.addAll(
+            datos.listaProyectos.filter { proyecto ->
+                proyecto.listaUsuarios.any { it == user.Id }
+            }
+        )
+        adapter.notifyDataSetChanged()
     }
 }

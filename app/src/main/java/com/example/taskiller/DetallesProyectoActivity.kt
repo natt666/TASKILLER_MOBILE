@@ -26,16 +26,6 @@ class DetallesProyectoActivity : AppCompatActivity() {
     private lateinit var adapter: MyTaskAdapter
     private val tareasDelProyecto: MutableList<Tarea> = mutableListOf()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_detalles_proyecto)
-
-        if (initData()) {
-            initUi()
-        }
-    }
-
     private val detalleLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
@@ -55,6 +45,16 @@ class DetallesProyectoActivity : AppCompatActivity() {
                 adapter.notifyDataSetChanged()
             }
         }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_detalles_proyecto)
+
+        if (initData()) {
+            initUi()
+        }
+    }
 
     private fun initData(): Boolean {
         val proyectoEncontrado = intent.getSerializableExtra("proyecto") as? Proyecto
