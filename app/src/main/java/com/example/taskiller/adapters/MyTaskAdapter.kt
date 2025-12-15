@@ -37,33 +37,44 @@ class MyTaskAdapter(
         val context = holder.itemView.context
 
         val textoEstado: String
-        val colorId: Int
 
         when (tarea.Estado) {
             Tarea.Estados.Por_Comenzar -> {
                 textoEstado = "Por comenzar"
-                colorId = R.color.Por_comenzar
             }
             Tarea.Estados.En_Progreso -> {
                 textoEstado = "En progreso"
-                colorId = R.color.En_progreso
             }
             Tarea.Estados.Entregado -> {
                 textoEstado = "Entregado"
-                colorId = R.color.Entregado
             }
             Tarea.Estados.Revisado -> {
                 textoEstado = "Revisado"
-                colorId = R.color.Revisado
             }
             Tarea.Estados.Bloqueado -> {
                 textoEstado = "Bloqueado"
-                colorId = R.color.Bloqueado
+            }
+        }
+
+        when (tarea.Estado) {
+            Tarea.Estados.Por_Comenzar -> {
+                holder.txtEstado.setBackgroundResource(R.drawable.bg_estado_por_comenzar)
+            }
+            Tarea.Estados.En_Progreso -> {
+                holder.txtEstado.setBackgroundResource(R.drawable.bg_estado_en_progreso)
+            }
+            Tarea.Estados.Entregado -> {
+                holder.txtEstado.setBackgroundResource(R.drawable.bg_estado_entregado)
+            }
+            Tarea.Estados.Revisado -> {
+                holder.txtEstado.setBackgroundResource(R.drawable.bg_estado_revisado)
+            }
+            Tarea.Estados.Bloqueado -> {
+                holder.txtEstado.setBackgroundResource(R.drawable.bg_estado_bloqueado)
             }
         }
 
         holder.txtEstado.text = textoEstado
-        holder.txtEstado.setTextColor(ContextCompat.getColor(context, colorId))
 
 
 

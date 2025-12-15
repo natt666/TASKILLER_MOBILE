@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btnVolver">Tornar</string>
+    <string name="LoginIniciaSesion">Iniciar Sesió</string>
+    <string name="LoginNombreUsuario">Usuari</string>
+    <string name="LoginContrasena">Contrasenya</string>
+    <string-array name="idiomas">
+        <item>Espanyol</item>
+        <item>Anglés</item>
+        <item>Catalá</item>
+    </string-array>
+    <string name="areaPersonal">Àrea Personal</string>
+    <string name="PaginaPrincipalTxtViewProyectos">Projectes</string>
+    <string name="tarea">Tasques</string>
+    <string name="inicio">Inici:</string>
+    <string name="fin">Fi:</string>
+    <string name="filtro">Filtre</string>
+    <string name="anadir_tarjeta">Afegir Tarjeta</string>
+    <string name="nomProyectoTarjPagPrincipal">Nom del Projecte</string>
+    <string name="mis_tareas">Les meves Tasques</string>
+    <string name="graficos">Gràfics del projecte:</string>
+    <string name="subtareas">Subtasques</string>
+    <string name="usuarios">Usuaris:</string>
+    <string name="prioridad">prioritat</string>
+    <string name="nombre_proyecto">Nom_projecte</string>
+    <string-array name="estados">
+        <item>A començar</item>
+        <item>En progrés</item>
+        <item>Entregat</item>
+        <item>Revisat</item>
+        <item>Bloquejat</item>
+    </string-array>
+</resources>

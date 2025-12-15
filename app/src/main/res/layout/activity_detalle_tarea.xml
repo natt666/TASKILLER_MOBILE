@@ -6,77 +6,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
-    android:padding="@dimen/paddingList">
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingBottom="@dimen/paddingList">
+        android:layout_marginTop="8dp">
 
         <ImageButton
             android:id="@+id/btnDetalleTareaVolver"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="4dp"
             android:scaleType="fitCenter"
             android:src="@drawable/flecha_hacia_atras"
-            android:contentDescription="@string/volver" />
+            android:contentDescription="@string/btnVolver" />
 
-        <TextView
+        <View
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/principal"
-            android:text="@string/tarea"
-            android:textSize="@dimen/txtTitulo"
-            android:textStyle="bold" />
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-        <ImageView
-            android:id="@+id/imgDetalleTareaLogo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="8dp"
+        <ImageButton
+            android:id="@+id/btnDetallesTareaAreaPersonal"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo_user_ros" />
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="@dimen/paddingList"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="8dp">
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="4dp">
 
         <TextView
             android:id="@+id/lblDetalleTareaNombreTarea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre de tarea"
+            android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/principal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
             android:textSize="@dimen/txtSubtitulo"
             android:textStyle="bold"
-            android:paddingBottom="4dp" />
+            android:paddingBottom="2dp" />
 
         <Spinner
             android:id="@+id/spinnerDetalleTareaEstado"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:minHeight="48dp"
-            android:layout_marginTop="4dp"
-            android:background="@drawable/bg_spinner_estado"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp" />
-
-
+            android:layout_height="40dp"
+            android:minHeight="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_spinner_estado" />
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,56 +79,90 @@
         android:orientation="vertical"
         android:paddingTop="@dimen/paddingList">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/paddingDiscriptionTarea"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="4dp">
 
             <TextView
                 android:id="@+id/lblDetalleTareaDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Descripción"
+                android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
-                android:paddingBottom="4dp" />
+                android:paddingBottom="2dp" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/layoutDetalleTareaTiempo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/horas_dedicadas"
+                android:textSize="@dimen/txtNormal"
+                android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
+                android:textColor="@color/principal" />
+
+            <TextView
+                android:id="@+id/total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0h 0m"
+                android:textSize="@dimen/txtNormal"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="8dp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:text="@string/subtareas"
+            android:fontFamily="@font/montserrat_medium"
             android:textSize="@dimen/txtNormal"
             android:textStyle="bold"
-            android:textColor="@color/principal"/>
-
+            android:textColor="@color/principal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDetalleTareaSubtareas"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="@dimen/paddingList"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             tools:listitem="@layout/item_mi_tarea" />
-
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
             android:text="@string/usuarios"
             android:textSize="@dimen/txtNormal"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
             android:textStyle="bold"
+            android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/principal"/>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDetalleTareaUsuariosAsignado"
@@ -142,9 +170,12 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:background="@drawable/bg_tarea_rounded"
-            android:padding="@dimen/paddingList"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="8dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="4dp"
             tools:listitem="@layout/item_usuario" />
     </LinearLayout>
 
@@ -154,15 +185,16 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingTop="@dimen/paddingList"
-        android:layout_marginTop="4dp">
+        android:layout_marginTop="2dp">
 
-        <!-- Inicio -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:paddingEnd="8dp">
+            android:paddingEnd="8dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -170,18 +202,20 @@
                 android:text="@string/inicio"
                 android:textSize="@dimen/txtNormal"
                 android:textStyle="bold"
-                android:textColor="@color/principal" />
+                android:textColor="@color/principal"
+                android:fontFamily="@font/montserrat_medium"/>
 
             <TextView
                 android:id="@+id/lblDetalleTareaFechaInicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12/10/2025"
+                android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
-                android:paddingTop="2dp" />
+                android:paddingTop="2dp"
+                android:paddingBottom="8dp"/>
         </LinearLayout>
 
-        <!-- Fin -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -195,6 +229,7 @@
                 android:text="@string/fin"
                 android:textSize="@dimen/txtNormal"
                 android:textStyle="bold"
+                android:fontFamily="@font/montserrat_medium"
                 android:textColor="@color/principal" />
 
             <TextView
@@ -202,10 +237,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="12/10/2025"
+                android:fontFamily="@font/montserrat_medium"
                 android:textSize="@dimen/txtNormal"
-                android:paddingTop="2dp" />
+                android:paddingTop="2dp"
+                android:paddingBottom="8dp"/>
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

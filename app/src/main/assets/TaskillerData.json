@@ -148,7 +148,8 @@
             "Subtareas": [
                 "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
                 "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d"
-            ]
+            ],
+            "DuracionMinutos": 120
         },
         {
             "Id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
@@ -163,7 +164,8 @@
             "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
             "Estado": 1,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 200
         },
         {
             "Id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
@@ -178,7 +180,8 @@
             "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 230
         },
         {
             "Id": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
@@ -195,7 +198,8 @@
             "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 110
         },
         {
             "Id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
@@ -210,7 +214,8 @@
             "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 280
         },
         {
             "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
@@ -225,7 +230,8 @@
             "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
             "Estado": 4,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 380
         },
         {
             "Id": "3f1a2e4c-5b6d-7c8f-9a0b-1d2e3f4a5b6c",
@@ -240,7 +246,8 @@
             "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 400
         },
         {
             "Id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9b",
@@ -255,7 +262,8 @@
             "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 100
         },
         {
             "Id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0c",
@@ -270,7 +278,8 @@
             "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
             "Estado": 4,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 120
         },
         {
             "Id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1d",
@@ -285,7 +294,8 @@
             "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
             "Estado": 1,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 110
         },
         {
             "Id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
@@ -300,7 +310,8 @@
             "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 50
         },
         {
             "Id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
@@ -317,7 +328,8 @@
             "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 65
         },
         {
             "Id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
@@ -332,7 +344,8 @@
             "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 40
         },
         {
             "Id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
@@ -347,7 +360,8 @@
             "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
             "Estado": 3,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 300
         },
         {
             "Id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
@@ -362,7 +376,8 @@
             "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 400
         },
         {
             "Id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
@@ -380,7 +395,8 @@
             "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 300
         },
         {
             "Id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
@@ -396,7 +412,8 @@
             "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
             "Estado": 3,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 270
         },
         {
             "Id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
@@ -411,7 +428,8 @@
             "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 190
         },
         {
             "Id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
@@ -428,7 +446,8 @@
             "IdProyecto": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 210
         },
         {
             "Id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
@@ -443,7 +462,8 @@
             "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
             "Estado": 1,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 110
         },
         {
             "Id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
@@ -458,7 +478,8 @@
             "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 50
         },
         {
             "Id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
@@ -475,7 +496,8 @@
             "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
             "Estado": 3,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 210
         },
         {
             "Id": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
@@ -490,7 +512,8 @@
             "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
             "Estado": 1,
             "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 410
         },
         {
             "Id": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
@@ -505,7 +528,8 @@
                 "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
             "Estado": 2,
             "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 190
         },
         {
             "Id": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
@@ -520,7 +544,8 @@
             "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
             "Estado": 1,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 200
         },
         {
             "Id": "da1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
@@ -536,7 +561,8 @@
             "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
             "Estado": 2,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 500
         },
         {
             "Id": "e0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
@@ -552,7 +578,8 @@
             "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 420
         },
         {
             "Id": "db2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
@@ -567,7 +594,8 @@
             "IdProyecto": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
             "Estado": 0,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 300
         },
         {
             "Id": "dc3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
@@ -582,7 +610,8 @@
             "IdProyecto": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
             "Estado": 1,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 230
         },
         {
             "Id": "aabdc3b3-fba7-42b4-8e3b-e79626a82d43",
@@ -598,7 +627,8 @@
             "IdProyecto": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
             "Estado": 3,
             "IdTareaPadre": null,
-            "Subtareas": null
+            "Subtareas": null,
+            "DuracionMinutos": 500
         }
     ],
     "listaUsuarios": [

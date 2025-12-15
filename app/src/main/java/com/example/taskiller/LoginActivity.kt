@@ -1,25 +1,25 @@
 package com.example.taskiller
+
 import Datos
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.google.gson.Gson
-import java.io.File
-import java.io.FileReader
+import java.util.Locale
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var txtViewLoginTitulo: TextView
+
+    private lateinit var btnLoginIniciarSesion: Button
+    private lateinit var txtBoxLoginUsuario: EditText
+    private lateinit var txtBoxLoginContrasena: EditText
+    private lateinit var spinner: Spinner
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        cargarIdioma()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
@@ -32,51 +32,96 @@ class LoginActivity : AppCompatActivity() {
 
         val datos = getDatos()
 
+        txtViewLoginTitulo = findViewById(R.id.txtViewLoginTitulo)
+        btnLoginIniciarSesion = findViewById(R.id.btnLoginIniciarSesion)
+        txtBoxLoginUsuario = findViewById(R.id.txtBoxLoginUsuario)
+        txtBoxLoginContrasena = findViewById(R.id.txtBoxLoginContrasena)
+        spinner = findViewById(R.id.spinnerLoginIdiomas)
 
-        val btnLoginIniciarSesion = findViewById<Button>(R.id.btnLoginIniciarSesion)
-        val txtBoxLoginUsuario = findViewById<EditText>(R.id.txtBoxLoginUsuario)
-        val txtBoxLoginContrasena = findViewById<EditText>(R.id.txtBoxLoginContrasena)
-
-        // 🔹 Paso 1: Buscar el Spinner del XML
-        val spinner = findViewById<Spinner>(R.id.spinnerLoginIdiomas)
-
-        // 🔹 Paso 2: Crear el adaptador con el array de strings del archivo strings.xml
         val adapter = ArrayAdapter.createFromResource(
             this,
-            R.array.idiomas, // el nombre del string-array del XML
-            android.R.layout.simple_spinner_item // diseño simple del ítem
-                                                     )
-
-        // 🔹 Paso 3: Asignar diseño al desplegable
+            R.array.idiomas,
+            android.R.layout.simple_spinner_item
+        )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        // 🔹 Paso 4: Enlazar el adaptador al Spinner
         spinner.adapter = adapter
 
-        // 🔹 Paso 5 (opcional): Mostrar un mensaje con el idioma seleccionado
+        val prefs = getSharedPreferences("configuracion", MODE_PRIVATE)
+        val idiomaGuardado = prefs.getString("idioma", "es")
+        spinner.setSelection(
+            when (idiomaGuardado) {
+                "es" -> 0
+                "en-GB" -> 1
+                "ca" -> 2
+                else -> 0
+            }
+        )
+
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val idioma = parent.getItemAtPosition(position).toString()
-                Toast.makeText(applicationContext, "Idioma: $idioma", Toast.LENGTH_SHORT).show()
+            private var primerInicializado = true
+            override fun onItemSelected(parent: AdapterView<*>, view: android.view.View?, position: Int, id: Long) {
+                if (primerInicializado) {
+                    primerInicializado = false
+                    return
+                }
+                val idioma = when (position) {
+                    0 -> "default"
+                    1 -> "en-GB"
+                    2 -> "ca"
+                    else -> "default"
+                }
+                guardarIdioma(idioma)
+                aplicarLocale(idioma)
+                actualizarTextos()
             }
 
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                // No hace falta poner nada aquí yey
-            }
+            override fun onNothingSelected(parent: AdapterView<*>) {}
         }
 
         btnLoginIniciarSesion.setOnClickListener {
-
             for (u in datos!!.listaUsuarios) {
                 if (u.Mail == txtBoxLoginUsuario.text.toString() &&
                     u.Contrasena == txtBoxLoginContrasena.text.toString()) {
-                        val intent = Intent(this, PaginaPrincipalActivity::class.java)
-                        intent.putExtra("datos", datos)
-                        intent.putExtra("user", u)
-                        startActivity(intent)
-
+                    val intent = Intent(this, MisTareasActivity::class.java)
+                    intent.putExtra("datos", datos)
+                    intent.putExtra("user", u)
+                    startActivity(intent)
                 }
             }
         }
+        actualizarTextos()
+    }
+
+    private fun guardarIdioma(idioma: String) {
+        val prefs = getSharedPreferences("configuracion", MODE_PRIVATE)
+        prefs.edit().putString("idioma", idioma).apply()
+    }
+
+    private fun aplicarLocale(idioma: String) {
+        val locale: Locale = when (idioma) {
+            "en-GB" -> Locale("en", "GB")
+            "es" -> Locale("default")
+            "ca" -> Locale("ca")
+            else -> Locale("es")
+        }
+
+        Locale.setDefault(locale)
+        val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+    }
+
+
+    private fun cargarIdioma() {
+        val prefs = getSharedPreferences("configuracion", MODE_PRIVATE)
+        val idioma = prefs.getString("idioma", "es") ?: "es"
+        aplicarLocale(idioma)
+    }
+
+    private fun actualizarTextos() {
+        txtViewLoginTitulo.text = getString(R.string.LoginIniciaSesion)
+        btnLoginIniciarSesion.text = getString(R.string.LoginIniciaSesion)
+        txtBoxLoginUsuario.hint = getString(R.string.LoginNombreUsuario)
+        txtBoxLoginContrasena.hint = getString(R.string.LoginContrasena)
     }
 }

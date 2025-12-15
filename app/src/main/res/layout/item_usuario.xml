@@ -18,6 +18,7 @@
         <TextView
             android:id="@+id/txtItemUsuario"
             android:layout_width="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
             android:layout_height="wrap_content"
             android:text="NombreUsuario"
             android:textStyle="bold"

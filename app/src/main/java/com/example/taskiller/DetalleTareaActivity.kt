@@ -15,6 +15,9 @@ import com.example.taskiller.models.Usuario
 import Datos
 import android.content.Intent
 import android.widget.ArrayAdapter
+import android.widget.ImageButton
+import android.widget.LinearLayout
+import android.widget.NumberPicker
 import android.widget.Spinner
 import com.google.gson.Gson
 import java.io.File
@@ -24,8 +27,9 @@ import java.time.format.DateTimeFormatter
 import java.util.UUID
 
 class DetalleTareaActivity : AppCompatActivity() {
-    val tareaId = "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b"
     private lateinit var listaTareas: List<Tarea>
+    private var horas = 0
+    private var minutos = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +44,22 @@ class DetalleTareaActivity : AppCompatActivity() {
         val datos = intent.getSerializableExtra("datos") as Datos
         listaTareas = datos.listaTareas
         val usuarios = datos.listaUsuarios
-
+        val btnVolver = findViewById<ImageButton>(R.id.btnDetalleTareaVolver)
 
         val tareaActual = intent.getSerializableExtra("tarea") as Tarea
         val user = intent.getSerializableExtra("user") as Usuario
+
+        val txtTotal = findViewById<TextView>(R.id.total)
+        val totalMin = tareaActual.DuracionMinutos
+        horas = totalMin / 60
+        minutos = totalMin % 60
+
+        txtTotal.text = "${horas}h ${minutos}m"
+
+        val layoutTiempo = findViewById<LinearLayout>(R.id.layoutDetalleTareaTiempo)
+        layoutTiempo.setOnClickListener {
+            mostrarDialogoTiempo(txtTotal, tareaActual, datos)
+        }
 
         val usuariosEnTarea = usuarios.filter { it.Id in tareaActual.listaUsuarios } ?: return
         configurarSpinnerEstado()
@@ -54,7 +70,51 @@ class DetalleTareaActivity : AppCompatActivity() {
         MostarDescripcion(tareaActual)
         MostraRecyclerViewSubtarea(tareaActual, datos, user)
         MostarEstado(tareaActual)
+
+        btnVolver.setOnClickListener {
+            finish()
+        }
     }
+
+    private fun mostrarDialogoTiempo(txtTotal: TextView, tareaActual: Tarea, datos: Datos) {
+        val dialogView = layoutInflater.inflate(R.layout.dialog_tiempo_tarea, null)
+
+        val npHoras = dialogView.findViewById<NumberPicker>(R.id.npHoras)
+        val npMinutos = dialogView.findViewById<NumberPicker>(R.id.npMinutos)
+
+        npHoras.minValue = 0
+        npHoras.maxValue = 24
+        npMinutos.minValue = 0
+        npMinutos.maxValue = 59
+
+        val totalMin = tareaActual.DuracionMinutos
+        val currentHoras = totalMin / 60
+        val currentMinutos = totalMin % 60
+
+        npHoras.value = currentHoras
+        npMinutos.value = currentMinutos
+
+        androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle(getString(R.string.horas_dedicadas))
+            .setView(dialogView)
+            .setPositiveButton(android.R.string.ok) { _, _ ->
+                val h = npHoras.value
+                val m = npMinutos.value
+                val duracionMinutos = h * 60 + m
+
+                tareaActual.DuracionMinutos = duracionMinutos
+
+                horas = h
+                minutos = m
+                txtTotal.text = "${h}h ${m}m"
+
+                guardarDatos(datos)
+            }
+            .setNegativeButton(android.R.string.cancel, null)
+            .show()
+    }
+
+
 
     fun MostraRecyclerViewUsuario(usuarios: List<Usuario>) {
         val rvDetalleTareaUsuarioAsignado = findViewById<RecyclerView>(R.id.rvDetalleTareaUsuariosAsignado)
@@ -158,25 +218,4 @@ class DetalleTareaActivity : AppCompatActivity() {
         spinnerEstado.setSelection(tarea.Estado.ordinal)
     }
 
-
-    fun getDatos(): Datos? {
-        return try {
-            val jsonFile = File(filesDir, "json/TaskillerData.json")
-
-            if (!jsonFile.exists()) {
-                Log.e("LoginActivity", "Archivo JSON no encontrado: ${jsonFile.absolutePath}")
-                return null
-            }
-
-            val gson = Gson()
-            FileReader(jsonFile).use { reader ->
-                gson.fromJson(reader, Datos::class.java)
-            }
-
-        } catch (e: Exception) {
-            Log.e("LoginActivity", "Error leyendo JSON", e)
-            null
-        }
-
-    }
 }
