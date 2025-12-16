@@ -6,17 +6,20 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.taskiller.MyTaskAdapter
 import com.example.taskiller.R
 import com.example.taskiller.models.Tarea
+import com.example.taskiller.models.Usuario
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 
 class TaskAdapter(
+    private val user: Usuario,
     private val tareas: MutableList<Tarea>,
     private val onCardClick: (Tarea) -> Unit) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val nombreUser: TextView = view.findViewById(R.id.lblMisTareasNombreUsuario)
+        val mailUser: TextView = view.findViewById(R.id.lblMisTareasMailUsuario)
         val titulo: TextView = view.findViewById(R.id.taskNameTextView)
         val estado: TextView = view.findViewById(R.id.taskStatusTextView)
         val inicio: TextView = view.findViewById(R.id.startDateTextView)
@@ -89,7 +92,8 @@ class TaskAdapter(
                 holder.prioridad.setImageResource(R.drawable.prioridad_alta)
             }
         }
-
+        holder.nombreUser.text = user.Nombre
+        holder.mailUser.text = "(${user.Mail})"
         holder.titulo.text = tarea.Titulo
         holder.estado.text = txtEstado
         holder.inicio.text = fechaInicio
