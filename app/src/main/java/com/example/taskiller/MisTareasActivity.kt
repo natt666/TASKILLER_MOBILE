@@ -57,6 +57,7 @@ class MisTareasActivity : AppCompatActivity() {
         recyclerTareas.layoutManager = LinearLayoutManager(this)
 
         adapter = TaskAdapter(
+            user,
             tareas,
             onCardClick = { tarea ->
                 val intent = Intent(this, DetalleTareaActivity::class.java).apply {
