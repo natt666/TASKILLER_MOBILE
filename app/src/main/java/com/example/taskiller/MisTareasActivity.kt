@@ -38,6 +38,7 @@ class MisTareasActivity : AppCompatActivity() {
             }
         }
         val adapter = TaskAdapter(
+            user,
             tareas,
             onCardClick = { tarea ->
                 val intent = Intent(this, DetalleTareaActivity::class.java).apply {
