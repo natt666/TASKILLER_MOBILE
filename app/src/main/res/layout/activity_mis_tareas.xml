@@ -29,7 +29,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:fontFamily="@font/montserrat_medium"
-            android:text="Laura"
+            android:text="Usuario"
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -41,7 +41,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="5dp"
             android:fontFamily="@font/montserrat_medium"
-            android:text="(laura@empresa.com)"
+            android:text="(usuario@empresa.com)"
             android:textColor="@android:color/darker_gray"
             android:textSize="15sp"
             android:textStyle="bold" />
