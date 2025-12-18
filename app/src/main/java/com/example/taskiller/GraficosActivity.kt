@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.animation.Easing
+import java.util.UUID
 
 class GraficosActivity : AppCompatActivity() {
 
@@ -43,11 +44,12 @@ class GraficosActivity : AppCompatActivity() {
         tfMedium = ResourcesCompat.getFont(this, R.font.montserrat_medium)!!
 
         val datos = intent.getSerializableExtra("datos") as Datos
-        val proyecto = intent.getSerializableExtra("proyecto") as Proyecto
         val user = intent.getSerializableExtra("user") as Usuario
-        val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyecto?.Id }
+        val proyectoId = intent.getSerializableExtra("proyectoId") as UUID
+        val proyecto = datos.listaProyectos.firstOrNull { it.Id == proyectoId } ?: return
+        val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyectoId }
+        lblnombreproyecto.text = proyecto.Titulo
 
-        lblnombreproyecto.text = proyecto?.Titulo
 
         val estadoCounts = Tarea.Estados.values().associateWith { estado ->
             todasTareas.count { it.Estado == estado }

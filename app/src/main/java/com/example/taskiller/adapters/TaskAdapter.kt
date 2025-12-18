@@ -6,14 +6,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.taskiller.MyTaskAdapter
 import com.example.taskiller.R
 import com.example.taskiller.models.Tarea
+import com.example.taskiller.models.Usuario
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 
 class TaskAdapter(
+    private val user: Usuario,
     private val tareas: MutableList<Tarea>,
     private val onCardClick: (Tarea) -> Unit) : RecyclerView.Adapter<TaskAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -32,7 +33,6 @@ class TaskAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val tarea = tareas[position]
-        var txtEstado : String
         val fechaInicioInput = LocalDateTime.parse(tarea.FechaInicio,
             DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"))
         val fechaFinalInput = LocalDateTime.parse(tarea.FechaFinal,
@@ -42,22 +42,16 @@ class TaskAdapter(
         val fechaFinal = fechaFinalInput.format(
             DateTimeFormatter.ofPattern("dd/MM/yyyy"))
 
-        when (tarea.Estado) {
-            Tarea.Estados.Por_Comenzar -> {
-                txtEstado = "POR COMENZAR"
-            }
-            Tarea.Estados.En_Progreso -> {
-                txtEstado = "EN PROGRESO"
-            }
-            Tarea.Estados.Entregado -> {
-                txtEstado = "ENTREGADO"
-            }
-            Tarea.Estados.Revisado -> {
-                txtEstado = "REVISADO"
-            }
-            Tarea.Estados.Bloqueado -> {
-                txtEstado = "BLOQUEADO"
-            }
+        val context = holder.itemView.context
+
+        val estadosArray = context.resources.getStringArray(R.array.estados)
+
+        val txtEstado = when (tarea.Estado) {
+            Tarea.Estados.Por_Comenzar -> estadosArray[0]
+            Tarea.Estados.En_Progreso -> estadosArray[1]
+            Tarea.Estados.Entregado -> estadosArray[2]
+            Tarea.Estados.Revisado -> estadosArray[3]
+            Tarea.Estados.Bloqueado -> estadosArray[4]
         }
 
         when (tarea.Estado) {
@@ -89,7 +83,6 @@ class TaskAdapter(
                 holder.prioridad.setImageResource(R.drawable.prioridad_alta)
             }
         }
-
         holder.titulo.text = tarea.Titulo
         holder.estado.text = txtEstado
         holder.inicio.text = fechaInicio

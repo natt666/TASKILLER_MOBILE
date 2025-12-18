@@ -16,8 +16,8 @@ import java.time.format.DateTimeFormatter
 
 class ProjectAdapter(
     private val projects: MutableList<Proyecto>,
-    private val datos: Datos,
-    private val user: Usuario,
+    private var datos: Datos,
+    private var user: Usuario,
     private val onItemClick: (Proyecto) -> Unit
                     ) : RecyclerView.Adapter<ProjectAdapter.ProjectViewHolder>() {
 
@@ -32,6 +32,11 @@ class ProjectAdapter(
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.targeta_proyecto_control, parent, false)
         return ProjectViewHolder(view)
+    }
+
+    fun updateContext(nuevosDatos: Datos, nuevoUser: Usuario) {
+        this.datos = nuevosDatos
+        this.user = nuevoUser
     }
 
     override fun onBindViewHolder(holder: ProjectViewHolder, position: Int) {
@@ -63,7 +68,7 @@ class ProjectAdapter(
             val intent = Intent(context, GraficosActivity::class.java).apply {
                 putExtra("datos", datos)
                 putExtra("user", user)
-                putExtra("proyecto", project)
+                putExtra("proyectoId", project.Id)
             }
             context.startActivity(intent)
         }

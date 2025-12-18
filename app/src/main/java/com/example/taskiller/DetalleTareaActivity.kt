@@ -29,6 +29,27 @@ class DetalleTareaActivity : AppCompatActivity() {
 
     private lateinit var txtTotal: TextView
     private lateinit var btnVolver: ImageButton
+    private lateinit var btnAreaPersonal: ImageButton
+
+    private lateinit var spinnerEstado: Spinner
+    private var ignorarEventoSpinner: Boolean = false
+
+    private val misTareasLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data = result.data
+                val datosDevueltos = data?.getSerializableExtra("datos") as? Datos
+                val userDevuelto = data?.getSerializableExtra("user") as? Usuario
+
+                if (datosDevueltos != null) {
+                    datos = datosDevueltos
+                }
+                if (userDevuelto != null) {
+                    user = userDevuelto
+                }
+            }
+        }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +73,9 @@ class DetalleTareaActivity : AppCompatActivity() {
         txtTotal = findViewById(R.id.total)
         btnVolver = findViewById(R.id.btnDetalleTareaVolver)
 
+        spinnerEstado = findViewById(R.id.spinnerDetalleTareaEstado)
         configurarSpinnerEstado()
+
 
         findViewById<LinearLayout>(R.id.layoutDetalleTareaTiempo).setOnClickListener {
             mostrarDialogoTiempo()
@@ -60,6 +83,16 @@ class DetalleTareaActivity : AppCompatActivity() {
 
         btnVolver.setOnClickListener {
             devolverResultadoYSalir()
+        }
+
+        btnAreaPersonal = findViewById(R.id.btnDetallesTareaAreaPersonal)
+
+        btnAreaPersonal.setOnClickListener {
+            val intent = Intent(this, MisTareasActivity::class.java).apply {
+                putExtra("datos", datos)
+                putExtra("user", user)
+            }
+            misTareasLauncher.launch(intent)
         }
 
         refrescarPantalla()
@@ -201,16 +234,41 @@ class DetalleTareaActivity : AppCompatActivity() {
     }
 
     fun configurarSpinnerEstado() {
-        val spinnerEstado = findViewById<Spinner>(R.id.spinnerDetalleTareaEstado)
-
         val labels = resources.getStringArray(R.array.estados)
 
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+
         spinnerEstado.adapter = adapter
+
+        spinnerEstado.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: android.view.View?,
+                position: Int,
+                id: Long
+            ) {
+                if (ignorarEventoSpinner) {
+                    return
+                }
+
+                val nuevoEstado = Tarea.Estados.values()[position]
+
+                val tareaEnDatos = datos.listaTareas.firstOrNull { it.Id == tareaId }
+                if (tareaEnDatos != null && tareaEnDatos.Estado != nuevoEstado) {
+                    tareaEnDatos.Estado = nuevoEstado
+                    guardarDatos(datos)
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) { }
+        }
     }
 
+
     fun MostarEstado(tarea: Tarea) {
-        findViewById<Spinner>(R.id.spinnerDetalleTareaEstado).setSelection(tarea.Estado.ordinal)
+        ignorarEventoSpinner = true
+        spinnerEstado.setSelection(tarea.Estado.ordinal, false)
+        ignorarEventoSpinner = false
     }
 }
