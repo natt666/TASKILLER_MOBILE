@@ -12,6 +12,7 @@
 
     <GridLayout
         android:layout_width="532dp"
+        android:background="@color/background"
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:padding="8dp"

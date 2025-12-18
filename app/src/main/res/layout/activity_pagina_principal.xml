@@ -4,6 +4,7 @@
     android:id="@+id/tarjproyecto"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,7 +14,6 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="right"
-        android:layout_marginBottom="16dp"
         android:paddingTop="10dp"
         android:paddingRight="20dp"
         android:background="@android:color/transparent"
@@ -24,18 +24,17 @@
     <TextView
         android:id="@+id/titleText"
         android:text="@string/PaginaPrincipalTxtViewProyectos"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="36sp"
+        android:textColor="@color/principal"
+        android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp" />
+        android:layout_height="wrap_content"/>
 
     <!-- RecyclerView para las tarjetas -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProjects"
         android:layout_width="match_parent"
-        android:padding="15dp"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_marginTop="16dp" />

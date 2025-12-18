@@ -1,13 +1,12 @@
 {
     "listaProyectos": [
         {
+            "Descripcion": "Aplicación para administración interna de la empresa.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-12-01T00:00:00",
+            "FechaInicio": "2025-06-01T00:00:00",
             "Id": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
             "Titulo": "App de Gestión Interna",
-            "Descripcion": "Aplicación para administración interna de la empresa.",
-            "FechaInicio": "2025-06-01T00:00:00",
-            "FechaFinal": "2025-12-01T00:00:00",
-            "Estado": 0,
-            "IdCreador": "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
             "listaUsuarios": [
                 "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
                 "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
@@ -17,13 +16,12 @@
             ]
         },
         {
+            "Descripcion": "Generación automática de reportes de gestión.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-11-30T00:00:00",
+            "FechaInicio": "2025-07-01T00:00:00",
             "Id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
             "Titulo": "Sistema de Reportes",
-            "Descripcion": "Generación automática de reportes de gestión.",
-            "FechaInicio": "2025-07-01T00:00:00",
-            "FechaFinal": "2025-11-30T00:00:00",
-            "Estado": 1,
-            "IdCreador": "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
             "listaUsuarios": [
                 "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
                 "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
@@ -34,13 +32,12 @@
             ]
         },
         {
+            "Descripcion": "Plataforma web para la gestión de clientes y pedidos.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-10-01T00:00:00",
+            "FechaInicio": "2025-05-01T00:00:00",
             "Id": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
             "Titulo": "Portal de Clientes",
-            "Descripcion": "Plataforma web para la gestión de clientes y pedidos.",
-            "FechaInicio": "2025-05-01T00:00:00",
-            "FechaFinal": "2025-10-01T00:00:00",
-            "Estado": 0,
-            "IdCreador": "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
             "listaUsuarios": [
                 "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
                 "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
@@ -51,13 +48,12 @@
             ]
         },
         {
+            "Descripcion": "Sistema para automatizar campañas de marketing y seguimiento de clientes.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-11-15T00:00:00",
+            "FechaInicio": "2025-06-15T00:00:00",
             "Id": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
             "Titulo": "Automatización Marketing",
-            "Descripcion": "Sistema para automatizar campañas de marketing y seguimiento de clientes.",
-            "FechaInicio": "2025-06-15T00:00:00",
-            "FechaFinal": "2025-11-15T00:00:00",
-            "Estado": 1,
-            "IdCreador": "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
             "listaUsuarios": [
                 "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
                 "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
@@ -68,13 +64,12 @@
             ]
         },
         {
+            "Descripcion": "Conectar los sistemas internos con el ERP corporativo.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-12-10T00:00:00",
+            "FechaInicio": "2025-07-10T00:00:00",
             "Id": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
             "Titulo": "Integración ERP",
-            "Descripcion": "Conectar los sistemas internos con el ERP corporativo.",
-            "FechaInicio": "2025-07-10T00:00:00",
-            "FechaFinal": "2025-12-10T00:00:00",
-            "Estado": 0,
-            "IdCreador": "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
             "listaUsuarios": [
                 "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
                 "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
@@ -86,13 +81,12 @@
             ]
         },
         {
+            "Descripcion": "Sistema para cursos internos y seguimiento de empleados.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-12-01T00:00:00",
+            "FechaInicio": "2025-08-01T00:00:00",
             "Id": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
             "Titulo": "Plataforma de Capacitación",
-            "Descripcion": "Sistema para cursos internos y seguimiento de empleados.",
-            "FechaInicio": "2025-08-01T00:00:00",
-            "FechaFinal": "2025-12-01T00:00:00",
-            "Estado": 1,
-            "IdCreador": "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
             "listaUsuarios": [
                 "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
                 "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
@@ -101,13 +95,12 @@
             ]
         },
         {
+            "Descripcion": "Optimización del inventario con alertas automáticas y reportes.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-11-20T00:00:00",
+            "FechaInicio": "2025-06-20T00:00:00",
             "Id": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
             "Titulo": "Gestión Inventario Avanzada",
-            "Descripcion": "Optimización del inventario con alertas automáticas y reportes.",
-            "FechaInicio": "2025-06-20T00:00:00",
-            "FechaFinal": "2025-11-20T00:00:00",
-            "Estado": 0,
-            "IdCreador": "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
             "listaUsuarios": [
                 "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
                 "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
@@ -115,13 +108,12 @@
             ]
         },
         {
+            "Descripcion": "Sistema para recibir comentarios y sugerencias de clientes.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-12-15T00:00:00",
+            "FechaInicio": "2025-07-15T00:00:00",
             "Id": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
             "Titulo": "Portal de Feedback",
-            "Descripcion": "Sistema para recibir comentarios y sugerencias de clientes.",
-            "FechaInicio": "2025-07-15T00:00:00",
-            "FechaFinal": "2025-12-15T00:00:00",
-            "Estado": 1,
-            "IdCreador": "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
             "listaUsuarios": [
                 "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
                 "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
@@ -134,13 +126,12 @@
             ]
         },
         {
+            "Descripcion": "Gestión de incidencias y soporte técnico interno.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-11-10T00:00:00",
+            "FechaInicio": "2025-06-10T00:00:00",
             "Id": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
             "Titulo": "Sistema de Tickets",
-            "Descripcion": "Gestión de incidencias y soporte técnico interno.",
-            "FechaInicio": "2025-06-10T00:00:00",
-            "FechaFinal": "2025-11-10T00:00:00",
-            "Estado": 0,
-            "IdCreador": "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
             "listaUsuarios": [
                 "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
                 "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
@@ -155,13 +146,12 @@
             ]
         },
         {
+            "Descripcion": "Generar reportes financieros automáticos para directivos.",
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-12-05T00:00:00",
+            "FechaInicio": "2025-08-05T00:00:00",
             "Id": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
             "Titulo": "Automatización de Reportes Financieros",
-            "Descripcion": "Generar reportes financieros automáticos para directivos.",
-            "FechaInicio": "2025-08-05T00:00:00",
-            "FechaFinal": "2025-12-05T00:00:00",
-            "Estado": 1,
-            "IdCreador": "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
             "listaUsuarios": [
                 "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
                 "c1a2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
@@ -172,640 +162,8 @@
             ]
         }
     ],
-    "listaTareas": [
-        {
-            "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-            "Titulo": "Diseño de la interfaz",
-            "Descripcion": "Creación del prototipo visual en Figma.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-01-10T00:00:00",
-            "FechaFinal": "2025-01-25T00:00:00",
-            "listaUsuarios": [
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
-            ],
-            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
-            "Estado": 4,
-            "IdTareaPadre": null,
-            "Subtareas": [
-                "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
-                "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d"
-            ],
-            "DuracionMinutos": 120
-        },
-        {
-            "Id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-            "Titulo": "Diseñar interfaz de usuario",
-            "Descripcion": "Crear wireframes y prototipos del portal de feedback.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-07-16T00:00:00",
-            "FechaFinal": "2025-07-30T00:00:00",
-            "listaUsuarios": [
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
-            ],
-            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
-            "Estado": 1,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 200
-        },
-        {
-            "Id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-            "Titulo": "Configurar base de datos",
-            "Descripcion": "Preparar la estructura de la base de datos para almacenar feedback.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-07-31T00:00:00",
-            "FechaFinal": "2025-08-10T00:00:00",
-            "listaUsuarios": [
-                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
-            ],
-            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 230
-        },
-        {
-            "Id": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-            "Titulo": "Implementar sistema de comentarios",
-            "Descripcion": "Desarrollar la funcionalidad para que los clientes puedan dejar comentarios.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-08-11T00:00:00",
-            "FechaFinal": "2025-08-25T00:00:00",
-            "listaUsuarios": [
-                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
-            ],
-            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 110
-        },
-        {
-            "Id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-            "Titulo": "Configurar notificaciones",
-            "Descripcion": "Enviar alertas internas cuando se reciba nuevo feedback.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-08-26T00:00:00",
-            "FechaFinal": "2025-09-05T00:00:00",
-            "listaUsuarios": [
-                "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b"
-            ],
-            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 280
-        },
-        {
-            "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-            "Titulo": "Pruebas de usabilidad",
-            "Descripcion": "Realizar pruebas con usuarios para mejorar la experiencia.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-09-06T00:00:00",
-            "FechaFinal": "2025-09-20T00:00:00",
-            "listaUsuarios": [
-                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
-            ],
-            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
-            "Estado": 4,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 380
-        },
-        {
-            "Id": "3f1a2e4c-5b6d-7c8f-9a0b-1d2e3f4a5b6c",
-            "Titulo": "Definir campañas iniciales",
-            "Descripcion": "Planificación de campañas de marketing automatizadas.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-06-16T00:00:00",
-            "FechaFinal": "2025-06-30T00:00:00",
-            "listaUsuarios": [
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
-            ],
-            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 400
-        },
-        {
-            "Id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9b",
-            "Titulo": "Configurar flujo de emails",
-            "Descripcion": "Automatizar envío de correos según segmentación.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-07-01T00:00:00",
-            "FechaFinal": "2025-07-15T00:00:00",
-            "listaUsuarios": [
-                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
-            ],
-            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 100
-        },
-        {
-            "Id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0c",
-            "Titulo": "Integrar CRM",
-            "Descripcion": "Sincronizar datos de clientes con el CRM.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-07-16T00:00:00",
-            "FechaFinal": "2025-07-31T00:00:00",
-            "listaUsuarios": [
-                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
-            ],
-            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
-            "Estado": 4,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 120
-        },
-        {
-            "Id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1d",
-            "Titulo": "Pruebas de segmentación",
-            "Descripcion": "Verificar que los segmentos se aplican correctamente.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-08-01T00:00:00",
-            "FechaFinal": "2025-08-10T00:00:00",
-            "listaUsuarios": [
-                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
-            ],
-            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
-            "Estado": 1,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 110
-        },
-        {
-            "Id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
-            "Titulo": "Análisis de integración",
-            "Descripcion": "Evaluar los sistemas existentes para integrar ERP.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-07-11T00:00:00",
-            "FechaFinal": "2025-07-25T00:00:00",
-            "listaUsuarios": [
-                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
-            ],
-            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 50
-        },
-        {
-            "Id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
-            "Titulo": "Configurar ERP",
-            "Descripcion": "Preparar entorno ERP para integración.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-07-26T00:00:00",
-            "FechaFinal": "2025-08-10T00:00:00",
-            "listaUsuarios": [
-                "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
-                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
-                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
-            ],
-            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 65
-        },
-        {
-            "Id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
-            "Titulo": "Pruebas de conexión",
-            "Descripcion": "Verificar la conexión de sistemas con ERP.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-08-11T00:00:00",
-            "FechaFinal": "2025-08-20T00:00:00",
-            "listaUsuarios": [
-                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
-            ],
-            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 40
-        },
-        {
-            "Id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
-            "Titulo": "Documentación ERP",
-            "Descripcion": "Generar guía de integración y procedimientos.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-08-21T00:00:00",
-            "FechaFinal": "2025-08-30T00:00:00",
-            "listaUsuarios": [
-                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
-            ],
-            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
-            "Estado": 3,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 300
-        },
-        {
-            "Id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
-            "Titulo": "Diseñar sistema de tickets",
-            "Descripcion": "Definir estructura de incidencias y flujos.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-06-11T00:00:00",
-            "FechaFinal": "2025-06-25T00:00:00",
-            "listaUsuarios": [
-                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a"
-            ],
-            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 400
-        },
-        {
-            "Id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-            "Titulo": "Implementar backend",
-            "Descripcion": "Desarrollar la lógica de gestión de tickets.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-06-26T00:00:00",
-            "FechaFinal": "2025-07-10T00:00:00",
-            "listaUsuarios": [
-                "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
-                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
-            ],
-            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 300
-        },
-        {
-            "Id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
-            "Titulo": "Integrar sistema de notificaciones",
-            "Descripcion": "Enviar alertas a usuarios al crear tickets.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-07-11T00:00:00",
-            "FechaFinal": "2025-07-20T00:00:00",
-            "listaUsuarios": [
-                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
-            ],
-            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
-            "Estado": 3,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 270
-        },
-        {
-            "Id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
-            "Titulo": "Pruebas de flujo",
-            "Descripcion": "Verificar que los tickets se registran correctamente.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-07-21T00:00:00",
-            "FechaFinal": "2025-07-31T00:00:00",
-            "listaUsuarios": [
-                "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"
-            ],
-            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 190
-        },
-        {
-            "Id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
-            "Titulo": "Definir KPIs",
-            "Descripcion": "Seleccionar indicadores financieros críticos.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-08-06T00:00:00",
-            "FechaFinal": "2025-08-15T00:00:00",
-            "listaUsuarios": [
-                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
-                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
-            ],
-            "IdProyecto": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 210
-        },
-        {
-            "Id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-            "Titulo": "Diseñar plantilla de reportes",
-            "Descripcion": "Crear formato estándar para reportes financieros.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-08-16T00:00:00",
-            "FechaFinal": "2025-08-25T00:00:00",
-            "listaUsuarios": [
-                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
-            ],
-            "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-            "Estado": 1,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 110
-        },
-        {
-            "Id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
-            "Titulo": "Automatizar generación de reportes",
-            "Descripcion": "Configurar scripts para crear reportes automáticamente.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-08-26T00:00:00",
-            "FechaFinal": "2025-09-05T00:00:00",
-            "listaUsuarios": [
-                "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"
-            ],
-            "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 50
-        },
-        {
-            "Id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
-            "Titulo": "Pruebas de consistencia",
-            "Descripcion": "Verificar que los reportes muestran datos correctos.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-09-06T00:00:00",
-            "FechaFinal": "2025-09-15T00:00:00",
-            "listaUsuarios": [
-                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
-                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
-            ],
-            "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-            "Estado": 3,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 210
-        },
-        {
-            "Id": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
-            "Titulo": "Implementar frontend",
-            "Descripcion": "Desarrollar la interfaz en React.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-01-26T00:00:00",
-            "FechaFinal": "2025-02-15T00:00:00",
-            "listaUsuarios": [
-                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
-            ],
-            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
-            "Estado": 1,
-            "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-            "Subtareas": null,
-            "DuracionMinutos": 410
-        },
-        {
-            "Id": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
-            "Titulo": "Configuración del servidor",
-            "Descripcion": "Preparar el entorno de producción en AWS.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-02-01T00:00:00",
-            "FechaFinal": "2025-02-10T00:00:00",
-            "listaUsuarios": [
-                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
-            ],
-            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
-            "Estado": 2,
-            "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
-            "Subtareas": null,
-            "DuracionMinutos": 190
-        },
-        {
-            "Id": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
-            "Titulo": "Diseñar base de datos",
-            "Descripcion": "Crear estructura y relaciones en MySQL.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-03-01T00:00:00",
-            "FechaFinal": "2025-03-15T00:00:00",
-            "listaUsuarios": [
-                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
-            ],
-            "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
-            "Estado": 1,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 200
-        },
-        {
-            "Id": "da1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
-            "Titulo": "Pruebas funcionales",
-            "Descripcion": "Validar los flujos principales de la app móvil.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-05-01T00:00:00",
-            "FechaFinal": "2025-05-20T00:00:00",
-            "listaUsuarios": [
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
-                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
-            ],
-            "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
-            "Estado": 2,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 500
-        },
-        {
-            "Id": "e0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
-            "Titulo": "Formación a usuarios finales",
-            "Descripcion": "Sesiones de formación para el equipo interno.",
-            "Prioridad": 2,
-            "FechaInicio": "2025-05-21T00:00:00",
-            "FechaFinal": "2025-06-01T00:00:00",
-            "listaUsuarios": [
-                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
-                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
-            ],
-            "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 420
-        },
-        {
-            "Id": "db2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
-            "Titulo": "Documentación técnica",
-            "Descripcion": "Redacción de la guía de instalación y uso de la plataforma.",
-            "Prioridad": 1,
-            "FechaInicio": "2025-03-10T00:00:00",
-            "FechaFinal": "2025-04-05T00:00:00",
-            "listaUsuarios": [
-                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
-            ],
-            "IdProyecto": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
-            "Estado": 0,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 300
-        },
-        {
-            "Id": "dc3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
-            "Titulo": "Optimizar consultas SQL",
-            "Descripcion": "Mejorar el rendimiento de las consultas del inventario.",
-            "Prioridad": 0,
-            "FechaInicio": "2025-04-01T00:00:00",
-            "FechaFinal": "2025-04-15T00:00:00",
-            "listaUsuarios": [
-                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
-            ],
-            "IdProyecto": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-            "Estado": 1,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 230
-        },
-        {
-            "Id": "aabdc3b3-fba7-42b4-8e3b-e79626a82d43",
-            "Titulo": "delimitar KPIs",
-            "Descripcion": "",
-            "Prioridad": 1,
-            "FechaInicio": "2025-12-01T17:00:52.506917+01:00",
-            "FechaFinal": "2025-12-27T17:00:52",
-            "listaUsuarios": [
-                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
-                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
-            ],
-            "IdProyecto": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
-            "Estado": 3,
-            "IdTareaPadre": null,
-            "Subtareas": null,
-            "DuracionMinutos": 500
-        }
-    ],
-    "listaUsuarios": [
-        {
-            "Id": "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
-            "Nombre": "Laura",
-            "Apellido": "Pepita",
-            "Mail": "laura@empresa.com",
-            "Contrasena": "1234",
-            "Rol": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b"
-        },
-        {
-            "Id": "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
-            "Nombre": "Carlos",
-            "Apellido": "Pepita",
-            "Mail": "carlos@empresa.com",
-            "Contrasena": "abcd",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
-            "Nombre": "Marta",
-            "Apellido": "Pepita",
-            "Mail": "marta@empresa.com",
-            "Contrasena": "pass",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-            "Nombre": "Andrés",
-            "Apellido": "Pepita",
-            "Mail": "andres@empresa.com",
-            "Contrasena": "5678",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        },
-        {
-            "Id": "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-            "Nombre": "Sofía",
-            "Apellido": "Pepita",
-            "Mail": "sofia@empresa.com",
-            "Contrasena": "qwerty",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        },
-        {
-            "Id": "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9b",
-            "Nombre": "Marrash",
-            "Apellido": "Pepita",
-            "Mail": "admin",
-            "Contrasena": "admin",
-            "Rol": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b"
-        },
-        {
-            "Id": "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
-            "Nombre": "Pedro",
-            "Apellido": "González",
-            "Mail": "pedro@empresa.com",
-            "Contrasena": "pedro123",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
-            "Nombre": "Ana",
-            "Apellido": "Lopez",
-            "Mail": "ana@empresa.com",
-            "Contrasena": "ana123",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        },
-        {
-            "Id": "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
-            "Nombre": "Luis",
-            "Apellido": "Martínez",
-            "Mail": "luis@empresa.com",
-            "Contrasena": "luis123",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
-            "Nombre": "Clara",
-            "Apellido": "Fernández",
-            "Mail": "clara@empresa.com",
-            "Contrasena": "clara123",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        },
-        {
-            "Id": "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
-            "Nombre": "Jorge",
-            "Apellido": "Sánchez",
-            "Mail": "jorge@empresa.com",
-            "Contrasena": "jorge123",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-            "Nombre": "Lucía",
-            "Apellido": "Ramírez",
-            "Mail": "lucia@empresa.com",
-            "Contrasena": "lucia123",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        },
-        {
-            "Id": "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
-            "Nombre": "Alberto",
-            "Apellido": "Vega",
-            "Mail": "alberto@empresa.com",
-            "Contrasena": "alberto123",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
-            "Nombre": "Elena",
-            "Apellido": "Cruz",
-            "Mail": "elena@empresa.com",
-            "Contrasena": "elena123",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        },
-        {
-            "Id": "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
-            "Nombre": "Miguel",
-            "Apellido": "Ortiz",
-            "Mail": "miguel@empresa.com",
-            "Contrasena": "miguel123",
-            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
-        },
-        {
-            "Id": "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
-            "Nombre": "Patricia",
-            "Apellido": "Moreno",
-            "Mail": "patricia@empresa.com",
-            "Contrasena": "patricia123",
-            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
-        }
-    ],
     "listaRoles": [
         {
-            "Id": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b",
-            "Nombre": "Administrador",
             "Acceso": [
                 "Crear proyectos",
                 "Editar proyectos",
@@ -816,11 +174,11 @@
                 "Crear Tareas",
                 "Editar Tareas",
                 "Eliminar Tarea"
-            ]
+            ],
+            "Id": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b",
+            "Nombre": "Administrador"
         },
         {
-            "Id": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
-            "Nombre": "Gestor",
             "Acceso": [
                 "Crear proyectos",
                 "Editar proyectos",
@@ -828,15 +186,590 @@
                 "Crear Tareas",
                 "Editar Tareas",
                 "Eliminar Tarea"
-            ]
+            ],
+            "Id": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+            "Nombre": "Gestor"
         },
         {
-            "Id": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
-            "Nombre": "Base",
             "Acceso": [
                 "Ver Tareas",
                 "Actualizar Estado"
+            ],
+            "Id": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a",
+            "Nombre": "Base"
+        }
+    ],
+    "listaTareas": [
+        {
+            "Descripcion": "Creación del prototipo visual en Figma.",
+            "DuracionMinutos": 120,
+            "Estado": "Bloqueado",
+            "FechaFinal": "2025-01-25T00:00:00",
+            "FechaInicio": "2025-01-10T00:00:00",
+            "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+            "Prioridad": "BAJA",
+            "Subtareas": [
+                "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+                "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d"
+            ],
+            "Titulo": "Diseño de la interfaz",
+            "listaUsuarios": [
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
             ]
+        },
+        {
+            "Descripcion": "Crear wireframes y prototipos del portal de feedback.",
+            "DuracionMinutos": 200,
+            "Estado": "En_Progreso",
+            "FechaFinal": "2025-07-30T00:00:00",
+            "FechaInicio": "2025-07-16T00:00:00",
+            "Id": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
+            "Prioridad": "BAJA",
+            "Titulo": "Diseñar interfaz de usuario",
+            "listaUsuarios": [
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
+            ]
+        },
+        {
+            "Descripcion": "Preparar la estructura de la base de datos para almacenar feedback.",
+            "DuracionMinutos": 230,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-08-10T00:00:00",
+            "FechaInicio": "2025-07-31T00:00:00",
+            "Id": "b2c3d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
+            "Prioridad": "MEDIA",
+            "Titulo": "Configurar base de datos",
+            "listaUsuarios": [
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
+            ]
+        },
+        {
+            "Descripcion": "Desarrollar la funcionalidad para que los clientes puedan dejar comentarios.",
+            "DuracionMinutos": 110,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-08-25T00:00:00",
+            "FechaInicio": "2025-08-11T00:00:00",
+            "Id": "c3d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
+            "Prioridad": "MEDIA",
+            "Titulo": "Implementar sistema de comentarios",
+            "listaUsuarios": [
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
+            ]
+        },
+        {
+            "Descripcion": "Enviar alertas internas cuando se reciba nuevo feedback.",
+            "DuracionMinutos": 280,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-09-05T00:00:00",
+            "FechaInicio": "2025-08-26T00:00:00",
+            "Id": "d4e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
+            "Prioridad": "BAJA",
+            "Titulo": "Configurar notificaciones",
+            "listaUsuarios": [
+                "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b"
+            ]
+        },
+        {
+            "Descripcion": "Realizar pruebas con usuarios para mejorar la experiencia.",
+            "DuracionMinutos": 380,
+            "Estado": "Bloqueado",
+            "FechaFinal": "2025-09-20T00:00:00",
+            "FechaInicio": "2025-09-06T00:00:00",
+            "Id": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+            "IdProyecto": "a3f5c2d1-9b8e-4f7a-b6c1-2d3e4f5a6b7c",
+            "Prioridad": "BAJA",
+            "Titulo": "Pruebas de usabilidad",
+            "listaUsuarios": [
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
+            ]
+        },
+        {
+            "Descripcion": "Planificación de campañas de marketing automatizadas.",
+            "DuracionMinutos": 400,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-06-30T00:00:00",
+            "FechaInicio": "2025-06-16T00:00:00",
+            "Id": "3f1a2e4c-5b6d-7c8f-9a0b-1d2e3f4a5b6c",
+            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+            "Prioridad": "BAJA",
+            "Titulo": "Definir campañas iniciales",
+            "listaUsuarios": [
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a"
+            ]
+        },
+        {
+            "Descripcion": "Automatizar envío de correos según segmentación.",
+            "DuracionMinutos": 100,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-07-15T00:00:00",
+            "FechaInicio": "2025-07-01T00:00:00",
+            "Id": "4d5e6f7a-8b9c-0d1e-2f3a-4b5c6d7e8f9b",
+            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+            "Prioridad": "BAJA",
+            "Titulo": "Configurar flujo de emails",
+            "listaUsuarios": [
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
+            ]
+        },
+        {
+            "Descripcion": "Sincronizar datos de clientes con el CRM.",
+            "DuracionMinutos": 120,
+            "Estado": "Bloqueado",
+            "FechaFinal": "2025-07-31T00:00:00",
+            "FechaInicio": "2025-07-16T00:00:00",
+            "Id": "5e6f7a8b-9c0d-1e2f-3a4b-5c6d7e8f9a0c",
+            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+            "Prioridad": "BAJA",
+            "Titulo": "Integrar CRM",
+            "listaUsuarios": [
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
+            ]
+        },
+        {
+            "Descripcion": "Verificar que los segmentos se aplican correctamente.",
+            "DuracionMinutos": 110,
+            "Estado": "En_Progreso",
+            "FechaFinal": "2025-08-10T00:00:00",
+            "FechaInicio": "2025-08-01T00:00:00",
+            "Id": "6f7a8b9c-0d1e-2f3a-4b5c-6d7e8f9a0b1d",
+            "IdProyecto": "c1d2e3f4-5a6b-7c8d-9e0f-1a2b3c4d5e6f",
+            "Prioridad": "MEDIA",
+            "Titulo": "Pruebas de segmentación",
+            "listaUsuarios": [
+                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
+            ]
+        },
+        {
+            "Descripcion": "Evaluar los sistemas existentes para integrar ERP.",
+            "DuracionMinutos": 50,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-07-25T00:00:00",
+            "FechaInicio": "2025-07-11T00:00:00",
+            "Id": "7a8b9c0d-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+            "Prioridad": "BAJA",
+            "Titulo": "Análisis de integración",
+            "listaUsuarios": [
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+            ]
+        },
+        {
+            "Descripcion": "Preparar entorno ERP para integración.",
+            "DuracionMinutos": 65,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-08-10T00:00:00",
+            "FechaInicio": "2025-07-26T00:00:00",
+            "Id": "8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+            "Prioridad": "BAJA",
+            "Titulo": "Configurar ERP",
+            "listaUsuarios": [
+                "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
+            ]
+        },
+        {
+            "Descripcion": "Verificar la conexión de sistemas con ERP.",
+            "DuracionMinutos": 40,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-08-20T00:00:00",
+            "FechaInicio": "2025-08-11T00:00:00",
+            "Id": "9c0d1e2f-3a4b-5c6d-7e8f-9a0b1c2d3e4f",
+            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+            "Prioridad": "BAJA",
+            "Titulo": "Pruebas de conexión",
+            "listaUsuarios": [
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a"
+            ]
+        },
+        {
+            "Descripcion": "Generar guía de integración y procedimientos.",
+            "DuracionMinutos": 300,
+            "Estado": "Revisado",
+            "FechaFinal": "2025-08-30T00:00:00",
+            "FechaInicio": "2025-08-21T00:00:00",
+            "Id": "0d1e2f3a-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+            "IdProyecto": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a",
+            "Prioridad": "MEDIA",
+            "Titulo": "Documentación ERP",
+            "listaUsuarios": [
+                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a"
+            ]
+        },
+        {
+            "Descripcion": "Definir estructura de incidencias y flujos.",
+            "DuracionMinutos": 400,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-06-25T00:00:00",
+            "FechaInicio": "2025-06-11T00:00:00",
+            "Id": "1e2f3a4b-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+            "Prioridad": "BAJA",
+            "Titulo": "Diseñar sistema de tickets",
+            "listaUsuarios": [
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a"
+            ]
+        },
+        {
+            "Descripcion": "Desarrollar la lógica de gestión de tickets.",
+            "DuracionMinutos": 300,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-07-10T00:00:00",
+            "FechaInicio": "2025-06-26T00:00:00",
+            "Id": "2f3a4b5c-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+            "Prioridad": "MEDIA",
+            "Titulo": "Implementar backend",
+            "listaUsuarios": [
+                "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+                "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+                "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+                "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c"
+            ]
+        },
+        {
+            "Descripcion": "Enviar alertas a usuarios al crear tickets.",
+            "DuracionMinutos": 270,
+            "Estado": "Revisado",
+            "FechaFinal": "2025-07-20T00:00:00",
+            "FechaInicio": "2025-07-11T00:00:00",
+            "Id": "3a4b5c6d-7e8f-9a0b-1c2d-3e4f5a6b7c8d",
+            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+            "Prioridad": "MEDIA",
+            "Titulo": "Integrar sistema de notificaciones",
+            "listaUsuarios": [
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d"
+            ]
+        },
+        {
+            "Descripcion": "Verificar que los tickets se registran correctamente.",
+            "DuracionMinutos": 190,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-07-31T00:00:00",
+            "FechaInicio": "2025-07-21T00:00:00",
+            "Id": "4b5c6d7e-8f9a-0b1c-2d3e-4f5a6b7c8d9e",
+            "IdProyecto": "b4a5c6d7-8e9f-0a1b-2c3d-4e5f6a7b8c9d",
+            "Prioridad": "BAJA",
+            "Titulo": "Pruebas de flujo",
+            "listaUsuarios": [
+                "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e"
+            ]
+        },
+        {
+            "Descripcion": "Seleccionar indicadores financieros críticos.",
+            "DuracionMinutos": 210,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-08-15T00:00:00",
+            "FechaInicio": "2025-08-06T00:00:00",
+            "Id": "5c6d7e8f-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+            "IdProyecto": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+            "Prioridad": "BAJA",
+            "Titulo": "Definir KPIs",
+            "listaUsuarios": [
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
+            ]
+        },
+        {
+            "Descripcion": "Crear formato estándar para reportes financieros.",
+            "DuracionMinutos": 110,
+            "Estado": "En_Progreso",
+            "FechaFinal": "2025-08-25T00:00:00",
+            "FechaInicio": "2025-08-16T00:00:00",
+            "Id": "6d7e8f9a-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+            "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+            "Prioridad": "BAJA",
+            "Titulo": "Diseñar plantilla de reportes",
+            "listaUsuarios": [
+                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+            ]
+        },
+        {
+            "Descripcion": "Configurar scripts para crear reportes automáticamente.",
+            "DuracionMinutos": 50,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-09-05T00:00:00",
+            "FechaInicio": "2025-08-26T00:00:00",
+            "Id": "7e8f9a0b-1c2d-3e4f-5a6b-7c8d9e0f1a2b",
+            "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+            "Prioridad": "BAJA",
+            "Titulo": "Automatizar generación de reportes",
+            "listaUsuarios": [
+                "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f"
+            ]
+        },
+        {
+            "Descripcion": "Verificar que los reportes muestran datos correctos.",
+            "DuracionMinutos": 210,
+            "Estado": "Revisado",
+            "FechaFinal": "2025-09-15T00:00:00",
+            "FechaInicio": "2025-09-06T00:00:00",
+            "Id": "8f9a0b1c-2d3e-4f5a-6b7c-8d9e0f1a2b3c",
+            "IdProyecto": "a1b2c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+            "Prioridad": "BAJA",
+            "Titulo": "Pruebas de consistencia",
+            "listaUsuarios": [
+                "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+                "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+                "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+            ]
+        },
+        {
+            "Descripcion": "Desarrollar la interfaz en React.",
+            "DuracionMinutos": 410,
+            "Estado": "En_Progreso",
+            "FechaFinal": "2025-02-15T00:00:00",
+            "FechaInicio": "2025-01-26T00:00:00",
+            "Id": "f6a7b8c9-0d1e-2f3a-4b5c-6d7e8f9a0b1c",
+            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+            "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+            "Prioridad": "BAJA",
+            "Titulo": "Implementar frontend",
+            "listaUsuarios": [
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
+            ]
+        },
+        {
+            "Descripcion": "Preparar el entorno de producción en AWS.",
+            "DuracionMinutos": 190,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-02-10T00:00:00",
+            "FechaInicio": "2025-02-01T00:00:00",
+            "Id": "a7b8c9d0-1e2f-3a4b-5c6d-7e8f9a0b1c2d",
+            "IdProyecto": "f1a2b3c4-5d6e-7f8a-9b0c-1d2e3f4a5b6c",
+            "IdTareaPadre": "e5f6a7b8-9c0d-1e2f-3a4b-5c6d7e8f9a0b",
+            "Prioridad": "MEDIA",
+            "Titulo": "Configuración del servidor",
+            "listaUsuarios": [
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
+            ]
+        },
+        {
+            "Descripcion": "Crear estructura y relaciones en MySQL.",
+            "DuracionMinutos": 200,
+            "Estado": "En_Progreso",
+            "FechaFinal": "2025-03-15T00:00:00",
+            "FechaInicio": "2025-03-01T00:00:00",
+            "Id": "b8c9d0e1-2f3a-4b5c-6d7e-8f9a0b1c2d3e",
+            "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+            "Prioridad": "MEDIA",
+            "Titulo": "Diseñar base de datos",
+            "listaUsuarios": [
+                "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
+            ]
+        },
+        {
+            "Descripcion": "Validar los flujos principales de la app móvil.",
+            "DuracionMinutos": 500,
+            "Estado": "Entregado",
+            "FechaFinal": "2025-05-20T00:00:00",
+            "FechaInicio": "2025-05-01T00:00:00",
+            "Id": "da1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+            "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+            "Prioridad": "BAJA",
+            "Titulo": "Pruebas funcionales",
+            "listaUsuarios": [
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a"
+            ]
+        },
+        {
+            "Descripcion": "Sesiones de formación para el equipo interno.",
+            "DuracionMinutos": 420,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-06-01T00:00:00",
+            "FechaInicio": "2025-05-21T00:00:00",
+            "Id": "e0a1b2c3-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+            "IdProyecto": "b1c2d3e4-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+            "Prioridad": "BAJA",
+            "Titulo": "Formación a usuarios finales",
+            "listaUsuarios": [
+                "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
+            ]
+        },
+        {
+            "Descripcion": "Redacción de la guía de instalación y uso de la plataforma.",
+            "DuracionMinutos": 300,
+            "Estado": "Por_Comenzar",
+            "FechaFinal": "2025-04-05T00:00:00",
+            "FechaInicio": "2025-03-10T00:00:00",
+            "Id": "db2c3d4e-5f6a-7b8c-9d0e-1f2a3b4c5d6e",
+            "IdProyecto": "e1f2a3b4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+            "Prioridad": "BAJA",
+            "Titulo": "Documentación técnica",
+            "listaUsuarios": [
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b"
+            ]
+        },
+        {
+            "Descripcion": "Mejorar el rendimiento de las consultas del inventario.",
+            "DuracionMinutos": 230,
+            "Estado": "En_Progreso",
+            "FechaFinal": "2025-04-15T00:00:00",
+            "FechaInicio": "2025-04-01T00:00:00",
+            "Id": "dc3d4e5f-6a7b-8c9d-0e1f-2a3b4c5d6e7f",
+            "IdProyecto": "f2a3b4c5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+            "Prioridad": "BAJA",
+            "Titulo": "Optimizar consultas SQL",
+            "listaUsuarios": [
+                "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c"
+            ]
+        },
+        {
+            "Descripcion": "",
+            "DuracionMinutos": 500,
+            "Estado": "Revisado",
+            "FechaFinal": "2025-12-27T17:00:52",
+            "FechaInicio": "2025-12-01T17:00:52.506917+01:00",
+            "Id": "aabdc3b3-fba7-42b4-8e3b-e79626a82d43",
+            "IdProyecto": "a5b6c7d8-9e0f-1a2b-3c4d-5e6f7a8b9c0d",
+            "Prioridad": "BAJA",
+            "Titulo": "delimitar KPIs",
+            "listaUsuarios": [
+                "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+                "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f"
+            ]
+        }
+    ],
+    "listaUsuarios": [
+        {
+            "Apellido": "Pepita",
+            "Contrasena": "1234",
+            "Id": "c1a1e2f3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+            "Mail": "laura@empresa.com",
+            "Nombre": "Laura",
+            "Rol": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b"
+        },
+        {
+            "Apellido": "Pepita",
+            "Contrasena": "abcd",
+            "Id": "c2b2f3a4-5c6d-7e8f-9a0b-1c2d3e4f5a6b",
+            "Mail": "carlos@empresa.com",
+            "Nombre": "Carlos",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Pepita",
+            "Contrasena": "pass",
+            "Id": "c3c3f4a5-6d7e-8f9a-0b1c-2d3e4f5a6b7c",
+            "Mail": "marta@empresa.com",
+            "Nombre": "Marta",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Pepita",
+            "Contrasena": "5678",
+            "Id": "c4d4e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+            "Mail": "andres@empresa.com",
+            "Nombre": "Andrés",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+        },
+        {
+            "Apellido": "Pepita",
+            "Contrasena": "qwerty",
+            "Id": "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+            "Mail": "sofia@empresa.com",
+            "Nombre": "Sofía",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+        },
+        {
+            "Apellido": "Pepita",
+            "Contrasena": "admin",
+            "Id": "c5e5f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9b",
+            "Mail": "admin",
+            "Nombre": "Marrash",
+            "Rol": "d0e1f2a3-4b5c-6d7e-8f9a-0b1c2d3e4f5b"
+        },
+        {
+            "Apellido": "González",
+            "Contrasena": "pedro123",
+            "Id": "c6e6f7a8-9b0c-1d2e-3f4a-5b6c7d8e9f0a",
+            "Mail": "pedro@empresa.com",
+            "Nombre": "Pedro",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Lopez",
+            "Contrasena": "ana123",
+            "Id": "c7f7a8a9-0b1c-2d3e-4f5a-6b7c8d9e0f1a",
+            "Mail": "ana@empresa.com",
+            "Nombre": "Ana",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+        },
+        {
+            "Apellido": "Martínez",
+            "Contrasena": "luis123",
+            "Id": "c8a8b9a0-1b2c-3d4e-5f6a-7b8c9d0e1f2a",
+            "Mail": "luis@empresa.com",
+            "Nombre": "Luis",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Fernández",
+            "Contrasena": "clara123",
+            "Id": "c9a9b0a1-2b3c-4d5e-6f7a-8b9c0d1e2f3a",
+            "Mail": "clara@empresa.com",
+            "Nombre": "Clara",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+        },
+        {
+            "Apellido": "Sánchez",
+            "Contrasena": "jorge123",
+            "Id": "ca1b2c3d-4d5e-6f7a-8b9c-0d1e2f3a4b5c",
+            "Mail": "jorge@empresa.com",
+            "Nombre": "Jorge",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Ramírez",
+            "Contrasena": "lucia123",
+            "Id": "cb12c3d4-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+            "Mail": "lucia@empresa.com",
+            "Nombre": "Lucía",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+        },
+        {
+            "Apellido": "Vega",
+            "Contrasena": "alberto123",
+            "Id": "cd13d4e5-6f7a-8b9c-0d1e-2f3a4b5c6d7e",
+            "Mail": "alberto@empresa.com",
+            "Nombre": "Alberto",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Cruz",
+            "Contrasena": "elena123",
+            "Id": "ce14e5f6-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+            "Mail": "elena@empresa.com",
+            "Nombre": "Elena",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
+        },
+        {
+            "Apellido": "Ortiz",
+            "Contrasena": "miguel123",
+            "Id": "cf15f6a7-8b9c-0d1e-2f3a-4b5c6d7e8f9a",
+            "Mail": "miguel@empresa.com",
+            "Nombre": "Miguel",
+            "Rol": "d1e2f3a4-5b6c-7d8e-9f0a-1b2c3d4e5f6a"
+        },
+        {
+            "Apellido": "Moreno",
+            "Contrasena": "patricia123",
+            "Id": "cfa6b7c8-9a0b-1c2d-3e4f-5a6b7c8d9e0f",
+            "Mail": "patricia@empresa.com",
+            "Nombre": "Patricia",
+            "Rol": "d2e3f4a5-6b7c-8d9e-0f1a-2b3c4d5e6f7a"
         }
     ]
 }
