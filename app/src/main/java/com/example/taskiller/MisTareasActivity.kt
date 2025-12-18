@@ -5,6 +5,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -56,6 +57,12 @@ class MisTareasActivity : AppCompatActivity() {
         recyclerTareas = findViewById(R.id.rVTareas)
         recyclerTareas.layoutManager = LinearLayoutManager(this)
 
+        val nombreUser: TextView = findViewById(R.id.lblMisTareasNombreUsuario)
+        val mailUser: TextView = findViewById(R.id.lblMisTareasMailUsuario)
+
+        nombreUser.text = user.Nombre
+        mailUser.text = "(${user.Mail})"
+
         adapter = TaskAdapter(
             user,
             tareas,
@@ -76,10 +83,6 @@ class MisTareasActivity : AppCompatActivity() {
         btnVolver.setOnClickListener {
             devolverResultadoYSalir()
         }
-    }
-
-    override fun onBackPressed() {
-        devolverResultadoYSalir()
     }
 
     private fun devolverResultadoYSalir() {
