@@ -3,6 +3,7 @@ package com.example.taskiller
 import Datos
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -36,12 +37,16 @@ class LoginActivity : AppCompatActivity() {
         btnLoginIniciarSesion = findViewById(R.id.btnLoginIniciarSesion)
         txtBoxLoginUsuario = findViewById(R.id.txtBoxLoginUsuario)
         txtBoxLoginContrasena = findViewById(R.id.txtBoxLoginContrasena)
+        val btnToggle = findViewById<ImageButton>(R.id.btnTogglePassword)
         spinner = findViewById(R.id.spinnerLoginIdiomas)
+
+        var passwordVisible = false
+
 
         val adapter = ArrayAdapter.createFromResource(
             this,
             R.array.idiomas,
-            android.R.layout.simple_spinner_item
+            R.layout.spinner_item_color
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
@@ -89,6 +94,21 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
+        btnToggle.setOnClickListener {
+            passwordVisible = !passwordVisible
+            if (passwordVisible) {
+                txtBoxLoginContrasena.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                btnToggle.setImageResource(R.drawable.contrasena_visible)
+            } else {
+                txtBoxLoginContrasena.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                btnToggle.setImageResource(R.drawable.contrasena_invisible)
+            }
+            txtBoxLoginContrasena.setSelection(txtBoxLoginContrasena.text.length)
+        }
+
         actualizarTextos()
     }
 

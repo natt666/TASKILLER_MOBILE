@@ -15,6 +15,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@drawable/logo"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="16dp"
         android:layout_gravity="center_horizontal" />
 
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:text="@string/LoginIniciaSesion"
+            android:textColor="@color/texto"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -41,16 +43,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/LoginNombreUsuario"
+            android:textColor="@color/texto"
             android:layout_marginBottom="12dp"/>
 
         <!-- TEXT BOX 2 -->
-        <EditText
-            android:id="@+id/txtBoxLoginContrasena"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/LoginContrasena"
-            android:inputType="textPassword"
-            android:layout_marginBottom="16dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/txtBoxLoginContrasena"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Contraseña"
+                    android:inputType="textPassword"/>
+
+                <ImageButton
+                    android:id="@+id/btnTogglePassword"
+                    android:layout_width="27dp"
+                    android:layout_height="25dp"
+                    android:scaleType="fitCenter"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/contrasena_invisible" />
+            </LinearLayout>
 
 
 
@@ -58,9 +76,12 @@
 
         <Button
             android:id="@+id/btnLoginIniciarSesion"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/principal"
+            android:textColor="@color/background"
             android:text="@string/LoginIniciaSesion" />
 
         <View
@@ -76,7 +97,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text="Idioma"
             />
 
     </LinearLayout>

@@ -7,13 +7,27 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.JsonDeserializer
 import java.io.File
+import java.io.FileOutputStream
 import java.io.FileReader
 import java.io.FileWriter
 import java.io.InputStreamReader
 
 fun Context.getDatos(): Datos? {
     return try {
-        val jsonFile = File(filesDir, "datajson/TaskillerData.json")
+        val dir = File(filesDir, "datajson")
+        if (!dir.exists()) {
+            dir.mkdirs()
+        }
+
+        val jsonFile = File(dir, "TaskillerData.json")
+
+        if (!jsonFile.exists()) {
+            assets.open("TaskillerData.json").use { input ->
+                FileOutputStream(jsonFile).use { output ->
+                    input.copyTo(output)
+                }
+            }
+        }
 
         val reader = InputStreamReader(jsonFile.inputStream())
 

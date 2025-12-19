@@ -1,140 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="25dp"
-    android:layout_marginEnd="40dp"
-    android:layout_marginBottom="12dp"
-    app:cardCornerRadius="10dp"
+    android:layout_marginBottom="25dp"
+    app:cardCornerRadius="15dp"
+    app:cardBackgroundColor="@color/background"
     app:cardElevation="5dp">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:padding="8dp"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="10dp"
-        android:rowCount="3">
+        android:orientation="vertical"
+        android:padding="16dp">
 
+        <!-- Nombre de la tarea -->
         <TextView
             android:id="@+id/taskNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:fontFamily="@font/montserrat_medium"
-            android:maxWidth="250dp"
-            android:minHeight="105dp"
+            android:fontFamily="@font/montserrat_bold"
             android:text="Nombre de la tarea (nombre muy muy muy muy largo)"
             android:textColor="@color/principal"
             android:textSize="25sp"
             android:textStyle="bold" />
 
+        <!-- GridLayout con 2 columnas -->
         <GridLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:columnCount="1"
-            android:padding="8dp"
-            android:paddingStart="10dp"
-            android:paddingTop="10dp"
-            android:paddingEnd="10dp"
-            android:paddingBottom="10dp"
-            android:rowCount="3">
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_marginTop="8dp">
 
+            <!-- Fila 1: etiquetas -->
+            <TextView
+                android:id="@+id/lblInicioTarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_columnWeight="1"
+                android:text="@string/inicio"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/lblFinTarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_columnWeight="1"
+                android:text="@string/fin"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Fila 2: fechas -->
+            <TextView
+                android:id="@+id/startDateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:layout_columnWeight="1"
+                android:text="XX-XX-XXXX"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/endDateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:fontFamily="@font/montserrat_light"
+                android:text="XX-XX-XXXX"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </GridLayout>
+
+        <!-- Fila 3: prioridad a la izquierda, estado a la derecha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <!-- Prioridad -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/lblPrioridadItemTarea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/prioridad"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/prioridadImageView"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/prioridad_baja"
+                    android:layout_marginStart="10dp"/>
+            </LinearLayout>
+
+            <!-- Estado -->
             <TextView
                 android:id="@+id/taskStatusTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:layout_gravity="end|bottom"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/bg_estado_por_comenzar"
                 android:fontFamily="@font/montserrat_medium"
+                android:layout_gravity="end|bottom"
+                android:paddingLeft="10dp"
+                android:paddingEnd="10dp"
+                android:background="@drawable/bg_estado_por_comenzar"
                 android:text="ESTADO"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/lblPrioridadItemTarea"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:layout_gravity="end|bottom"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Prioridad:"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+        </LinearLayout>
 
-            <ImageView
-                android:id="@+id/prioridadImageView"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_row="2"
-                android:layout_column="0"
-                android:layout_gravity="end"
-                android:scaleType="fitCenter"
-                android:src="@drawable/prioridad_baja" />
+    </LinearLayout>
 
-        </GridLayout>
-
-        <TextView
-            android:id="@+id/lblInicioTarea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="Inicio:"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/lblFinTarea"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="Fin:"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/startDateTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="XX-XX-XXXX"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/endDateTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:fontFamily="@font/montserrat_medium"
-            android:text="XX-XX-XXXX"
-            android:textColor="@android:color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-    </GridLayout>
-
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView >
