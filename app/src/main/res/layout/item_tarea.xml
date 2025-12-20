@@ -127,7 +127,7 @@
 
             <!-- Estado -->
             <TextView
-                android:id="@+id/lblInicioTarea"
+                android:id="@+id/taskStatusTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|bottom"
