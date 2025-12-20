@@ -141,7 +141,11 @@ class DetallesProyectoActivity : AppCompatActivity() {
 
     private fun cargarTareasDelProyecto() {
         tareasDelProyecto.clear()
-        tareasDelProyecto.addAll(datos.listaTareas.filter { it.IdProyecto == proyecto.Id })
+        tareasDelProyecto.addAll(
+            datos.listaTareas.filter {
+                it.IdProyecto == proyecto.Id && it.listaUsuarios.contains(user.Id)
+            }
+        )
     }
 
     private fun mostrarDescripcion(p: Proyecto) {
