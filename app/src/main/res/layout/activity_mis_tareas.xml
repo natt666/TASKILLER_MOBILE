@@ -6,73 +6,66 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
+    android:padding="@dimen/margin_borde"
     app:cardElevation="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="18dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/btnMisTareasVolver"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="@string/volver"
-                android:scaleType="fitCenter"
-                android:src="@drawable/flecha_hacia_atras" />
-
-            <TextView
-                android:id="@+id/lblMisTareasNombreUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Usuario"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/lblMisTareasMailUsuario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="(usuario@empresa.com)"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+        <ImageButton
+            android:id="@+id/btnMisTareasVolver"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/volver"
+            android:scaleType="fitCenter"
+            android:src="@drawable/flecha_hacia_atras" />
 
         <TextView
-            android:id="@+id/lblMisTareas"
-            android:layout_width="match_parent"
+            android:id="@+id/lblMisTareasNombreUsuario"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="@font/montserrat_bold"
-            android:text="@string/mis_tareas"
-            android:textColor="@color/principal"
-            android:textSize="@dimen/txtTitulo" />
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Usuario"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rVTareas"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:clipToPadding="false"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
+        <TextView
+            android:id="@+id/lblMisTareasMailUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="(usuario@empresa.com)"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblMisTareas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="@string/mis_tareas"
+        android:textColor="@color/principal"
+        android:textSize="@dimen/txtTitulo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rVTareas"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </LinearLayout>

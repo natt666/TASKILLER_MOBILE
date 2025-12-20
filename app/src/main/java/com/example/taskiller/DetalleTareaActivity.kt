@@ -56,11 +56,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_detalle_tarea)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.layoutDetallesTareaMain)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
 
         datos = intent.getSerializableExtra("datos") as Datos
         user = intent.getSerializableExtra("user") as Usuario
@@ -190,6 +186,7 @@ class DetalleTareaActivity : AppCompatActivity() {
         if (subtareasIds != null) {
             val subtareasTarea = subtareasIds
                 .mapNotNull { id -> listaTareas.find { it.Id == id } }
+                .filter { subTarea -> subTarea.listaUsuarios?.contains(user.Id) == true }
                 .toMutableList()
 
             val adapter = MyTaskAdapter(
@@ -236,7 +233,7 @@ class DetalleTareaActivity : AppCompatActivity() {
     fun configurarSpinnerEstado() {
         val labels = resources.getStringArray(R.array.estados)
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, labels)
+        val adapter = ArrayAdapter(this, R.layout.spinner_item_selected, labels)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spinnerEstado.adapter = adapter
