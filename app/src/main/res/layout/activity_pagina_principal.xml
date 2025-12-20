@@ -3,41 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tarjproyecto"
     android:orientation="vertical"
-    android:padding="16dp"
     android:background="@color/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Botón con imagen -->
-    <ImageButton
-        android:id="@+id/logo"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="right"
-        android:paddingTop="10dp"
-        android:paddingRight="20dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/logo_user_ros" />
-
-    <!-- Título -->
-    <TextView
-        android:id="@+id/titleText"
-        android:text="@string/PaginaPrincipalTxtViewProyectos"
-        android:textSize="36sp"
-        android:textColor="@color/principal"
-        android:fontFamily="@font/montserrat_bold"
-        android:gravity="center"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="18dp">
+        <!-- Botón con imagen -->
+        <ImageButton
+            android:id="@+id/logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_user_ros" />
 
-    <!-- RecyclerView para las tarjetas -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewProjects"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp" />
+        <!-- Título -->
 
+        <!-- RecyclerView para las tarjetas -->
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="@string/PaginaPrincipalTxtViewProyectos"
+            android:textColor="@color/principal"
+            android:textSize="36sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewProjects"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp" />
+
+
+    </LinearLayout>
 
 </LinearLayout>

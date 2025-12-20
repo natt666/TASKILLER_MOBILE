@@ -2,6 +2,7 @@ package com.example.taskiller
 
 import Datos
 import Proyecto
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -37,17 +38,20 @@ class GraficosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_graficos)
 
         pieChart = findViewById(R.id.pieChart)
-        graficosbtnvolver = findViewById(R.id.graficosbtnvolver)
+        graficosbtnvolver = findViewById(R.id.btngraficosVolver)
         lblnombreproyecto = findViewById(R.id.lblGraficosNombreProyecto)
+        val imgButton = findViewById<ImageButton>(R.id.imgbtnusuario)
+
 
         tfBold = ResourcesCompat.getFont(this, R.font.montserrat_bold)!!
         tfMedium = ResourcesCompat.getFont(this, R.font.montserrat_medium)!!
 
         val datos = intent.getSerializableExtra("datos") as Datos
         val user = intent.getSerializableExtra("user") as Usuario
-        val proyectoId = intent.getSerializableExtra("proyectoId") as UUID
-        val proyecto = datos.listaProyectos.firstOrNull { it.Id == proyectoId } ?: return
-        val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyectoId }
+        val proyecto = intent.getSerializableExtra("proyecto") as Proyecto
+
+        val todasTareas = datos.listaTareas.filter { it.IdProyecto == proyecto.Id }
+
         lblnombreproyecto.text = proyecto.Titulo
 
 
@@ -55,7 +59,7 @@ class GraficosActivity : AppCompatActivity() {
             todasTareas.count { it.Estado == estado }
         }
 
-        val (entries, colors) = preparePieChartData(estadoCounts)
+        val (entries, colors) = preparePieChartData(estadoCounts, this)
 
         if (entries.isEmpty()) {
             pieChart.centerText = "Sin tareas"
@@ -73,12 +77,22 @@ class GraficosActivity : AppCompatActivity() {
             setResult(RESULT_OK, resultIntent)
             finish()
         }
+
+        setupBotones(imgButton,datos,user)
     }
 
-    private fun preparePieChartData(estadoCounts: Map<Tarea.Estados, Int>): Pair<List<PieEntry>, List<Int>> {
+    private fun preparePieChartData(
+        estadoCounts: Map<Tarea.Estados, Int>,
+        context: Context
+    ): Pair<List<PieEntry>, List<Int>> {
+
         val entries = mutableListOf<PieEntry>()
         val colors = mutableListOf<Int>()
 
+        // Array de nombres desde resources
+        val estadosArray = context.resources.getStringArray(R.array.estados)
+
+        // Map de colores
         val estadoColorMap = mapOf(
             Tarea.Estados.Por_Comenzar to R.color.Por_comenzar,
             Tarea.Estados.En_Progreso to R.color.En_progreso,
@@ -87,15 +101,28 @@ class GraficosActivity : AppCompatActivity() {
             Tarea.Estados.Bloqueado to R.color.Bloqueado
         )
 
+        // Map de índices del array para obtener el nombre
+        val estadoIndexMap = mapOf(
+            Tarea.Estados.Por_Comenzar to 0,
+            Tarea.Estados.En_Progreso to 1,
+            Tarea.Estados.Entregado to 2,
+            Tarea.Estados.Revisado to 3,
+            Tarea.Estados.Bloqueado to 4
+        )
+
         estadoCounts.forEach { (estado, count) ->
             if (count > 0) {
-                entries.add(PieEntry(count.toFloat(), estado.name.replace("_", " ")))
-                colors.add(ContextCompat.getColor(this, estadoColorMap[estado]!!))
+                val index = estadoIndexMap.getOrElse(estado) { 0 }
+                val estadoNombre = estadosArray.getOrElse(index) { "Desconocido" }
+
+                entries.add(PieEntry(count.toFloat(), estadoNombre))
+                colors.add(ContextCompat.getColor(context, estadoColorMap.getOrElse(estado) { R.color.black }))
             }
         }
 
         return entries to colors
     }
+
     private fun setupPieChart(entries: List<PieEntry>, colors: List<Int>, title: String?) {
         val dataSet = PieDataSet(entries, "").apply {
             this.colors = colors
@@ -123,6 +150,7 @@ class GraficosActivity : AppCompatActivity() {
             setEntryLabelColor(Color.BLACK)
             setEntryLabelTextSize(12f)
             setEntryLabelTypeface(tfBold)
+            description.isEnabled = false
             setExtraOffsets(30f, 10f, 30f, 10f)
             animateY(1200, Easing.EaseInOutQuad)
 
@@ -141,4 +169,15 @@ class GraficosActivity : AppCompatActivity() {
             invalidate()
         }
     }
+
+    private fun setupBotones(imgButton:ImageButton ,datos:Datos, user:Usuario) {
+        imgButton.setOnClickListener {
+            val intent = Intent(this, MisTareasActivity::class.java).apply {
+                putExtra("datos", datos)
+                putExtra("user", user)
+            }
+            startActivity(intent)
+        }
+    }
+
 }

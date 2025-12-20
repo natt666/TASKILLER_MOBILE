@@ -68,7 +68,7 @@ class ProjectAdapter(
             val intent = Intent(context, GraficosActivity::class.java).apply {
                 putExtra("datos", datos)
                 putExtra("user", user)
-                putExtra("proyectoId", project.Id)
+                putExtra("proyecto", project)
             }
             context.startActivity(intent)
         }

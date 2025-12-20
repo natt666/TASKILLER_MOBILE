@@ -4,12 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="25dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_margin="10dp"
     app:cardCornerRadius="15dp"
     app:cardBackgroundColor="@color/background"
-    app:cardElevation="5dp">
+    app:cardElevation="4dp">
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -21,68 +22,76 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Nombre de la tarea (nombre muy muy muy muy largo)"
+            android:text="Nombre de la tarea (nombre muy largo)"
             android:textColor="@color/principal"
-            android:textSize="25sp"
+            android:textSize="23sp"
             android:textStyle="bold" />
 
-        <!-- GridLayout con 2 columnas -->
-        <GridLayout
+        <!-- Etiquetas y fechas con LinearLayouts -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="2"
+            android:orientation="vertical"
             android:layout_marginTop="8dp">
 
-            <!-- Fila 1: etiquetas -->
-            <TextView
-                android:id="@+id/lblInicioTarea"
-                android:layout_width="0dp"
+            <!-- Fila de etiquetas -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
-                android:layout_columnWeight="1"
-                android:text="@string/inicio"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/lblFinTarea"
-                android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/lblInicioTarea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/inicio"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/lblFinTarea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:layout_weight="1"
+                    android:text="@string/fin"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!-- Fila de fechas -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
-                android:layout_columnWeight="1"
-                android:text="@string/fin"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
 
-            <!-- Fila 2: fechas -->
-            <TextView
-                android:id="@+id/startDateTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_light"
-                android:layout_columnWeight="1"
-                android:text="XX-XX-XXXX"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/startDateTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="XX-XX-XXXX"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/montserrat_light"
+                    />
 
-            <TextView
-                android:id="@+id/endDateTextView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:fontFamily="@font/montserrat_light"
-                android:text="XX-XX-XXXX"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/endDateTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="XX-XX-XXXX"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:fontFamily="@font/montserrat_light"
+                    />
+            </LinearLayout>
+        </LinearLayout>
 
-        </GridLayout>
-
-        <!-- Fila 3: prioridad a la izquierda, estado a la derecha -->
+        <!-- Prioridad a la izquierda y estado a la derecha -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,10 +110,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/prioridad"
-                    android:fontFamily="@font/montserrat_medium"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/montserrat_medium"
+                    />
 
                 <ImageView
                     android:id="@+id/prioridadImageView"
@@ -113,7 +122,7 @@
                     android:layout_gravity="center_vertical"
                     android:scaleType="fitCenter"
                     android:src="@drawable/prioridad_baja"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="10dp" />
             </LinearLayout>
 
             <!-- Estado -->
@@ -121,18 +130,18 @@
                 android:id="@+id/taskStatusTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_medium"
                 android:layout_gravity="end|bottom"
-                android:paddingLeft="10dp"
+                android:paddingStart="10dp"
                 android:paddingEnd="10dp"
                 android:background="@drawable/bg_estado_por_comenzar"
                 android:text="ESTADO"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/montserrat_medium"
+                />
 
         </LinearLayout>
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView >
+</androidx.cardview.widget.CardView>
